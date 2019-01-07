@@ -305,4 +305,7 @@
 
     <!-- Whether to force enable multi resolution configuration for camera -->
     <bool name="config_forceMultiResolution">true</bool>
+
+    <!-- Specify custom blanking delay of the display -->
+    <integer name="config_screen_off_delay">0</integer>
 </resources>
