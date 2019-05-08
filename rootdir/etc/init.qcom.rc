@@ -79,6 +79,9 @@ on init
     chown root system /sys/fs/cgroup/memory/bg/tasks
     chmod 0660 /sys/fs/cgroup/memory/bg/tasks
 
+    # Vibration intensity
+    chown system system /sys/devices/platform/soc/a8c000.i2c/i2c-3/3-005a/leds/vibrator/level
+
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
 
@@ -238,6 +241,34 @@ on boot
     write /sys/bus/coresight/devices/coresight-tmc-etr/enable_sink 1
     write /sys/bus/coresight/devices/coresight-stm/enable_source 1
     write /sys/bus/coresight/devices/coresight-stm/hwevent_enable 0
+
+    # DC-Dimming
+    chmod 0660 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dimlayer_bl_en
+    chown system system /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dimlayer_bl_en
+
+    # Force Fast Charge
+    chown system system /sys/kernel/fast_charge/force_fast_charge
+    chmod 0666 /sys/kernel/fast_charge/force_fast_charge
+
+    # Force Game Mode
+    chown system system /proc/touchpanel/force_game_switch_enable
+    chmod 0666 /proc/touchpanel//force_game_switch_enable
+
+    # High Brightness Mode
+    chown system graphics /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm
+    chmod 0666 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm
+
+    # Measured FPS
+    chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
+    chmod 0666 /sys/class/drm/sde-crtc-0/measured_fps
+
+    # TP-edge limit 
+    chown system system /proc/touchpanel/tpedge_limit_enable
+    chmod 0666 /proc/touchpanel/tpedge_limit_enable
+
+    # Tri-state-key
+    chown system system /sys/devices/platform/soc/soc:tri_state_key/tri_state
+    chmod 0666 /sys/devices/platform/soc/soc:tri_state_key/tri_state
 
 # msm specific files that need to be created on /data
 on post-fs-data
