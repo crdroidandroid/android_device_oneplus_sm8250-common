@@ -76,8 +76,12 @@ on fs
 on post-fs
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
+
     write /dev/ipa 1
     mkdir /mnt/vendor/op2/recovery 0770 root system
+
+    # make the selinux kernel policy world-readable
+    chmod 0444 /sys/fs/selinux/policy
 
 on late-fs
     wait_for_prop hwservicemanager.ready true
