@@ -127,6 +127,7 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
+    audio_amplifier.kona \
     libaudiopreprocessing \
     libbatterylistener \
     libbundlewrapper \
