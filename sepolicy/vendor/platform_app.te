@@ -5,7 +5,6 @@ allow platform_app vendor_xdsp_device:chr_file { ioctl read getattr lock map ope
 allow platform_app vendor_sysfs_battery_supply:dir search;
 allow platform_app vendor_sysfs_battery_supply:file { read open getattr };
 allow platform_app adsprpcd_file:dir { search getattr read };
-allow platform_app hal_power_service:service_manager find;
 allow platform_app hal_ifaa_hwservice:hwservice_manager find;
 allow platform_app zygote:unix_stream_socket getopt;
 dontaudit platform_app mnt_vendor_file:dir search;
@@ -16,3 +15,6 @@ allow platform_app vendor_camera_data_file:dir getattr;
 binder_call(platform_app, hal_camera_default)
 r_dir_file(platform_app, oem_file)
 binder_call(platform_app, hal_ifaa_default)
+
+allow platform_app hal_dms_hwservice:hwservice_manager find;
+allow platform_app hal_dms_default:binder { call transfer };

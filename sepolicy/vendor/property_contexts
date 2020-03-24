@@ -76,3 +76,6 @@ persist.vendor.arcsoft.sn.dumprawinfo				u:object_r:ctl_default_prop:s0
 vendor.oneplus.gallery.					u:object_r:ctl_default_prop:s0
 persist.vendor.apsSN.algo.enable				u:object_r:ctl_default_prop:s0
 vendor.boot.project_name					u:object_r:ctl_default_prop:s0
+
+# Dolby
+persist.vendor.dolby.loglevel                 u:object_r:vendor_dolby_loglevel_prop:s0
