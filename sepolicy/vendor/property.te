@@ -9,3 +9,6 @@ type vendor_oem_wifi_prop, property_type;
 type vendor_rild_prop, property_type;
 type vendor_set_wlan_prop, property_type;
 type vendor_shell_prop, property_type;
+
+# Dolby
+type vendor_dolby_loglevel_prop, property_type;
