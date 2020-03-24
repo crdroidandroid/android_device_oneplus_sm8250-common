@@ -84,3 +84,6 @@ ro.ril.supportLTE               u:object_r:radio_prop:s0
 ro.vendor.ril.svlte1x           u:object_r:radio_prop:s0
 ro.vendor.ril.svdo              u:object_r:radio_prop:s0
 vendor.oem.bt.addr              u:object_r:vendor_radio_prop:s0
+
+# Dolby
+persist.vendor.dolby.loglevel                 u:object_r:vendor_dolby_loglevel_prop:s0

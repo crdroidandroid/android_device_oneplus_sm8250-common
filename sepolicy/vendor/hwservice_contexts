@@ -9,3 +9,5 @@ vendor.oneplus.hardware.ifaa::IOneplusIfaa                                 u:obj
 vendor.oneplus.hardware.param::IOneplusParam                               u:object_r:hal_param_hwservice:s0
 vendor.pixelworks.hardware.display::IIris                                  u:object_r:hal_display_iris_hwservice:s0
 vendor.pixelworks.hardware.feature::IIrisFeature                           u:object_r:hal_display_iris_hwservice:s0
+vendor.qti.hardware.audiohalext::IAudioHalExt                              u:object_r:hal_audio_hwservice:s0
+vendor.dolby.hardware.dms::IDms                                            u:object_r:hal_dms_hwservice:s0
