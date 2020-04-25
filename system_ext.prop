@@ -18,6 +18,8 @@ persist.vendor.cne.feature=1
 persist.camera.privapp.list=com.oneplus.camera
 persist.vendor.camera.privapp.list=com.oneplus.camera
 
+# Dalvik
+dalvik.vm.dex2oat64.enabled=true
 
 # DPM
 persist.vendor.dpm.feature=9
