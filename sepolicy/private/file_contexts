@@ -1,6 +1,3 @@
-# tri-state-key
-/system/bin/tri-state-key_daemon          u:object_r:tri-state-key_daemon_exec:s0
-
 # Data files
 /data/misc/lineage/client_package_name                u:object_r:lineage_data_file:s0
 
