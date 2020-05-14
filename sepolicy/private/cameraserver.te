@@ -1,0 +1,2 @@
+allow cameraserver lineage_data_file:file rw_file_perms;
+allow cameraserver lineage_data_file:dir write;

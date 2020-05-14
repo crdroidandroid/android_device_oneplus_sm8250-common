@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014-2017 The OmniROM Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <string name="device_title">OnePlus Settings</string>
+    <string name="device_summary">Adjust OnePlus specific device settings</string>
+
+    <!-- Display modes -->
+    <string name="display_title">Display modes</string>
+    <string name="display_summary">Adjust settings and preferences for display</string>
+    <string name="srgb_mode_summary"></string>
+    <string name="srgb_mode_title">Natural colors</string>
+    <string name="hbm_mode_summary"></string>
+    <string name="hbm_mode_title">High brightness mode</string>
+    <string name="hbm_autobrightness_summary"></string>
+    <string name="hbm_autobrightness_title">Automatic High brightness mode</string>
+    <string name="hbm_autobrightness_threshold_summary"></string>
+    <string name="hbm_autobrightness_threshold_title">Automatic High brightness mode threshold (lux)</string>
+    <string name="dc_mode_summary"></string>
+    <string name="dc_mode_title">DC-Dimming</string>
+    <string name="dci_mode_summary"></string>
+    <string name="dci_mode_title_new">Vivid colors</string>
+    <string name="Night_mode_summary"></string>
+    <string name="Night_mode_title">Night mode</string>
+    <string name="panel_category_title">Panel modes</string>
+    <string name="panel_category_summary">Modes for panel color correction</string>
+    <string name="off_mode_title">Off</string>
+    <string name="tile_panel_mode">Panel modes</string>
+    <string name="tile_hbm_mode">High brightness modes</string>
+    <string name="tile_dc_mode">DC-Dimming</string>
+    <string name="panel_mode_info">Disable panel mode requires reboot.</string>
+
+    <!-- Notification slider -->
+    <string name="notification_slider_category_title">Notification slider</string>
+    <string name="notification_slider_selection_dialog_title">Action</string>
+    <string name="notification_slider_top_position">Top position</string>
+    <string name="notification_slider_middle_position">Middle position</string>
+    <string name="notification_slider_bottom_position">Bottom position</string>
+    <string name="notification_slider_mode_total_silence">Total silence</string>
+    <string name="notification_slider_mode_alarms_only">Alarms only</string>
+    <string name="notification_slider_mode_priority_only">Priority only</string>
+    <string name="notification_slider_mode_silent">Silent</string>
+    <string name="notification_slider_mode_vibrate">Vibrate</string>
+    <string name="notification_slider_mode_none">Normal</string>
+    <string name="buttons_dashboard_summary">Alert Slider Settings</string>
+
+    <!-- Vibration control -->
+    <string name="category_vibrator">Vibrator</string>
+    <string name="vib_strength_title_head">System Strength</string>
+    <string name="vib_strength_summary_head">Define the strength of the vibrator</string>
+    <string name="vib_call_strength_title_head">Call Strength</string>
+    <string name="vib_call_strength_summary_head">Define the strength of the vibrator during an incoming call</string>
+    <string name="vib_notif_strength_title_head">Notification Strength</string>
+    <string name="vib_notif_strength_summary_head">Define the strength of the vibrator during an incoming notification</string>
+
+</resources>

@@ -4,12 +4,23 @@
 # Data files
 /data/misc/display(/.*)?      u:object_r:display_misc_file:s0
 
+/data/misc/lineage/client_package_name                u:object_r:lineage_data_file:s0
+
 # Files in rootfs
 /op1(/.*)?       u:object_r:op1_file:s0
 /op2(/.*)?       u:object_r:op2_file:s0
 
 # Files in sysfs
 /sys/devices/platform/soc/soc:goodix_fp/proximity_state    u:object_r:sysfs_fpc_proximity:s0
+
+# Display Modes
+/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/native_display_srgb_color_mode  u:object_r:sysfs_dm:s0
+/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/hbm                             u:object_r:sysfs_dm:s0
+/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/dimlayer_bl_en                  u:object_r:sysfs_dm:s0
+/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/night_mode                      u:object_r:sysfs_dm:s0
+/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/native_display_p3_mode          u:object_r:sysfs_dm:s0
+/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/native_display_wide_color_mode  u:object_r:sysfs_dm:s0
+/sys/class/drm/sde-crtc-0/measured_fps u:object_r:sysfs_dm:s0
 
 # HALs
 /(product|system/product)/vendor_overlay/[0-9]+/bin/hw/android\.hardware\.power-service    u:object_r:hal_power_default_exec:s0
@@ -26,3 +37,6 @@
 /(product|system/product)/vendor_overlay/[0-9]+/etc(/.*)?        u:object_r:vendor_configs_file:s0
 /(product|system/product)/vendor_overlay/[0-9]+/lib(64)?/hw      u:object_r:vendor_hal_file:s0
 /(product|system/product)/vendor_overlay/[0-9]+/overlay(/.*)?    u:object_r:vendor_overlay_file:s0
+
+# Vibrator
+/sys/devices/platform/soc/a8c000.i2c/i2c-3/3-005a/leds/vibrator/level u:object_r:sysfs_vibrator:s0
