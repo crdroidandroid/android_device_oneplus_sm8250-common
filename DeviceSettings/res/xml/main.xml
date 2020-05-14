@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2014-2016 The OmniROM Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:key="graphics"
+        android:title="@string/display_title">
+
+        <SwitchPreference
+            android:key="hbm"
+            android:summary="@string/hbm_mode_summary"
+            android:icon="@drawable/rr_hbm_icon"
+            android:title="@string/hbm_mode_title" />
+
+        <SwitchPreference
+            android:key="hbm_autobrightness"
+            android:summary="@string/hbm_autobrightness_summary"
+            android:icon="@drawable/rr_hbm_icon"
+            android:title="@string/hbm_autobrightness_title" />
+
+        <org.lineageos.device.DeviceSettings.HBMAutobrightnessThresholdPreference
+            android:key="hbm_autobrightness_threshould"
+            android:title="@string/hbm_autobrightness_threshold_title"
+            android:icon="@drawable/rr_hbm_icon"
+            android:summary="@string/hbm_autobrightness_threshold_summary" />
+
+        <SwitchPreference
+            android:key="dc"
+            android:icon="@drawable/rr_dc_dim_icon"
+            android:summary="@string/dc_mode_summary"
+            android:title="@string/dc_mode_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="slider"
+        android:title="@string/notification_slider_category_title">
+
+        <ListPreference
+            android:key="keycode_top_position"
+            android:dialogTitle="@string/notification_slider_selection_dialog_title"
+            android:title="@string/notification_slider_top_position"
+            android:icon="@drawable/rr_up_icon"
+            android:summary="%s"
+            android:entries="@array/notification_slider_action_entries"
+            android:entryValues="@array/notification_slider_action_entry_values" />
+
+        <ListPreference
+            android:key="keycode_middle_position"
+            android:icon="@drawable/rr_middle_icon"
+            android:dialogTitle="@string/notification_slider_selection_dialog_title"
+            android:title="@string/notification_slider_middle_position"
+            android:summary="%s"
+            android:entries="@array/notification_slider_action_entries"
+            android:entryValues="@array/notification_slider_action_entry_values" />
+
+        <ListPreference
+          android:key="keycode_bottom_position"
+          android:icon="@drawable/rr_down_icon"
+          android:dialogTitle="@string/notification_slider_selection_dialog_title"
+          android:title="@string/notification_slider_bottom_position"
+          android:summary="%s"
+          android:entries="@array/notification_slider_action_entries"
+          android:entryValues="@array/notification_slider_action_entry_values" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="vibrator"
+        android:title="@string/category_vibrator">
+        <org.lineageos.device.DeviceSettings.VibratorStrengthPreference
+            android:key="vib_strength"
+            android:icon="@drawable/rr_intensity_icon"
+            android:title="@string/vib_strength_title_head"
+            android:summary="@string/vib_strength_summary_head" />
+    </PreferenceCategory>
+</PreferenceScreen>
