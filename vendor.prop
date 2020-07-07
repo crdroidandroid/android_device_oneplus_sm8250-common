@@ -134,6 +134,7 @@ dalvik.vm.heapstartsize=8m
 dalvik.vm.heaptargetutilization=0.75
 
 # Display
+ro.surface_flinger.support_kernel_idle_timer=true
 ro.vendor.display.sensortype=2
 vendor.display.comp_mask=0
 vendor.display.disable_excl_rect=0
