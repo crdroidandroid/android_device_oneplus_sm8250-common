@@ -36,7 +36,6 @@
 #include <sys/sysinfo.h>
 #include <sys/system_properties.h>
 
-#include "property_service.h"
 #include "vendor_init.h"
 
 using android::base::GetProperty;
