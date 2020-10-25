@@ -26,4 +26,9 @@
     <!-- Allow devices override audio panel location to the left side -->
     <bool name="config_audioPanelOnLeftSide">true</bool>
 
+    <!-- Default no. of QS tile rows and columns -->
+    <integer name="config_qs_columns_portrait">4</integer>
+    <integer name="config_qs_rows_portrait">3</integer>
+    <integer name="config_qs_columns_landscape">5</integer>
+    <integer name="config_qs_rows_landscape">2</integer>
 </resources>
