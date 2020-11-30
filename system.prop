@@ -22,6 +22,7 @@ debug.gralloc.gfx_ubwc_disable=0
 debug.sf.enable_hwc_vds=1
 debug.sf.latch_unsignaled=0
 persist.vendor.color.matrix=2
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 
 # CNE
 persist.vendor.cne.feature=1
