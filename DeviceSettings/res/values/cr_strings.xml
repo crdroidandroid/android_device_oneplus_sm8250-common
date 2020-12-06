@@ -62,4 +62,11 @@
     <string name="vib_notif_strength_title_head">Notification Strength</string>
     <string name="vib_notif_strength_summary_head">Define the strength of the vibrator during an incoming notification</string>
 
+    <!-- Slider toasts -->
+    <string name="slider_toast_normal">Calls and notifications will ring</string>
+    <string name="slider_toast_vibrate">Calls and notifications will vibrate</string>
+    <string name="slider_toast_dnd">DND - No interruptions</string>
+    <string name="slider_toast_priority">DND - Priority only</string>
+    <string name="slider_toast_silent">Calls and notifications will be muted</string>
+
 </resources>

@@ -18,12 +18,14 @@
 package org.lineageos.device.DeviceSettings;
 
 import android.Manifest;
+import android.app.ActivityThread;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.hardware.Sensor;
@@ -49,11 +51,14 @@ import android.provider.Settings;
 import android.util.Log;
 import android.util.SparseIntArray;
 import android.view.KeyEvent;
+import android.widget.Toast;
 
 import com.android.internal.os.DeviceKeyHandler;
 import com.android.internal.util.ArrayUtils;
 
 import org.lineageos.device.DeviceSettings.Constants;
+import org.lineageos.device.DeviceSettings.DeviceSettings;
+import org.lineageos.device.DeviceSettings.R;
 
 import vendor.oneplus.camera.CameraHIDL.V1_0.IOnePlusCameraProvider;
 
@@ -82,10 +87,14 @@ public class KeyHandler implements DeviceKeyHandler {
         sSupportedSliderRingModes.put(Constants.KEY_VALUE_NORMAL, AudioManager.RINGER_MODE_NORMAL);
     }
 
+    private static Toast mToast;
+
     public static final String CLIENT_PACKAGE_NAME = "com.oneplus.camera";
     public static final String CLIENT_PACKAGE_PATH = "/data/misc/lineage/client_package_name";
 
     private final Context mContext;
+    private final Context mResContext;
+    private final Context mSysUiContext;
     private final PowerManager mPowerManager;
     private final NotificationManager mNotificationManager;
     private final AudioManager mAudioManager;
@@ -117,6 +126,8 @@ public class KeyHandler implements DeviceKeyHandler {
 
     public KeyHandler(Context context) {
         mContext = context;
+        mResContext = getResContext(context);
+        mSysUiContext = ActivityThread.currentActivityThread().getSystemUiContext();        
         mHandler = new Handler(Looper.getMainLooper());
         mDispOn = true;
         mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
@@ -226,6 +237,40 @@ public class KeyHandler implements DeviceKeyHandler {
         int position = scanCode == 601 ? 2 : scanCode == 602 ? 1 : 0;
         sendUpdateBroadcast(position);
         doHapticFeedback();
+
+        String toastText;
+        Resources res = mResContext.getResources();
+        int key = sSupportedSliderRingModes.keyAt(
+                sSupportedSliderRingModes.indexOfKey(keyCodeValue));
+        switch (key) {
+            case Constants.KEY_VALUE_TOTAL_SILENCE: // DND - no int'
+                toastText = res.getString(R.string.slider_toast_dnd);
+                break;
+            case Constants.KEY_VALUE_SILENT: // Ringer silent
+                toastText = res.getString(R.string.slider_toast_silent);
+                break;
+            case Constants.KEY_VALUE_PRIORTY_ONLY: // DND - priority
+                toastText = res.getString(R.string.slider_toast_priority);
+                break;
+            case Constants.KEY_VALUE_VIBRATE: // Ringer vibrate
+                toastText = res.getString(R.string.slider_toast_vibrate);
+                break;
+            default:
+            case Constants.KEY_VALUE_NORMAL: // Ringer normal DND off
+                toastText = res.getString(R.string.slider_toast_normal);
+                break;
+        }
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                if (mToast != null) mToast.cancel();
+                mToast = Toast.makeText(
+                        mSysUiContext, toastText, Toast.LENGTH_SHORT);
+                mToast.show();
+            }
+        });
+
         return null;
     }
 
@@ -242,6 +287,18 @@ public class KeyHandler implements DeviceKeyHandler {
             mVibrator.vibrate(VibrationEffect.createOneShot(50,
                     VibrationEffect.DEFAULT_AMPLITUDE));
         }
+    }
+
+    private Context getResContext(Context context) {
+        Context resContext;
+        try {
+            resContext = context.createPackageContext("org.lineageos.device.DeviceSettings",
+                    Context.CONTEXT_IGNORE_SECURITY | Context.CONTEXT_INCLUDE_CODE);
+        } catch (NameNotFoundException e) {
+            // nothing to do about this, shouldn't ever reach here anyway
+            resContext = context;
+        }
+        return resContext;
     }
 
     public void handleNavbarToggle(boolean enabled) {
