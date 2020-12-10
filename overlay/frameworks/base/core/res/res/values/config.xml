@@ -299,4 +299,8 @@
         <item>258</item>
         <item>259</item>
     </integer-array>
+
+    <!-- Smart charging -->
+    <bool name="config_smartChargingAvailable">true</bool>
+
 </resources>
