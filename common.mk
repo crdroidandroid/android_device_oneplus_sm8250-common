@@ -26,6 +26,9 @@ $(call inherit-product, vendor/oneplus/sm8250-common/sm8250-common-vendor.mk)
 # Gapps
 $(call inherit-product, vendor/google/gms/config.mk)
 
+# GoogleCamera
+$(call inherit-product, packages/apps/GoogleCamera/config.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
