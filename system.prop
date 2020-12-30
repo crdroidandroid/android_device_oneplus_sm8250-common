@@ -54,6 +54,17 @@ persist.vendor.qti.inputopts.movetouchslop=0.6
 persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
 
+# SurfaceFlinger
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+ro.surface_flinger.protected_contents=true
+ro.surface_flinger.use_color_management=true
+ro.surface_flinger.has_wide_color_display=true
+ro.surface_flinger.wcg_composition_dataspace=143261696
+ro.surface_flinger.display_primary_red=0.571498,0.268889,0.000102
+ro.surface_flinger.display_primary_green=0.264549,0.688889,0.044777
+ro.surface_flinger.display_primary_blue=0.183287,0.073333,0.965525
+ro.surface_flinger.display_primary_white=0.950352,1.0,1.089366
+
 # SSR
 persist.vendor.ssr.restart_level=ALL_ENABLE
 
