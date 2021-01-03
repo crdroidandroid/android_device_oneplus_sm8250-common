@@ -85,6 +85,13 @@ void checkram_loadprops() {
   }
 }
 
+void checkmodel_loadprops() {
+  std::string name;
+  name = android::base::GetProperty("ro.product.vendor.model", "");
+  property_override("ro.build.model", name.c_str());
+}
+
 void vendor_load_properties() {
   checkram_loadprops();
+  checkmodel_loadprops();
 }
