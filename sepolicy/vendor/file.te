@@ -21,3 +21,6 @@ type sysfs_memplus, fs_type, sysfs_type;
 type sysfs_project_info, fs_type, sysfs_type;
 type sysfs_tpd, fs_type, sysfs_type;
 type vendor_sysfs_video_call_on, fs_type, sysfs_type;
+
+# Fingerprint
+type vendor_persist_fingerprint_file, file_type;
