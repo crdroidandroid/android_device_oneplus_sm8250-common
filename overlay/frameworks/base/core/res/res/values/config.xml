@@ -313,10 +313,13 @@
     <!-- Whether key handler sends intent when changing slider position -->
     <string name="config_alertSliderIntent">org.lineageos.device.DeviceSettings.UPDATE_SLIDER_POSITION</string>
 
-     <!-- Whether to show a custom view for FOD -->
+    <!-- Whether to show a custom view for FOD -->
     <bool name="config_needCustomFODView">true</bool>
 
     <!-- Default fod pressed color -->
     <integer name="config_fod_pressed_color">4</integer>
+
+    <!-- Whether usage of the proximity sensor during doze is supported -->
+    <bool name="doze_proximity_sensor_supported">false</bool>
 
 </resources>
