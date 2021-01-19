@@ -44,57 +44,14 @@ on fs
     mount ext4 /dev/block/bootdevice/by-name/op1 /mnt/vendor/op1 ro barrier=1 discard context=u:object_r:op1_file:s0
     mount ext4 /dev/block/bootdevice/by-name/op2 /mnt/vendor/op2 noatime nosuid nodev barrier=1
     chown system system /mnt/vendor/op2
-    #yankelong add
-    chown system system /sys/class/leds/vibrator/haptic_audio_ai_input
-    chown system system /sys/class/leds/vibrator/haptic_audio_tp_input
-    chown system system /sys/class/leds/vibrator/haptic_audio_tp_size
-    chown audioserver audioserver /sys/class/leds/vibrator/register
-    chown system system /sys/class/leds/vibrator/vmax_mv
-    chmod 660 /sys/class/leds/vibrator/vmax_mv
-    chmod 660 /sys/class/leds/vibrator/rtp
-    chmod 660 /sys/class/leds/vibrator/haptic_audio_tp_time
-    chmod 644 /sys/class/leds/vibrator/haptic_osc_data
-    chmod 660 /sys/class/leds/vibrator/ram_test
-    chmod 644 /sys/class/leds/vibrator/ram_update
-    chmod 644 /sys/class/leds/vibrator/f0_cali_data
-    chown system system /sys/class/leds/vibrator/activate
-    chown system system /sys/class/leds/vibrator/brightness
-    chown system system /sys/class/leds/vibrator/duration
-    chown system system /sys/class/leds/vibrator/state
-    chown system system /sys/class/leds/vibrator/rf_hz
-    chown system system /sys/class/leds/vibrator/lra_resistance
-    chown system system /sys/class/leds/vibrator/gain
-    chown system system /sys/class/leds/vibrator/vmax
-    chown system system /sys/class/leds/vibrator/index
-    chown system system /sys/class/leds/vibrator/activate_mode
-    chown system system /sys/class/leds/vibrator/seq
-    chown system audio /sys/class/leds/vibrator/rtp
-    chown system audio /sys/class/leds/vibrator/haptic_audio_tp_time
-    chown system system /sys/class/leds/vibrator/loop
-    chown system system /sys/class/leds/vibrator/ignore_store
-    chown system system /sys/class/leds/vibrator/osc_cali
-    chown system system /sys/class/leds/vibrator/haptic_osc_data
-    chown system system /sys/class/leds/vibrator/ram_test
-    chown system system /sys/class/leds/vibrator/ram_update
-    chown system system /sys/class/leds/vibrator/f0_cali_data
+
 #ifdef VENDOR_EDIT
 #    /* 20200330 david shih */
     chown system system /sys/module/proc/parameters/dbg_buf
 #endif
-    chown system system /sys/class/leds/vibrator/cali
+
     chown system system /sys/module/lpm_levels/parameters/sleep_disabled
-    restorecon /sys/class/leds/vibrator/activate
-    restorecon /sys/class/leds/vibrator/brightness
-    restorecon /sys/class/leds/vibrator/duration
-    restorecon /sys/class/leds/vibrator/state
-#change ownership and premission for awinic haptic shock with music
-    chown audioserver audioserver /dev/awinic_haptic
-    chown audioserver audioserver /sys/class/leds/vibrator/haptic_audio
-    chown audioserver audioserver /sys/class/leds/vibrator/gun_type
-    chown audioserver audioserver /sys/class/leds/vibrator/bullet_nr
-    chmod 777 /sys/class/leds/vibrator/gun_type
-    chmod 777 /sys/class/leds/vibrator/bullet_nr
-    chmod 777 /sys/class/leds/vibrator/register
+
 #    /* add for aging apk to set node */
     chown system system /sys/class/power_supply/battery/is_aging_test
     chown system system /sys/class/power_supply/battery/dump_reg
