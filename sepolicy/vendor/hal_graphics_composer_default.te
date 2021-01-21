@@ -8,3 +8,5 @@ allow hal_graphics_composer_default vendor_persist_file:file rw_file_perms;
 allow hal_graphics_composer_default sysfs_devices_system_cpu:file rw_file_perms;
 
 allow hal_graphics_composer_default vendor_diag_device:chr_file rw_file_perms;
+
+allow hal_graphics_composer_default property_socket:sock_file write;

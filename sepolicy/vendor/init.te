@@ -1,1 +1,4 @@
 allow hal_hdcpkey_default param_block_device:blk_file rw_file_perms;
+
+allow init iorapd_data_file:file getattr;
+allow init op2_file:dir mounton;

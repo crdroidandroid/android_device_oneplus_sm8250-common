@@ -1,5 +1,7 @@
 hal_client_domain(hal_camera_default, hal_cameraHIDL)
 
+allow hal_camera_default cgroup:file getattr;
+
 allow hal_camera_default mnt_vendor_file:dir w_dir_perms;
 allow hal_camera_default mnt_vendor_file:file create_file_perms;
 

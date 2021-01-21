@@ -12,3 +12,7 @@ get_prop(vendor_init, vendor_db_security_prop)
 set_prop(vendor_init, vendor_oem_bluetooth_prop)
 set_prop(vendor_init, vendor_oem_wifi_prop)
 set_prop(vendor_init, vendor_persist_camera_prop)
+
+allow vendor_init block_device:lnk_file setattr;
+allow vendor_init default_prop:file read;
+allow vendor_init persist_debug_prop:file read;
