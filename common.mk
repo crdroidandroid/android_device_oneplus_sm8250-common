@@ -297,6 +297,9 @@ PRODUCT_PACKAGES += \
     vendor.oneplus.fingerprint.extension@1.0 \
     vendor.oneplus.hardware.display@1.0
 
+# FOD
+EXTRA_FOD_ANIMATIONS := true
+
 # GPS
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
