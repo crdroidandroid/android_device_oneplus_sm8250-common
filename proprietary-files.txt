@@ -1084,6 +1084,7 @@ vendor/firmware/aw8697_haptic_168.bin
 vendor/firmware/aw8697_haptic_170.bin
 vendor/firmware/aw8697_haptic_172.bin
 vendor/firmware/aw8697_haptic_174.bin
+vendor/firmware/aw8697_rtp.bin
 
 # VPP
 vendor/bin/vppservice
