@@ -12,6 +12,8 @@ binder_call(hal_display_default, vendor_hal_display_color)
 
 allow hal_display_default vendor_hal_display_postproc_hwservice:hwservice_manager find;
 
+allow hal_display_default sysfs_color:file rw_file_perms;
+
 allow hal_display_default sysfs:file rw_file_perms;
 allow hal_display_default sysfs_fod:file rw_file_perms;
 

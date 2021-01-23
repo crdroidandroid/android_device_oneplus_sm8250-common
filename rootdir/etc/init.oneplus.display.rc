@@ -1,0 +1,18 @@
+on boot
+    chown system system  /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/native_display_p3_mode
+    chown system system  /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/native_display_srgb_color_mode
+
+# Set sRGB calibration on Natural and Boosted Mode.
+on property:persist.sys.sf.native_mode=0
+    write /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/native_display_p3_mode 0
+    write /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/native_display_srgb_color_mode 1
+
+# Set unmanaged calibration on Saturated Mode.
+on property:persist.sys.sf.native_mode=1
+    write /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/native_display_srgb_color_mode 0
+    write /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/native_display_p3_mode 0
+
+# Set P3 calibration on Adaptive/Automatic Mode.
+on property:persist.sys.sf.native_mode=2
+    write /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/native_display_srgb_color_mode 0
+    write /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/native_display_p3_mode 1
