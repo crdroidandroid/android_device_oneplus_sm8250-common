@@ -30,6 +30,9 @@ PRODUCT_COPY_FILES += \
 # GoogleCamera
 $(call inherit-product, packages/apps/GoogleCamera/config.mk)
 
+# Gapps
+$(call inherit-product, vendor/google/gms/config.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
