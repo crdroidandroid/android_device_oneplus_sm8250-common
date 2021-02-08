@@ -68,6 +68,7 @@ public class KeyHandler implements DeviceKeyHandler {
 
     private static final SparseIntArray sSupportedSliderZenModes = new SparseIntArray();
     private static final SparseIntArray sSupportedSliderRingModes = new SparseIntArray();
+    private static final SparseIntArray sSupportedSliderHaptics = new SparseIntArray();
     static {
         sSupportedSliderZenModes.put(Constants.KEY_VALUE_TOTAL_SILENCE, Settings.Global.ZEN_MODE_NO_INTERRUPTIONS);
         sSupportedSliderZenModes.put(Constants.KEY_VALUE_SILENT, Settings.Global.ZEN_MODE_OFF);
@@ -80,6 +81,12 @@ public class KeyHandler implements DeviceKeyHandler {
         sSupportedSliderRingModes.put(Constants.KEY_VALUE_PRIORTY_ONLY, AudioManager.RINGER_MODE_NORMAL);
         sSupportedSliderRingModes.put(Constants.KEY_VALUE_VIBRATE, AudioManager.RINGER_MODE_VIBRATE);
         sSupportedSliderRingModes.put(Constants.KEY_VALUE_NORMAL, AudioManager.RINGER_MODE_NORMAL);
+        
+        sSupportedSliderHaptics.put(Constants.KEY_VALUE_TOTAL_SILENCE, VibrationEffect.EFFECT_THUD);
+        sSupportedSliderHaptics.put(Constants.KEY_VALUE_SILENT, VibrationEffect.EFFECT_DOUBLE_CLICK);
+        sSupportedSliderHaptics.put(Constants.KEY_VALUE_PRIORTY_ONLY, VibrationEffect.EFFECT_THUD);
+        sSupportedSliderHaptics.put(Constants.KEY_VALUE_VIBRATE, VibrationEffect.EFFECT_HEAVY_CLICK);
+        sSupportedSliderHaptics.put(Constants.KEY_VALUE_NORMAL, -1);
     }
 
     public static final String CLIENT_PACKAGE_NAME = "com.oneplus.camera";
@@ -173,7 +180,7 @@ public class KeyHandler implements DeviceKeyHandler {
         mAudioManager.setRingerModeInternal(sSupportedSliderRingModes.get(keyCodeValue));
         mNotificationManager.setZenMode(sSupportedSliderZenModes.get(keyCodeValue), null, TAG);
         int position = scanCode == 601 ? 2 : scanCode == 602 ? 1 : 0;
-        doHapticFeedback();
+        doHapticFeedback(sSupportedSliderHaptics.get(keyCodeValue));
 
         int positionValue = 0;
         String toastText;
@@ -230,10 +237,9 @@ public class KeyHandler implements DeviceKeyHandler {
                             + " with value " + position_value);
     }
 
-    private void doHapticFeedback() {
-        if (mVibrator != null && mVibrator.hasVibrator()) {
-            mVibrator.vibrate(VibrationEffect.createOneShot(50,
-                    VibrationEffect.DEFAULT_AMPLITUDE));
+    private void doHapticFeedback(int effect) {
+        if (mVibrator != null && mVibrator.hasVibrator() && effect != -1) {
+            mVibrator.vibrate(VibrationEffect.get(effect));
         }
     }
 
