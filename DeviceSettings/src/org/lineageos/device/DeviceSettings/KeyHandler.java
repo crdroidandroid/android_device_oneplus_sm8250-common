@@ -235,9 +235,9 @@ public class KeyHandler implements DeviceKeyHandler {
         mAudioManager.setRingerModeInternal(sSupportedSliderRingModes.get(keyCodeValue));
         mNotificationManager.setZenMode(sSupportedSliderZenModes.get(keyCodeValue), null, TAG);
         int position = scanCode == 601 ? 2 : scanCode == 602 ? 1 : 0;
-        sendUpdateBroadcast(position);
         doHapticFeedback();
 
+        int positionValue = 0;
         String toastText;
         Resources res = mResContext.getResources();
         int key = sSupportedSliderRingModes.keyAt(
@@ -245,21 +245,29 @@ public class KeyHandler implements DeviceKeyHandler {
         switch (key) {
             case Constants.KEY_VALUE_TOTAL_SILENCE: // DND - no int'
                 toastText = res.getString(R.string.slider_toast_dnd);
+                positionValue = Constants.MODE_TOTAL_SILENCE;
                 break;
             case Constants.KEY_VALUE_SILENT: // Ringer silent
                 toastText = res.getString(R.string.slider_toast_silent);
+                positionValue = Constants.MODE_SILENT;
                 break;
             case Constants.KEY_VALUE_PRIORTY_ONLY: // DND - priority
                 toastText = res.getString(R.string.slider_toast_priority);
+                positionValue = Constants.MODE_PRIORITY_ONLY;
                 break;
             case Constants.KEY_VALUE_VIBRATE: // Ringer vibrate
                 toastText = res.getString(R.string.slider_toast_vibrate);
+                positionValue = Constants.MODE_VIBRATE;
                 break;
             default:
             case Constants.KEY_VALUE_NORMAL: // Ringer normal DND off
                 toastText = res.getString(R.string.slider_toast_normal);
+                positionValue = Constants.MODE_RING;
                 break;
         }
+
+        sendUpdateBroadcast(position, positionValue);
+
         Handler handler = new Handler(Looper.getMainLooper());
         handler.post(new Runnable() {
             @Override
@@ -274,12 +282,14 @@ public class KeyHandler implements DeviceKeyHandler {
         return null;
     }
 
-    private void sendUpdateBroadcast(int position) {
+    private void sendUpdateBroadcast(int position, int position_value) {
         Intent intent = new Intent(Constants.ACTION_UPDATE_SLIDER_POSITION);
         intent.putExtra(Constants.EXTRA_SLIDER_POSITION, position);
+        intent.putExtra(Constants.EXTRA_SLIDER_POSITION_VALUE, position_value);
         mContext.sendBroadcastAsUser(intent, UserHandle.CURRENT);
         intent.setFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY);
-        Log.d(TAG, "slider change to positon " + position);
+        Log.d(TAG, "slider change to positon " + position
+                            + " with value " + position_value);
     }
 
     private void doHapticFeedback() {
