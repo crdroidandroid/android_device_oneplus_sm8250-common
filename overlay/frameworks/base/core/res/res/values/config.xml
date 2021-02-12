@@ -307,4 +307,7 @@
 
     <!-- Whether to force enable multi resolution configuration for camera -->
     <bool name="config_forceMultiResolution">true</bool>
+
+    <!-- Whether device has warp charging support -->
+    <bool name="config_hasWarpCharger">true</bool>
 </resources>
