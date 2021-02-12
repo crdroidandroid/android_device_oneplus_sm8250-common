@@ -320,4 +320,7 @@
     <!-- Default fod pressed color -->
     <integer name="config_fod_pressed_color">4</integer>
 
+    <!-- Whether device has warp charging support -->
+    <bool name="config_hasWarpCharger">true</bool>
+
 </resources>
