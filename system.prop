@@ -9,6 +9,7 @@ persist.vendor.btstack.enable.twsplus=true
 persist.vendor.btstack.enable.lpa=true
 persist.vendor.bt.a2dp.hal.implementation=true
 ro.bluetooth.library_name=libbluetooth_qti.so
+persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
 
 # Camera
 camera.disable_zsl_mode=true
@@ -31,6 +32,12 @@ persist.vendor.dpm.feature=9
 # Fingerprint
 vendor.boot.fingerprintbstate=orange
 
+# GPS
+persist.backup.ntpServer=0.pool.ntp.org
+
+# Graphics
+persist.demo.hdmirotationlock=false
+
 # IMS
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
@@ -52,6 +59,10 @@ ro.vendor.qti.core_ctl_min_cpu=2
 
 # Radio
 ro.telephony.default_network=33,22
+persist.radio.snapshot_enabled=0
+persist.radio.snapshot_timer=0
+persist.rcs.otp_sms_port=0
+rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 
 # Touchscreen
 persist.vendor.qti.inputopts.enable=true
