@@ -523,6 +523,12 @@ vendor/lib64/vendor.oneplus.hardware.hdcpkey@1.0.so
 system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml
 system_ext/framework/com.android.hotwordenrollment.common.util.jar
 
+# IFAA
+-system_ext/priv-app/IFAAService/IFAAService.apk
+vendor/lib64/vendor.oneplus.hardware.ifaa@2.0.so
+vendor/bin/hw/vendor.oneplus.hardware.ifaa@2.0-service
+vendor/etc/init/vendor.oneplus.hardware.ifaa@2.0-service.rc
+
 # IMS
 -system_ext/priv-app/ims/ims.apk
 system_ext/lib64/lib-imsvideocodec.so

@@ -334,6 +334,7 @@
             <name>IOneplusIfaa</name>
             <instance>default</instance>
         </interface>
+        <fqname>@2.0::IOneplusIfaa/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.oneplus.hardware.lmvibrator</name>
