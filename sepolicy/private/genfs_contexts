@@ -1,0 +1,2 @@
+# sysfs
+genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dimlayer_bl_en                        u:object_r:sysfs_dc_dim:s0
