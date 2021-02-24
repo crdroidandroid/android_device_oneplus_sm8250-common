@@ -69,6 +69,10 @@
 # Fingerprint
 /mnt/vendor/persist/engineermode/fpqrcode                                                          u:object_r:vendor_persist_fingerprint_file:s0
 
+#FPS
+/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dynamic_fps                                  u:object_r:sysfs_dm:s0
+/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps                                  u:object_r:sysfs_dm:s0
+
 # Persist files
 /mnt/vendor/persist                                  u:object_r:vendor_data_file:s0
 /mnt/vendor/persist/camera(/.*)?                     u:object_r:oem_file:s0

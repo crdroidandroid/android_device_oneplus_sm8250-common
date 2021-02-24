@@ -13,22 +13,22 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
           android:sharedUserId="android.uid.system"
           package="org.lineageos.device.DeviceSettings"
-          android:versionCode="1"
-          android:versionName="1.0" >
+          android:versionCode="2"
+          android:versionName="2.0" >
 
     <uses-permission android:name="android.permission.INJECT_EVENTS"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
-    <uses-permission android:name="android.permission.WRITE_DEVICE_CONFIG" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <protected-broadcast android:name=">org.lineageos.device.DeviceSettings.UPDATE_SLIDER_POSITION" />
 
     <uses-sdk
-        android:minSdkVersion="24" />
+        android:minSdkVersion="28"
+        android:targetSdkVersion="29" />
 
     <application
         android:icon="@drawable/ic_settings_device"
@@ -55,25 +55,15 @@
         <activity android:name=".DeviceSettings" />
         <activity android:name=".KeyHandler" />
 
-        <receiver android:name="org.lineageos.device.DeviceSettings.Startup" >
+        <receiver 
+            android:name="org.lineageos.device.DeviceSettings.Startup" 
+            android:enabled="true">
             <intent-filter android:priority="100" >
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
-        <!-- Quick Settings Tiles -->
-        <service
-            android:name="org.lineageos.device.DeviceSettings.HBMModeTileService"
-            android:icon="@drawable/ic_hbm_tile"
-            android:label="@string/tile_hbm_mode"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action
-                    android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-
-        </service>
-
+        <!-- DC-Dimming tile -->
         <service
             android:name="org.lineageos.device.DeviceSettings.DCModeTileService"
             android:icon="@drawable/ic_dc_tile"
@@ -85,9 +75,67 @@
             </intent-filter>
         </service>
 
-        <service android:name="org.lineageos.device.DeviceSettings.AutoHighBrightnessModeService" />
+        <!-- HBM tile -->
+        <service
+            android:name="org.lineageos.device.DeviceSettings.HBMModeTileService"
+            android:icon="@drawable/ic_hbm_tile"
+            android:label="@string/tile_hbm_mode"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action
+                    android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
 
-        <!-- Search Provider -->
+        <!-- Refresh rate tile -->
+        <service
+            android:name="org.lineageos.device.DeviceSettings.RefreshRateTileService"
+            android:icon="@drawable/ic_refresh_tile_60"
+            android:label="@string/tile_refresh_rate"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action
+                    android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+        <!-- FPS overlay tile -->
+        <service
+            android:name=".FPSTileService"
+            android:icon="@drawable/ic_fps"
+            android:label="@string/fps_info_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action
+                    android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+        <!-- FPS info service -->
+        <service android:name="org.lineageos.device.DeviceSettings.FPSInfoService"
+                android:exported="false">
+        </service>
+        
+        <!-- Log Tile -->
+        <service
+            android:name="org.lineageos.device.DeviceSettings.LogTile"
+            android:icon="@drawable/ic_qs_log"
+            android:label="@string/quick_settings_log_tile_label"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action
+                    android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+        <service android:name="org.lineageos.device.DeviceSettings.HBMModeService"
+                 android:exported="false" />
+                 
+        <!-- Auto HBM service -->
+        <service android:name="org.lineageos.device.DeviceSettings.AutoHBMService"
+		 android:exported="false" />
+                 
+        <!-- Search indexing -->
         <provider
             android:name=".ConfigPanelSearchIndexablesProvider"
             android:authorities="org.lineageos.device"

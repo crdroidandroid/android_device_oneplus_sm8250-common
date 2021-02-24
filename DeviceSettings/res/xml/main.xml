@@ -16,29 +16,112 @@
         android:title="@string/display_title">
 
         <SwitchPreference
-            android:key="hbm"
-            android:summary="@string/hbm_mode_summary"
-            android:icon="@drawable/rr_hbm_icon"
-            android:title="@string/hbm_mode_title" />
-
-        <SwitchPreference
-            android:key="hbm_autobrightness"
-            android:summary="@string/hbm_autobrightness_summary"
-            android:icon="@drawable/rr_hbm_icon"
-            android:title="@string/hbm_autobrightness_title" />
-
-        <org.lineageos.device.DeviceSettings.HBMAutobrightnessThresholdPreference
-            android:key="hbm_autobrightness_threshould"
-            android:title="@string/hbm_autobrightness_threshold_title"
-            android:icon="@drawable/rr_hbm_icon"
-            android:summary="@string/hbm_autobrightness_threshold_summary" />
-
-        <SwitchPreference
             android:key="dc"
-            android:icon="@drawable/rr_dc_dim_icon"
+            android:icon="@drawable/ic_dc_mode_icon"
             android:summary="@string/dc_mode_summary"
             android:title="@string/dc_mode_title" />
+            
+        <Preference
+            android:icon="@drawable/ic_info_outline_24dp"
+            android:persistent="false"
+            android:summary="@string/hbm_mode_warning" />
 
+        <SwitchPreference
+            android:key="hbm"
+            android:icon="@drawable/ic_hbm_mode_icon"
+            android:summary="@string/hbm_mode_summary"
+            android:title="@string/hbm_mode_title"
+            android:defaultValue="false" />
+
+        <SwitchPreference
+            android:key="auto_hbm"
+            android:icon="@drawable/ic_autohbm_mode_icon"
+            android:summary="@string/auto_hbm_summary"
+            android:title="@string/auto_hbm_title" />
+
+        <org.lineageos.device.DeviceSettings.AutoHBMThresholdPreference
+            android:key="auto_hbm_threshold"
+            android:title="@string/auto_hbm_threshold_title"
+            android:summary="@string/auto_hbm_threshold_summary" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="refresh"
+        android:title="@string/refresh_title">
+        
+        <Preference
+            android:icon="@drawable/ic_info_outline_24dp"
+            android:persistent="false"
+            android:summary="@string/refresh_rate_warning" />
+
+        <SwitchPreference
+            android:key="auto_refresh_rate"
+            android:icon="@drawable/ic_auto_refresh_icon"
+            android:summary="@string/auto_refresh_rate_summary"
+            android:title="@string/auto_refresh_rate_title"
+            android:persistent="true" />
+
+        <SwitchPreference
+            android:key="refresh_rate"
+            android:icon="@drawable/ic_forced_refresh_icon"
+            android:summary="@string/refresh_rate_summary"
+            android:title="@string/refresh_rate_title"
+            android:persistent="false" />
+
+        <SwitchPreference
+            android:key="fps_info"
+            android:icon="@drawable/ic_fps_overlay_icon"
+            android:title="@string/fps_info_title"
+            android:summary="@string/fps_info_summary"
+            android:persistent="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="audio"
+        android:title="@string/audio_title">
+
+        <SwitchPreference
+            android:key="enable_dolby_atmos"
+            android:summary="@string/enable_dolby_summary"
+            android:title="@string/enable_dolby_title"
+            android:icon="@drawable/ic_dolby"
+            android:defaultValue="true"
+            android:persistent="true" />
+
+        <Preference
+            android:key="audio_dolby_atmos"
+            android:title="@string/dolby_title"
+            android:summary="@string/dolby_summary"
+            android:icon="@drawable/ic_dolby_atmos"
+            android:dependency="enable_dolby_atmos"
+            android:persistent="false">
+            <intent
+                 android:targetPackage="com.motorola.dolby.dolbyui"
+                 android:targetClass="com.motorola.dolby.dolbyui.ui.welcome.WelcomeActivity" />
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="selinux"
+        android:title="@string/selinux_category">
+
+       <Preference
+          android:summary="@string/selinux_explanation_summary"
+          android:selectable="false"/>
+
+       <SwitchPreference
+          android:key="selinux_mode"
+          android:icon="@drawable/ic_linux"
+          android:title="@string/selinux_mode_title"
+          android:summaryOn="@string/selinux_enforcing_summary"
+          android:summaryOff="@string/selinux_permissive_summary" />
+
+        <SwitchPreference
+          android:key="selinux_persistence"
+          android:icon="@drawable/ic_power"
+          android:title="@string/selinux_persistence_title"
+          android:summary="@string/selinux_persistence_summary"
+          android:defaultValue="true" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -47,16 +130,16 @@
 
         <ListPreference
             android:key="keycode_top_position"
+            android:icon="@drawable/ic_up_icon"
             android:dialogTitle="@string/notification_slider_selection_dialog_title"
             android:title="@string/notification_slider_top_position"
-            android:icon="@drawable/rr_up_icon"
             android:summary="%s"
             android:entries="@array/notification_slider_action_entries"
             android:entryValues="@array/notification_slider_action_entry_values" />
 
         <ListPreference
             android:key="keycode_middle_position"
-            android:icon="@drawable/rr_middle_icon"
+            android:icon="@drawable/ic_middle_icon"
             android:dialogTitle="@string/notification_slider_selection_dialog_title"
             android:title="@string/notification_slider_middle_position"
             android:summary="%s"
@@ -65,7 +148,7 @@
 
         <ListPreference
           android:key="keycode_bottom_position"
-          android:icon="@drawable/rr_down_icon"
+          android:icon="@drawable/ic_down_icon"
           android:dialogTitle="@string/notification_slider_selection_dialog_title"
           android:title="@string/notification_slider_bottom_position"
           android:summary="%s"
@@ -76,10 +159,16 @@
     <PreferenceCategory
         android:key="vibrator"
         android:title="@string/category_vibrator">
+        <Preference
+            android:icon="@drawable/ic_info_outline_24dp"
+            android:persistent="false"
+            android:summary="@string/vibration_warning" />
+
         <org.lineageos.device.DeviceSettings.VibratorStrengthPreference
             android:key="vib_strength"
-            android:icon="@drawable/rr_intensity_icon"
+            android:icon="@drawable/ic_vibration_icon"
             android:title="@string/vib_strength_title_head"
             android:summary="@string/vib_strength_summary_head" />
     </PreferenceCategory>
+
 </PreferenceScreen>
