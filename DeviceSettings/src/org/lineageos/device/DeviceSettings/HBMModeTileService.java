@@ -18,15 +18,19 @@
 package org.lineageos.device.DeviceSettings;
 
 import android.annotation.TargetApi;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 import androidx.preference.PreferenceManager;
 
+import java.lang.IllegalArgumentException;
+
 @TargetApi(24)
 public class HBMModeTileService extends TileService {
-    private boolean enabled = false;
+
+    private Intent mHbmIntent;
 
     @Override
     public void onDestroy() {
@@ -40,16 +44,14 @@ public class HBMModeTileService extends TileService {
 
     @Override
     public void onTileRemoved() {
+        tryStopService();
         super.onTileRemoved();
     }
 
     @Override
     public void onStartListening() {
         super.onStartListening();
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        enabled = HBMModeSwitch.isCurrentlyEnabled(this);
-        getQsTile().setState(enabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
-        getQsTile().updateTile();
+        updateState();
     }
 
     @Override
@@ -60,12 +62,27 @@ public class HBMModeTileService extends TileService {
     @Override
     public void onClick() {
         super.onClick();
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        enabled = HBMModeSwitch.isCurrentlyEnabled(this);
+        boolean enabled = HBMModeSwitch.isCurrentlyEnabled(this);
+        // NOTE: reverse logic, enabled reflects the state before press
         Utils.writeValue(HBMModeSwitch.getFile(), enabled ? "0" : "5");
-        sharedPrefs.edit().putBoolean(DeviceSettings.KEY_HBM_SWITCH, enabled ? false : true).commit();
-        //getQsTile().setLabel(enabled ? "HBM off" : "HBM On");
-        getQsTile().setState(enabled ? Tile.STATE_INACTIVE : Tile.STATE_ACTIVE);
+        if (!enabled) {
+            mHbmIntent = new Intent(this,
+                    org.lineageos.device.DeviceSettings.HBMModeService.class);
+            this.startService(mHbmIntent);
+        }
+        updateState();
+    }
+
+    private void updateState() {
+        boolean enabled = HBMModeSwitch.isCurrentlyEnabled(this);
+        if (!enabled) tryStopService();
+        getQsTile().setState(enabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
         getQsTile().updateTile();
+    }
+
+    private void tryStopService() {
+        if (mHbmIntent == null) return;
+        this.stopService(mHbmIntent);
+        mHbmIntent = null;
     }
 }
