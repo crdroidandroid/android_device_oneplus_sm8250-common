@@ -31,4 +31,9 @@
     <integer name="config_qs_rows_portrait">3</integer>
     <integer name="config_qs_columns_landscape">5</integer>
     <integer name="config_qs_rows_landscape">2</integer>
+
+    <!-- Burn-in protection -->
+    <bool name="config_statusBarBurnInProtection">true</bool>
+    <integer name="config_shift_interval">40</integer>
+
 </resources>
