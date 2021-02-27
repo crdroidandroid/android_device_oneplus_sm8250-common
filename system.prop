@@ -5,6 +5,7 @@ persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
 
 # Bluetooth
 persist.vendor.bt.a2dp.aac_whitelist=false
+persist.vendor.btstack.enable.twsplus=true
 ro.bluetooth.library_name=libbluetooth_qti.so
 
 # Camera
