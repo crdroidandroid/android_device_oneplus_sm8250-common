@@ -57,6 +57,14 @@ vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libshoebox.so
+vendor/lib/soundfx/libaudiopreprocessing.so
+vendor/lib/soundfx/libbundlewrapper.so
+vendor/lib/soundfx/libdownmix.so
+vendor/lib/soundfx/libdynproc.so
+vendor/lib/soundfx/libeffectproxy.so
+vendor/lib/soundfx/libldnhncr.so
+vendor/lib/soundfx/libreverbwrapper.so
+vendor/lib/soundfx/libvisualizer.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so

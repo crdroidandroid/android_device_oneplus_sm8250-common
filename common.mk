@@ -132,10 +132,17 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     liba2dpoffload \
-    libaudiopreprocessing \
+    libbatterylistener \
+    libcirrusspkrprot \
+    libcomprcapture \
+    libexthwplugin \
+    libhdmiedid \
+    libhfp \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
+    libsndmonitor \
+    libspkrprot \
     libvolumelistener
 
 PRODUCT_COPY_FILES += \
