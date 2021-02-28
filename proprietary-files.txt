@@ -66,7 +66,17 @@ vendor/lib/libadsprpc.so
 vendor/lib/libaudcal.so
 vendor/lib/libqtigef.so
 vendor/lib/libssrec.so
+vendor/lib/libopf.so
+vendor/lib/libaudioconfigstore.so
+vendor/lib/libaudio_log_utils.so
 vendor/lib64/libadsprpc.so
+
+# Audio Hardware
+system_ext/lib/vendor.qti.hardware.audiohalext@1.0.so
+vendor/lib/hw/vendor.qti.hardware.audiohalext@1.0-impl.so
+vendor/lib/vendor.qti.hardware.audiohalext@1.0.so
+vendor/lib/hw/audio.primary.default.so
+vendor/lib/hw/audio.primary.kona.so
 
 # Authsecret
 vendor/bin/hw/android.hardware.authsecret@1.0-service-qti

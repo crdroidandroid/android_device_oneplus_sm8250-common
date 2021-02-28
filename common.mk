@@ -125,7 +125,6 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.3-impl:32 \
     audio.a2dp.default \
     audio.bluetooth.default \
-    audio.primary.kona:32 \
     audio.r_submix.default \
     audio.usb.default \
     liba2dpoffload \
