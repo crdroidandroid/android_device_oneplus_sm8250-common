@@ -24,8 +24,6 @@ on oem_ftm
     chmod 0666  /sys/class/drm/card0-DSI-1/panel_serial_number_AT
     chown system system /vendor/bin/factory
     chmod 0755  /vendor/bin/factory
-    chown system system /vendor/bin/ptt_socket_app
-    chmod 0755  /vendor/bin/ptt_socket_app
     write /sys/class/power_supply/battery/charging_enabled 0
     start qcom-sh
     start vendor.qmuxd
