@@ -31,6 +31,9 @@ persist.vendor.dpm.feature=9
 # Fingerprint
 vendor.boot.fingerprintbstate=orange
 
+# GBoard Spacing
+ro.com.google.ime.kb_pad_port_b=1
+
 # IMS
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
