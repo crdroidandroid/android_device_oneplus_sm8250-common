@@ -51,10 +51,10 @@ void property_override(char const prop[], char const value[]) {
 }
 
 void load_12gb() {
-  property_override("dalvik.vm.heapstartsize", "24m");
-  property_override("dalvik.vm.heapgrowthlimit", "384m");
-  property_override("dalvik.vm.heaptargetutilization", "0.42");
-  property_override("dalvik.vm.heapmaxfree", "56m");
+  property_override("dalvik.vm.heapstartsize", "32m");
+  property_override("dalvik.vm.heapgrowthlimit", "512m");
+  property_override("dalvik.vm.heaptargetutilization", "0.40");
+  property_override("dalvik.vm.heapmaxfree", "64m");
 }
 
 void load_8gb() {
