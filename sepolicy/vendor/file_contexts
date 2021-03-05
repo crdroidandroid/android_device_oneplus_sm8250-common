@@ -84,6 +84,9 @@
 /mnt/vendor/persist/engineermode(/.*)?               u:object_r:oem_file:s0
 /mnt/vendor/persist/OPDiagnose(/.*)?                 u:object_r:oem_file:s0
 
+# Power
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power\.stats@1\.0-service\.mock      u:object_r:hal_power_stats_default_exec:s0
+
 # Socket files
 /dev/socket/backuprestore    u:object_r:backuprestore_socket:s0
 /dev/socket/oemlogkit        u:object_r:oemlogkit_socket:s0
