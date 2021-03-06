@@ -1,0 +1,5 @@
+allow gmscore_app linkerconfig_file:dir { getattr };
+allow gmscore_app vendor_default_prop:file { open getattr map };
+allow gmscore_app adbd_prop:file { open getattr map };
+dontaudit gmscore_app hal_memtrack_hwservice:hwservice_manager { find };
+binder_call(gmscore_app, hal_memtrack_default);
