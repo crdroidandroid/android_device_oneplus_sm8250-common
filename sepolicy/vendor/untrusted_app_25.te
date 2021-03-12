@@ -1,0 +1,8 @@
+allow untrusted_app_25 apex_mnt_dir:dir read;
+allow untrusted_app_25 bt_firmware_file:filesystem getattr;
+allow untrusted_app_25 cgroup:dir read;
+allow untrusted_app_25 firmware_file:filesystem getattr;
+allow untrusted_app_25 init_exec:file getattr;
+allow untrusted_app_25 rootfs:dir read;
+
+dontaudit untrusted_app_25 mirror_data_file:dir getattr;

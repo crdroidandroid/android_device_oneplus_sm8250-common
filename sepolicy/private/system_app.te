@@ -2,3 +2,7 @@ allow system_app sysfs_dm:file rw_file_perms;
 allow system_app sysfs_vibrator:file rw_file_perms;
 allow system_app sysfs_vibrator:dir r_dir_perms;
 allow system_app sysfs_leds:dir search;
+allow system_app selinuxfs:file open;
+allow system_app selinuxfs:file read;
+allow system_app storaged:binder call;
+allow system_app system_suspend:binder call;

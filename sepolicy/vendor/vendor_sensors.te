@@ -1,2 +1,5 @@
 allow vendor_sensors oem_file:dir search;
 allow vendor_sensors sysfs_project_info:dir search;
+
+allow vendor_sensors oem_file:file { read open getattr };
+allow vendor_sensors sysfs_project_info:file { read open getattr };

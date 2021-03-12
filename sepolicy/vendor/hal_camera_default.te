@@ -22,3 +22,5 @@ allow hal_camera_default vendor_sysfs_video_call_on:file rw_file_perms;
 get_prop(hal_camera_default, ctl_default_prop)
 get_prop(hal_camera_default, vendor_db_security_prop)
 get_prop(hal_camera_default, vendor_mmi_prop)
+
+dontaudit hal_camera_default default_prop:file read;

@@ -1,1 +1,12 @@
 dontaudit untrusted_app_29 hal_memtrack_hwservice:hwservice_manager find;
+dontaudit untrusted_app_29 proc:file read;
+dontaudit untrusted_app_29 proc_tty_drivers:file read;
+dontaudit untrusted_app_29 serialno_prop:file read;
+dontaudit untrusted_app_29 proc_version:file read;
+dontaudit untrusted_app_29 anr_data_file:dir read;
+
+allow untrusted_app_29 app_data_file:dir getattr;
+allow untrusted_app_29 proc_net:file read;
+allow untrusted_app_29 self:udp_socket ioctl;
+allow untrusted_app_29 sysfs:dir read;
+allow untrusted_app_29 sysfs_net:dir search;
