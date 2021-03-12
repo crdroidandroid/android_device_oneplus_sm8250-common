@@ -1,2 +1,11 @@
 allow kernel param_block_device:dir search;
 allow kernel param_block_device:blk_file rw_file_perms;
+allow kernel self:capability kill;
+allow kernel sysfs_devices_block:dir search;
+allow kernel sysfs_devices_block:file { open getattr };
+allow kernel toolbox_exec:file { execute getattr map open };
+allow kernel block_device:blk_file { open read write getattr };
+allow kernel block_device:dir search;
+
+dontaudit kernel shell_exec:file { execute open execute_no_trans getattr map };
+dontaudit kernel toolbox_exec:file { execute_no_trans };

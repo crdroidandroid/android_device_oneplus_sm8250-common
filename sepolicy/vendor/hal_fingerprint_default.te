@@ -1,0 +1,6 @@
+allow hal_fingerprint_default vendor_sysfs_battery_supply:file open;
+allow hal_fingerprint_default mnt_vendor_file:dir search;
+allow hal_fingerprint_default oem_file:dir { search write add_name create };
+allow hal_fingerprint_default oem_file:file create;
+
+dontaudit hal_fingerprint_default default_prop:file read;

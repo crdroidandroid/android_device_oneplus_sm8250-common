@@ -1,0 +1,9 @@
+dontaudit untrusted_app self:netlink_route_socket nlmsg_readpriv;
+
+allow untrusted_app virtual_ab_prop:file { read open getattr };
+allow untrusted_app mnt_media_rw_file:dir getattr;
+allow untrusted_app mnt_pass_through_file:dir getattr;
+allow untrusted_app mnt_product_file:dir getattr;
+
+dontaudit untrusted_app mnt_sdcard_file:lnk_file read;
+dontaudit untrusted_app mnt_vendor_file:dir getattr;

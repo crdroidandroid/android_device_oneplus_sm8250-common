@@ -12,4 +12,7 @@ allow rild vendor_diag_device:chr_file rw_file_perms;
 allow rild proc:file w_file_perms;
 allow rild proc_net:file w_file_perms;
 
+dontaudit rild default_prop:file read;
+dontaudit rild vendor_default_prop:property_service set;
+
 set_prop(rild, vendor_rild_prop)
