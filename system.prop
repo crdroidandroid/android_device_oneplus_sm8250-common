@@ -29,9 +29,6 @@ persist.vendor.color.matrix=2
 # CNE
 persist.vendor.cne.feature=1
 
-# DPM
-persist.vendor.dpm.feature=11
-
 # Fingerprint
 vendor.boot.fingerprintbstate=orange
 
