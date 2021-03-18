@@ -13,4 +13,5 @@
 
 <resources>
     <color name="primary_color">@*android:color/notification_material_background_color</color>
+    <color name="settings_background">#eb0029</color>
 </resources>
