@@ -262,6 +262,7 @@
             <name>IOnePlusCameraMDM</name>
             <instance>default</instance>
         </interface>
+        <fqname>@1.0::IOnePlusCameraMDM/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.oneplus.hardware.camera</name>
@@ -271,6 +272,7 @@
             <name>IOnePlusCameraProvider</name>
             <instance>default</instance>
         </interface>
+        <fqname>@1.0::IOnePlusCameraProvider/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.oneplus.hardware.cwb</name>

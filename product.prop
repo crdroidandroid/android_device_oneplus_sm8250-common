@@ -1,2 +1,5 @@
 # Google Assistant
 ro.opa.eligible_device=true
+
+# Camera
+ro.com.google.lens.oem_camera_package=com.oneplus.camera
