@@ -254,7 +254,7 @@
         </interface>
         <fqname>@1.0::IVendorFingerprintExtensions/default</fqname>
     </hal>
-    <hal format="hidl">
+    <hal format="hidl" optional="true">
         <name>vendor.oneplus.hardware.CameraMDMHIDL</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -262,8 +262,9 @@
             <name>IOnePlusCameraMDM</name>
             <instance>default</instance>
         </interface>
+        <fqname>@1.0::IOnePlusCameraMDM/default</fqname>
     </hal>
-    <hal format="hidl">
+    <hal format="hidl" optional="true">
         <name>vendor.oneplus.hardware.camera</name>
         <transport>hwbinder</transport>
         <version>1.0</version>

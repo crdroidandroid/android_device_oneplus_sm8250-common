@@ -14,6 +14,16 @@ persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
 # Camera
 camera.disable_zsl_mode=true
 
+#Expose aux camera for below packages
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.oneplus.factorymode,com.oneplus.camera,com.oneplus.healthcheck
+
+#Whitelisting the below packages
+persist.vendor.camera.privapp.list=com.oneplus.camera,com.oem.autotest,com.oneplus.factorymode
+persist.camera.privapp.list=org.codeaurora.snapcam,com.oneplus.factorymode,com.oneplus.camera,com.oem.autotest
+
+#APS log level support
+persist.camera.assert.panic=true
+
 # Charger
 ro.charger.disable_init_blank=true
 
@@ -67,6 +77,9 @@ ro.netflix.bsp_rev=Q8250-19134-1
 # Perf
 ro.vendor.qti.core_ctl_max_cpu=4
 ro.vendor.qti.core_ctl_min_cpu=2
+
+#Property to enable Codec2 for audio and OMX for Video
+debug.stagefright.ccodec=1
 
 # Radio
 ro.telephony.default_network=33,22
