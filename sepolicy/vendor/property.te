@@ -15,3 +15,6 @@ type vendor_rild_prop, property_type;
 type vendor_rild_libpath_prop, property_type;
 type vendor_set_wlan_prop, property_type;
 type vendor_shell_prop, property_type;
+
+type vendor_ro_camera_prop, property_type;
+type camera_prop, property_type;

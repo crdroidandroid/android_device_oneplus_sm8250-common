@@ -24,8 +24,8 @@ $(call inherit-product, vendor/oneplus/sm8250-common/sm8250-common-vendor.mk)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
-# GoogleCamera
-$(call inherit-product, packages/apps/GoogleCamera/config.mk)
+# OP Camera
+$(call inherit-product, vendor/oneplus_camera/opcamera-vendor.mk)
 
 # Gapps
 $(call inherit-product, vendor/google/gms/config.mk)
@@ -188,7 +188,16 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
     Snap \
-    vendor.qti.hardware.camera.postproc@1.0.vendor
+    vendor.oneplus.camera.CameraHIDL@1.0 \
+    vendor.oneplus.camera.CameraHIDL@1.0-adapter-helper \
+    vendor.oneplus.camera.CameraHIDL-V1.0-java \
+    vendor.oneplus.camera.CameraHIDL@1.0.vendor \
+    vendor.oneplus.hardware.camera@1.0.vendor \
+    vendor.oneplus.hardware.CameraMDMHIDL@1.0.vendor \
+    vendor.qti.hardware.camera.device@1.0.vendor \
+    vendor.qti.hardware.camera.postproc@1.0.vendor \
+    vendor.qti.hardware.camera.postproc@1.0-service-impl.vendor \
+    vendor.qti.hardware.seccam@1.0.vendor
 
 # Common init scripts
 PRODUCT_PACKAGES += \
@@ -312,7 +321,9 @@ PRODUCT_PACKAGES += \
 
 # HIDL
 PRODUCT_PACKAGES += \
-    libhwbinder.vendor
+    libhwbinder.vendor \
+    libhidltransport \
+    libhwbinder
 
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \

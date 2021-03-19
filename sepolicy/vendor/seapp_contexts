@@ -1,1 +1,2 @@
 user=system seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=vendor_poweroffalarm_app type=system_app_data_file
+user=_app seinfo=platform name=com.qualcomm.qti.seccamservice:remote domain=vendor_seccam_app type=app_data_file
