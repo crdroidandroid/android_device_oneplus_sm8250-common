@@ -1,0 +1,5 @@
+get_prop(hal_camera, vendor_ro_camera_prop)
+
+allow hal_camera sysfs:file read;
+allow hal_camera sdcardfs:dir { search };
+allow hal_camera sdcardfs:file { rw_file_perms };
