@@ -1,3 +1,4 @@
+vendor.dolby.hardware.dms::IDms                                            u:object_r:hal_dms_hwservice:s0
 vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemon    u:object_r:hal_fingerprint_hwservice:s0
 vendor.oneplus.camera.CameraHIDL::IOnePlusCameraProvider                   u:object_r:hal_cameraHIDL_hwservice:s0
 vendor.oneplus.fingerprint.extension::IVendorFingerprintExtensions         u:object_r:hal_fingerprint_hwservice:s0
@@ -9,4 +10,5 @@ vendor.oneplus.hardware.param::IOneplusParam                               u:obj
 vendor.pixelworks.hardware.display::IIris                                  u:object_r:hal_display_iris_hwservice:s0
 vendor.pixelworks.hardware.feature::IIrisFeature                           u:object_r:hal_display_iris_hwservice:s0
 vendor.qti.hardware.audiohalext::IAudioHalExt                              u:object_r:hal_audio_hwservice:s0
-vendor.dolby.hardware.dms::IDms                                            u:object_r:hal_dms_hwservice:s0
+vendor.qti.hardware.camera.postproc::IPostProcService                      u:object_r:vendor_hal_camera_postproc_hwservice:s0
+vendor.qti.hardware.seccam::ISecCam                                        u:object_r:vendor_hal_seccam_hwservice:s0

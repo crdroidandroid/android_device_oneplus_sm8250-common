@@ -112,13 +112,21 @@ system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 
 # Camera
+vendor/bin/hw/android.hardware.camera.provider@2.4-service_64|0b53591e661f59d44cd1ea376ae46fab3d6dd727
 vendor/bin/hw/vendor.oneplus.hardware.camera@1.0-service
 vendor/bin/hw/vendor.oneplus.hardware.CameraMDMHIDL@1.0-service
 vendor/bin/vl53l1_daemon_main
+vendor/etc/init/android.hardware.camera.provider@2.4-service_64.rc|d6f258f1773780888d10c5d75072a690dd0849eb
 vendor/etc/init/vendor.oneplus.hardware.camera@1.0-service.rc
 vendor/etc/init/vendor.oneplus.hardware.CameraMDMHIDL@1.0-service.rc
+vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so|52987f18168964dff72fba61e529c46a97580ce0
+vendor/lib/android.hardware.camera.provider@2.4-external.so|4a6baaaff22b1741aa6b3f45a9c7eb5e4b6df936
+vendor/lib/android.hardware.camera.provider@2.4-legacy.so|91b315cb1d79acb2dc567765c2e9786ed470a09b
 vendor/lib/libcamxexternalformatutils.so
+vendor/lib64/hw/android.hardware.camera.provider@2.4-impl.so|c778ed74962ccfc786e16178279655dfb0cd8919
 vendor/lib64/hw/com.qti.chi.override.so
+vendor/lib64/android.hardware.camera.provider@2.4-external.so|18c07c94db40ce4d0602efa5997005ba198c3761
+vendor/lib64/android.hardware.camera.provider@2.4-legacy.so|19c4bd08ce1a6eefa6deaf52c3a3b3b4f734ed83
 vendor/lib64/com.qti.feature2.anchorsync.so
 vendor/lib64/com.qti.feature2.demux.so
 vendor/lib64/com.qti.feature2.frameselect.so
