@@ -162,6 +162,15 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
+        <name>vendor.display.config</name>
+        <version>1.9</version>
+        <interface>
+            <name>IDisplayConfig</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.9::IDisplayConfig/default</fqname>
+    </hal>
+    <hal format="hidl" optional="true">
         <name>vendor.display.postproc</name>
         <version>1.0</version>
         <interface>
@@ -261,6 +270,16 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.oneplus.camera.CameraHIDL</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IOnePlusCameraProvider</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IOnePlusCameraProvider/default</fqname>
+    </hal>
     <hal format="hidl" optional="false">
         <name>vendor.oneplus.engnative.engineer</name>
         <version>1.0</version>
@@ -287,11 +306,13 @@
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.oneplus.hardware.CameraMDMHIDL</name>
+        <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IOnePlusCameraMDM</name>
             <instance>default</instance>
         </interface>
+        <fqname>@1.0::IOnePlusCameraMDM/default</fqname>
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.oneplus.hardware.camera</name>

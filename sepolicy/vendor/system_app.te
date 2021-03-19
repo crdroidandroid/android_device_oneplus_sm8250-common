@@ -2,3 +2,5 @@
 allow system_app hal_power_default:binder call;
 allow system_app hal_vibrator_default:binder call;
 allow system_app sysfs_zram:dir search;
+
+allow system_app hal_cameraHIDL_hwservice:hwservice_manager find;

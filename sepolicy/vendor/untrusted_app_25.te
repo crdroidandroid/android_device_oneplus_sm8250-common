@@ -1,8 +1,20 @@
+allow untrusted_app_25 adsprpcd_file:dir { getattr open read };
 allow untrusted_app_25 apex_mnt_dir:dir read;
 allow untrusted_app_25 bt_firmware_file:filesystem getattr;
+allow untrusted_app_25 cache_file:lnk_file read;
 allow untrusted_app_25 cgroup:dir read;
+allow untrusted_app_25 configfs:dir { open read };
 allow untrusted_app_25 firmware_file:filesystem getattr;
+allow untrusted_app_25 linkerconfig_file:dir { open read };
+allow untrusted_app_25 metadata_file:dir { open read };
 allow untrusted_app_25 init_exec:file getattr;
 allow untrusted_app_25 rootfs:dir read;
+allow untrusted_app_25 adsprpcd_file:dir getattr;
+allow untrusted_app_25 bt_firmware_file:dir getattr;
+allow untrusted_app_25 firmware_file:dir getattr;
+allow untrusted_app_25 vendor_firmware_file:dir getattr;
 
 dontaudit untrusted_app_25 mirror_data_file:dir getattr;
+dontaudit untrusted_app_25 vendor_file:file { getattr read };
+dontaudit untrusted_app_25 mediacodec_exec:file { getattr open read };
+dontaudit untrusted_app_25 system_bootstrap_lib_file:dir { getattr open read };
