@@ -15,7 +15,6 @@
      limitations under the License.
 -->
 <resources>
-
     <!-- Base attributes available to CustomSeekBarPreference. -->
     <declare-styleable name="CustomSeekBarPreference">
         <attr name="defaultValueText" format="string" />
