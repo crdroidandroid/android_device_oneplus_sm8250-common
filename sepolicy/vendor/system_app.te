@@ -1,0 +1,4 @@
+# Allow system app to bind Power HALL
+allow system_app hal_power_default:binder call;
+allow system_app hal_vibrator_default:binder call;
+allow system_app sysfs_zram:dir search;

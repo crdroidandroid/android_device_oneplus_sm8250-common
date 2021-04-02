@@ -22,6 +22,8 @@ allow vendor_qti_init_shell vendor_wcnss_service_exec:file execute_no_trans;
 
 get_prop(vendor_qti_init_shell, exported_system_prop)
 set_prop(vendor_qti_init_shell, ctl_default_prop)
+set_prop(vendor_qti_init_shell, ctl_start_prop)
+set_prop(vendor_qti_init_shell, ctl_stop_prop)
 set_prop(vendor_qti_init_shell, vendor_memplus_prop)
 set_prop(vendor_qti_init_shell, vendor_set_wlan_prop)
 

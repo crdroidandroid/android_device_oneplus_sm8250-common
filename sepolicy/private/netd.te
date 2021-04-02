@@ -1,0 +1,1 @@
+allow netd tmpfs:dir open;

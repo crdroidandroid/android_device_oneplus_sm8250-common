@@ -15,4 +15,6 @@ allow rild proc_net:file w_file_perms;
 dontaudit rild default_prop:file read;
 dontaudit rild vendor_default_prop:property_service set;
 
+set_prop(rild, vendor_oem_bluetooth_prop)
+
 set_prop(rild, vendor_rild_prop)

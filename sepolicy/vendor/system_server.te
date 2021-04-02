@@ -1,5 +1,9 @@
 allow system_server lineage_data_file:file r_file_perms;
 allow system_server app_zygote:process getpgid;
+allow system_server vendor_sysfs_battery_supply:file { getattr open read };
+
+allow system_server sysfs_wakeup:file { getattr open read };
+allow system_server vendor_oem_hdmi_prop:file { getattr map open read };
 
 dontaudit system_server default_android_hwservice:hwservice_manager find;
 dontaudit system_server sysfs:file read;

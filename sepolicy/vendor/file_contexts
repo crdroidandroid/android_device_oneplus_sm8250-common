@@ -29,6 +29,7 @@
 
 # Data files
 /data/reserve-lib(/.*)?    u:object_r:apk_data_file:s0
+/data/misc/lineage/client_package_name                u:object_r:lineage_data_file:s0
 
 # Devices
 /dev/byte-cntr            u:object_r:byte_cntr_device:s0
