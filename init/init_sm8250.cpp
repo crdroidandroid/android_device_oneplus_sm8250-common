@@ -78,114 +78,90 @@ void load_dalvikvm_properties() {
   property_override("dalvik.vm.heapminfree", "8m");
 }
 
-void load_op8(const char *model) {
-  property_override("ro.product.model", model);
-  property_override("ro.product.name", "OnePlus8");
-  property_override("ro.build.product", "OnePlus8");
-  property_override("ro.product.device", "OnePlus8");
-  property_override("ro.vendor.product.device", "OnePlus8");
-  property_override("ro.display.series", "OnePlus 8");
-}
-
-void load_op8pro(const char *model) {
-  property_override("ro.product.model", model);
-  property_override("ro.product.name", "OnePlus8Pro");
-  property_override("ro.build.product", "OnePlus8Pro");
-  property_override("ro.product.device", "OnePlus8Pro");
-  property_override("ro.vendor.product.device", "OnePlus8Pro");
-  property_override("ro.display.series", "OnePlus 8 Pro");
-}
-
-void load_op8t(const char *model) {
-  property_override("ro.product.model", model);
-  property_override("ro.product.name", "OnePlus8T");
-  property_override("ro.build.product", "OnePlus8T");
-  property_override("ro.product.device", "OnePlus8T");
-  property_override("ro.vendor.product.device", "OnePlus8T");
-  property_override("ro.display.series", "OnePlus 8T");
-}
-
 void vendor_load_properties() {
   int project_name = stoi(android::base::GetProperty("ro.boot.project_name", ""));
   int rf_version = stoi(android::base::GetProperty("ro.boot.rf_version", ""));
   switch(project_name){
     case 19821:
+      /* OnePlus 8 */
       switch (rf_version){
         case 11:
-          /* China*/
-          load_op8("IN2010");
+          /* China */
+          property_override("ro.product.model", "IN2010");
           break;
         case 12:
-          /* T-Mobile*/
-          load_op8("IN2017");
+          /* T-Mobile */
+          property_override("ro.product.model", "IN2017");
           break;
         case 13:
-          /* India*/
-          load_op8("IN2011");
+          /* India */
+          property_override("ro.product.model", "IN2011");
           break;
         case 14:
           /* Europe */
-          load_op8("IN2013");
+          property_override("ro.product.model", "IN2013");
           break;
         case 15:
           /* Global / US Unlocked */
-          load_op8("IN2015");
+          property_override("ro.product.model", "IN2015");
           break;
         default:
           /* Generic */
-          load_op8("IN2015");
+          property_override("ro.product.model", "IN2015");
           break;
       }
       break;
     case 19811:
+      /* OnePlus 8 Pro */
       switch (rf_version){
         case 11:
-          /* China*/
-          load_op8pro("IN2020");
+          /* China */
+          property_override("ro.product.model", "IN2020");
           break;
         case 13:
-          /* India*/
-          load_op8pro("IN2021");
+          /* India */
+          property_override("ro.product.model", "IN2021");
           break;
         case 14:
           /* Europe */
-          load_op8pro("IN2023");
+          property_override("ro.product.model", "IN2023");
           break;
         case 15:
           /* Global / US Unlocked */
-          load_op8pro("IN2025");
+          property_override("ro.product.model", "IN2025");
           break;
         default:
-          /* Generic*/
-          load_op8pro("IN2025");
+          /* Generic */
+          property_override("ro.product.model", "IN2025");
           break;
       }
       break;
     case 19805:
+      /* OnePlus 8T */
       switch (rf_version){
         case 11:
-          /* China*/
-          load_op8t("KB2000");
+          /* China */
+          property_override("ro.product.model", "KB2000");
           break;
         case 12:
-          /* T-Mobile*/
-          load_op8t("KB2007");
+          /* T-Mobile */
+          property_override("ro.product.model", "KB2007");
           break;
         case 13:
-          /* India*/
-          load_op8t("KB2001");
+          /* India */
+          property_override("ro.product.model", "KB2001");
           break;
         case 14:
           /* Europe */
-          load_op8t("KB2003");
+          property_override("ro.product.model", "KB2003");
           break;
         case 15:
           /* Global / US Unlocked */
-          load_op8t("KB2005");
+          property_override("ro.product.model", "KB2005");
           break;
         default:
           /* Generic */
-          load_op8t("KB2005");
+          property_override("ro.product.model", "KB2005");
           break;
       }
       break;
