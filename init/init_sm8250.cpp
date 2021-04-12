@@ -1,6 +1,5 @@
 /*
    Copyright (c) 2020, The LineageOS Project
-                 2020, The Potato Open Sauce Project
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
@@ -33,7 +32,6 @@
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <stdio.h>
 #include <sys/_system_properties.h>
-#include <sys/sysinfo.h>
 #include <sys/system_properties.h>
 
 #include "property_service.h"
@@ -51,40 +49,5 @@ void property_override(char const prop[], char const value[]) {
     __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
-void load_12gb() {
-  property_override("dalvik.vm.heapstartsize", "32m");
-  property_override("dalvik.vm.heapgrowthlimit", "512m");
-  property_override("dalvik.vm.heaptargetutilization", "0.40");
-  property_override("dalvik.vm.heapmaxfree", "64m");
-}
-
-void load_8gb() {
-  property_override("dalvik.vm.heapstartsize", "24m");
-  property_override("dalvik.vm.heapgrowthlimit", "256m");
-  property_override("dalvik.vm.heaptargetutilization", "0.46");
-  property_override("dalvik.vm.heapmaxfree", "48m");
-}
-
-void load_6gb() {
-  property_override("dalvik.vm.heapstartsize", "16m");
-  property_override("dalvik.vm.heapgrowthlimit", "256m");
-  property_override("dalvik.vm.heaptargetutilization", "0.5");
-  property_override("dalvik.vm.heapmaxfree", "32m");
-}
-
-/* Check RAM size for current variant. */
-void checkram_loadprops() {
-  struct sysinfo sys;
-  sysinfo(&sys);
-  if (sys.totalram > 8192ull * 1024 * 1024) {
-    load_12gb();
-  } else if (sys.totalram > 6144ull * 1024 * 1024) {
-    load_8gb();
-  } else if (sys.totalram > 4096ull * 1024 * 1024) {
-    load_6gb();
-  }
-}
-
 void vendor_load_properties() {
-  checkram_loadprops();
 }
