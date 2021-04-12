@@ -63,18 +63,6 @@
             </intent-filter>
         </receiver>
 
-        <!-- DC-Dimming tile -->
-        <service
-            android:name="org.lineageos.device.DeviceSettings.DCModeTileService"
-            android:icon="@drawable/ic_dc_tile"
-            android:label="@string/tile_dc_mode"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action
-                    android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
-
         <!-- HBM tile -->
         <service
             android:name="org.lineageos.device.DeviceSettings.HBMModeTileService"

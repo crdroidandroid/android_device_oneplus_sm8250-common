@@ -61,7 +61,6 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_HBM_SWITCH = "hbm";
     public static final String KEY_AUTO_HBM_SWITCH = "auto_hbm";
     public static final String KEY_AUTO_HBM_THRESHOLD = "auto_hbm_threshold";
-    public static final String KEY_DC_SWITCH = "dc";
 
     private static final String KEY_CATEGORY_REFRESH = "refresh";
     public static final String KEY_REFRESH_RATE = "refresh_rate";
@@ -78,7 +77,6 @@ public class DeviceSettings extends PreferenceFragment
     
     private static TwoStatePreference mHBMModeSwitch;
     private static TwoStatePreference mAutoHBMSwitch;
-    private static TwoStatePreference mDCModeSwitch;
     private static TwoStatePreference mRefreshRate;
     private static SwitchPreference mAutoRefreshRate;
     private static SwitchPreference mFpsInfo;
@@ -118,11 +116,6 @@ public class DeviceSettings extends PreferenceFragment
         mBottomKeyPref = (ListPreference) findPreference(Constants.NOTIF_SLIDER_BOTTOM_KEY);
         mBottomKeyPref.setValueIndex(Constants.getPreferenceInt(getContext(), Constants.NOTIF_SLIDER_BOTTOM_KEY));
         mBottomKeyPref.setOnPreferenceChangeListener(this);
-
-        mDCModeSwitch = (TwoStatePreference) findPreference(KEY_DC_SWITCH);
-        mDCModeSwitch.setEnabled(DCModeSwitch.isSupported());
-        mDCModeSwitch.setChecked(DCModeSwitch.isCurrentlyEnabled(this.getContext()));
-        mDCModeSwitch.setOnPreferenceChangeListener(new DCModeSwitch());
 
         mHBMModeSwitch = (TwoStatePreference) findPreference(KEY_HBM_SWITCH);
         mHBMModeSwitch.setEnabled(HBMModeSwitch.isSupported());
