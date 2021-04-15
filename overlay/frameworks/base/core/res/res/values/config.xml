@@ -322,7 +322,7 @@
     <!-- Whether key handler sends intent when changing slider position -->
     <string name="config_alertSliderIntent">org.lineageos.device.DeviceSettings.UPDATE_SLIDER_POSITION</string>
 
-    <!-- Whether to show a custom view for FOD -->
+     <!-- Whether to show a custom view for FOD -->
     <bool name="config_needCustomFODView">true</bool>
 
     <!-- Default fod pressed color -->
@@ -371,8 +371,5 @@
     <string name="db_default_journal_mode">MEMORY</string>
     <string name="db_default_sync_mode">OFF</string>
     <string name="db_wal_sync_mode">OFF</string>
-
-    <!-- NightLight FOD -->
-    <bool name="disable_fod_night_light">true</bool>
 
 </resources>
