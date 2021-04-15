@@ -72,8 +72,4 @@
         <item>restart_bootloader</item>
         <item>restart_fastboot</item>
      </string-array>
-
-    <!-- FOD icon dim-->
-    <bool name="config_targetUsesInKernelDimming">true</bool>
-
 </resources>
