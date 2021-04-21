@@ -62,45 +62,54 @@ static const char LED_DEVICE[] = "/sys/class/leds/vibrator";
 static std::map<Effect, std::vector<std::pair<std::string, std::string>>> LED_EFFECTS{
     { Effect::CLICK, {
         { "/sys/class/leds/vibrator/ignore_store", "0" },
-        { "/sys/class/leds/vibrator/duration", "10" },
-        { "/sys/class/leds/vibrator/vmax", "0x1f" },
-        { "/sys/class/leds/vibrator/gain", "0x80" },
-        { "/sys/class/leds/vibrator/seq", "0x00 0x03" },
+        { "/sys/class/leds/vibrator/duration", "59" },
+        { "/sys/class/leds/vibrator/vmax", "0x0a" },
+        { "/sys/class/leds/vibrator/gain", "0x58" },
+        { "/sys/class/leds/vibrator/seq", "0x00 0x0d" },
         { "/sys/class/leds/vibrator/loop", "0x00 0x00" },
         { "/sys/class/leds/vibrator/brightness", "1" },
     }},
     { Effect::DOUBLE_CLICK, {
         { "/sys/class/leds/vibrator/ignore_store", "0" },
-        { "/sys/class/leds/vibrator/duration", "30" },
-        { "/sys/class/leds/vibrator/vmax", "0x1f" },
+        { "/sys/class/leds/vibrator/duration", "80" },
+        { "/sys/class/leds/vibrator/vmax", "0x1a" },
         { "/sys/class/leds/vibrator/gain", "0x80" },
-        { "/sys/class/leds/vibrator/seq", "0x00 0x03" },
+        { "/sys/class/leds/vibrator/seq", "0x00 0x12" },
         { "/sys/class/leds/vibrator/loop", "0x00 0x00" },
         { "/sys/class/leds/vibrator/brightness", "1" },
         { "SLEEP", "150" },
         { "/sys/class/leds/vibrator/ignore_store", "0" },
-        { "/sys/class/leds/vibrator/duration", "30" },
-        { "/sys/class/leds/vibrator/vmax", "0x1f" },
-        { "/sys/class/leds/vibrator/gain", "0x80" },
-        { "/sys/class/leds/vibrator/seq", "0x00 0x03" },
+        { "/sys/class/leds/vibrator/duration", "75" },
+        { "/sys/class/leds/vibrator/vmax", "0x12" },
+        { "/sys/class/leds/vibrator/gain", "0x70" },
+        { "/sys/class/leds/vibrator/seq", "0x00 0x0d" },
         { "/sys/class/leds/vibrator/loop", "0x00 0x00" },
         { "/sys/class/leds/vibrator/brightness", "1" },
     }},
     { Effect::TICK, {
         { "/sys/class/leds/vibrator/ignore_store", "0" },
-        { "/sys/class/leds/vibrator/duration", "30" },
-        { "/sys/class/leds/vibrator/vmax", "0x1f" },
+        { "/sys/class/leds/vibrator/duration", "11" },
+        { "/sys/class/leds/vibrator/vmax", "0x09" },
         { "/sys/class/leds/vibrator/gain", "0x80" },
         { "/sys/class/leds/vibrator/seq", "0x00 0x03" },
         { "/sys/class/leds/vibrator/loop", "0x00 0x00" },
         { "/sys/class/leds/vibrator/brightness", "1" },
     }},
+    { Effect::POP, {
+        { "/sys/class/leds/vibrator/ignore_store", "0" },
+        { "/sys/class/leds/vibrator/duration", "11" },
+        { "/sys/class/leds/vibrator/vmax", "0x09" },
+        { "/sys/class/leds/vibrator/gain", "0x80" },
+        { "/sys/class/leds/vibrator/seq", "0x00 0x04" },
+        { "/sys/class/leds/vibrator/loop", "0x00 0x00" },
+        { "/sys/class/leds/vibrator/brightness", "1" },
+    }},
     { Effect::HEAVY_CLICK, {
         { "/sys/class/leds/vibrator/ignore_store", "0" },
-        { "/sys/class/leds/vibrator/duration", "10" },
-        { "/sys/class/leds/vibrator/vmax", "0x1f" },
+        { "/sys/class/leds/vibrator/duration", "16" },
+        { "/sys/class/leds/vibrator/vmax", "0x09" },
         { "/sys/class/leds/vibrator/gain", "0x80" },
-        { "/sys/class/leds/vibrator/seq", "0x00 0x03" },
+        { "/sys/class/leds/vibrator/seq", "0x00 0x05" },
         { "/sys/class/leds/vibrator/loop", "0x00 0x00" },
         { "/sys/class/leds/vibrator/brightness", "1" },
     }}
@@ -538,7 +547,8 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength es, const std
 
 ndk::ScopedAStatus Vibrator::getSupportedEffects(std::vector<Effect>* _aidl_return) {
     if (ledVib.mDetected) {
-        *_aidl_return = {Effect::CLICK, Effect::DOUBLE_CLICK, Effect::TICK, Effect::HEAVY_CLICK};
+        *_aidl_return = {Effect::CLICK, Effect::DOUBLE_CLICK, Effect::TICK, Effect::POP,
+                         Effect::HEAVY_CLICK};
     } else {
         *_aidl_return = {Effect::CLICK, Effect::DOUBLE_CLICK, Effect::TICK, Effect::THUD,
                          Effect::POP, Effect::HEAVY_CLICK};
