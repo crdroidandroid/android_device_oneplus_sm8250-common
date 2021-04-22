@@ -24,7 +24,6 @@
 
 #include "AntiFlicker.h"
 #include "DisplayModes.h"
-#include "SunlightEnhancement.h"
 
 using android::OK;
 using android::sp;
@@ -37,10 +36,8 @@ using ::vendor::lineage::livedisplay::V2_0::sdm::SDMController;
 using ::vendor::lineage::livedisplay::V2_1::IAntiFlicker;
 using ::vendor::lineage::livedisplay::V2_1::IDisplayModes;
 using ::vendor::lineage::livedisplay::V2_1::IPictureAdjustment;
-using ::vendor::lineage::livedisplay::V2_1::ISunlightEnhancement;
 using ::vendor::lineage::livedisplay::V2_1::implementation::AntiFlicker;
 using ::vendor::lineage::livedisplay::V2_1::implementation::DisplayModes;
-using ::vendor::lineage::livedisplay::V2_1::implementation::SunlightEnhancement;
 
 int main() {
     status_t status = OK;
@@ -53,7 +50,6 @@ int main() {
     sp<AntiFlicker> af = new AntiFlicker();
     sp<DisplayModes> dm = new DisplayModes();
     sp<PictureAdjustment> pa = new PictureAdjustment(controller);
-    sp<SunlightEnhancement> se = new SunlightEnhancement();
 
     configureRpcThreadpool(1, true /*callerWillJoin*/);
 
@@ -74,13 +70,6 @@ int main() {
     status = pa->registerAsService();
     if (status != OK) {
         LOG(ERROR) << "Could not register service for LiveDisplay HAL PictureAdjustment Iface ("
-                   << status << ")";
-        goto shutdown;
-    }
-
-    status = se->registerAsService();
-    if (status != OK) {
-        LOG(ERROR) << "Could not register service for LiveDisplay HAL SunlightEnhancement Iface ("
                    << status << ")";
         goto shutdown;
     }
