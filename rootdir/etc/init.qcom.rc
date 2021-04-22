@@ -1077,3 +1077,8 @@ service vendor.camera-provider-2-4 /vendor/bin/hw/android.hardware.camera.provid
     ioprio rt 4
     capabilities SYS_NICE
     writepid /dev/cpuset/camera-daemon/tasks /dev/stune/foreground/tasks
+
+on property:sys.boot_completed=1
+    # Restrict permissions to socket file
+    # to hide Magisk & co.
+    chmod 440 /proc/net/unix
