@@ -55,6 +55,7 @@ vendor.iop.enable_uxe=0
 
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+ro.media.recorder-max-base-layer-fps = 60
 
 # Netflix
 ro.netflix.bsp_rev=Q8250-19134-1
