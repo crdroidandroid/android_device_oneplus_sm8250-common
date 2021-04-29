@@ -115,6 +115,8 @@ vendor.qcom.bluetooth.soc=hastings
 # Camera
 vendor.arcsoft.sn_isHardCopy=0
 vendor.camera.algo.jpeghwencode=1
+log.tag.CHIUSECASE=ERROR
+persist.vendor.camera.logInfoMask=false
 
 # Chipset
 ro.soc.manufacturer=Qualcomm
