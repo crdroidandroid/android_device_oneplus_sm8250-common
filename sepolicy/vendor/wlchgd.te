@@ -5,3 +5,5 @@ init_daemon_domain(wlchgd)
 
 allow wlchgd kmsg_device:chr_file rw_file_perms;
 allow wlchgd wlchg_device:chr_file rw_file_perms;
+
+allow wlchgd self:capability sys_admin;

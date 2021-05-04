@@ -1,2 +1,3 @@
 allow vendor_dpmd vendor_default_prop:file { read open getattr map };
 get_prop(vendor_dpmd, vendor_default_prop)
+allow vendor_dpmd self:capability sys_admin;

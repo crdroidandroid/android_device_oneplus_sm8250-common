@@ -1,0 +1,1 @@
+allow vendor_msm_irqbalanced self:capability sys_admin;

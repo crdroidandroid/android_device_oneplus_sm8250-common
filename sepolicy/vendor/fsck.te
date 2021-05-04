@@ -1,2 +1,2 @@
 allow fsck op2_block_device:blk_file { read write open ioctl };
-allow fsck self:capability kill;
+allow fsck self:capability { kill sys_admin };

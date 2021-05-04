@@ -1,0 +1,1 @@
+allow adbroot self:capability sys_admin;

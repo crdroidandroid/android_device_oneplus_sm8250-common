@@ -1,0 +1,4 @@
+allow system_server proc_touchpanel:dir search;
+dontaudit system_server sysfs:file read;
+allow system_server vendor_proc_shs:dir search;
+allow system_server app_zygote:process getpgid;

@@ -1,4 +1,3 @@
-allow system_suspend sysfs:dir read;
-allow system_suspend sysfs:dir open;
+allow system_suspend sysfs:dir { read open };
 
 dontaudit system_suspend sysfs:file read;

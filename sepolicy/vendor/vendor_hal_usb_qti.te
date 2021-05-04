@@ -1,0 +1,1 @@
+allow vendor_hal_usb_qti self:capability sys_admin;

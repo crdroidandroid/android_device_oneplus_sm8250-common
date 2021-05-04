@@ -1,0 +1,1 @@
+allow update_verifier self:capability sys_admin;

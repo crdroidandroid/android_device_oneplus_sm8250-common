@@ -1,2 +1,3 @@
 # Allow update engine to reach uefi block device
 allow hal_bootctl_default vendor_uefi_block_device:blk_file getattr;
+allow hal_bootctl_default self:capability sys_admin;

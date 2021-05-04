@@ -1,0 +1,2 @@
+dontaudit vendor_hal_neuralnetworks_default default_prop:file read;
+allow vendor_hal_neuralnetworks_default vendor_adsprpc_prop:file read;

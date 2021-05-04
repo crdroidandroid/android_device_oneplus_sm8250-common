@@ -9,3 +9,8 @@ allow kernel block_device:dir search;
 
 dontaudit kernel shell_exec:file { execute open execute_no_trans getattr map };
 dontaudit kernel toolbox_exec:file { execute_no_trans };
+
+allow kernel swap_block_device:blk_file { getattr open read write };
+allow kernel sysfs_zram:dir search;
+allow kernel sysfs_zram:file { getattr open };
+allow kernel toolbox_exec:file { execute getattr map open };
