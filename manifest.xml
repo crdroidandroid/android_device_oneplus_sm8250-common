@@ -227,6 +227,26 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.oneplus.camera.CameraHIDL</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IOnePlusCameraProvider</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IOnePlusCameraProvider/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.oneplus.camera.CameraMDMHIDL</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IOnePlusCameraMDM</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IOnePlusCameraMDM/default</fqname>
+    </hal>
+    <hal format="hidl">
         <name>vendor.oneplus.engnative.engineer</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -254,7 +274,7 @@
         </interface>
         <fqname>@1.0::IVendorFingerprintExtensions/default</fqname>
     </hal>
-    <hal format="hidl" optional="true">
+    <hal format="hidl">
         <name>vendor.oneplus.hardware.CameraMDMHIDL</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -264,7 +284,7 @@
         </interface>
         <fqname>@1.0::IOnePlusCameraMDM/default</fqname>
     </hal>
-    <hal format="hidl" optional="true">
+    <hal format="hidl">
         <name>vendor.oneplus.hardware.camera</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -272,6 +292,7 @@
             <name>IOnePlusCameraProvider</name>
             <instance>default</instance>
         </interface>
+        <fqname>@1.0::IOnePlusCameraProvider/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.oneplus.hardware.cwb</name>
