@@ -1,0 +1,3 @@
+allow vendor_hal_neuralnetworks_default vendor_adsprpc_prop:file { read open getattr map };
+
+get_prop(vendor_hal_neuralnetworks_default, vendor_camera_prop)

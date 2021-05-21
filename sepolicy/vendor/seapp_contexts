@@ -1,1 +1,4 @@
 user=system seinfo=platform name=com.qualcomm.qti.poweroffalarm domain=vendor_poweroffalarm_app type=system_app_data_file
+
+# Use a custom app domain for oneplus camera
+user=_app isPrivApp=true seinfo=oneplus name=com.oneplus.camera domain=oneplus_camera_app type=app_data_file levelFrom=all

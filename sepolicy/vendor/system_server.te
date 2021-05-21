@@ -1,0 +1,6 @@
+r_dir_file(system_server, sysfs_battery_supply)
+allow system_server sysfs_battery_supply:file { getattr open read write };
+allow system_server hal_cameraHIDL_hwservice:hwservice_manager find;
+binder_call(system_server, hal_cameraHIDL_default)
+
+allow system_server app_zygote:process { getattr getpgid };

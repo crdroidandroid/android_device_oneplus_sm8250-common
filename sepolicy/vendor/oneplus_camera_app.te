@@ -1,0 +1,4 @@
+# Type define oneplus camera domain
+type oneplus_camera_app, domain, coredomain;
+
+allow oneplus_camera_app vendor_sysfs_battery_supply:dir search;

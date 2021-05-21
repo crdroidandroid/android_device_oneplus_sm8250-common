@@ -1,0 +1,4 @@
+allow iorap_prefetcherd media_rw_data_file:dir search;
+allow iorap_prefetcherd media_rw_data_file:file { read open };
+allow iorap_prefetcherd vendor_file:file { read open };
+allow iorap_prefetcherd hal_cameraHIDL_default_exec:file { read open };
