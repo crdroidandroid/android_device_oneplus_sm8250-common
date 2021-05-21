@@ -1,0 +1,8 @@
+# Data files
+/data/misc/lineage/client_package_name                                              u:object_r:lineage_data_file:s0
+
+# Display Modes
+/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/hbm         u:object_r:sysfs_dm:s0
+
+# Vibrator
+/sys/devices/platform/soc/a8c000.i2c/i2c-3/3-005a/leds/vibrator/level               u:object_r:sysfs_vibrator:s0
