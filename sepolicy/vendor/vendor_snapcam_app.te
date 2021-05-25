@@ -1,0 +1,1 @@
+allow vendor_snapcam_app selinuxfs:file read;
