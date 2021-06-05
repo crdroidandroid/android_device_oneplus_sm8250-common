@@ -57,7 +57,7 @@ import org.lineageos.device.DeviceSettings.Constants;
 import org.lineageos.device.DeviceSettings.DeviceSettings;
 import org.lineageos.device.DeviceSettings.R;
 
-import vendor.oneplus.camera.CameraHIDL.V1_0.IOnePlusCameraProvider;
+import vendor.oneplus.hardware.camera.V1_0.IOnePlusCameraProvider;
 
 
 public class KeyHandler implements DeviceKeyHandler {
@@ -90,7 +90,7 @@ public class KeyHandler implements DeviceKeyHandler {
     }
 
     public static final String CLIENT_PACKAGE_NAME = "com.oneplus.camera";
-    public static final String CLIENT_PACKAGE_PATH = "/data/misc/lineageos/client_package_name";
+    public static final String CLIENT_PACKAGE_PATH = "/data/misc/lineage/client_package_name";
     
     private static Toast mToast;
 
