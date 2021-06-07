@@ -202,6 +202,9 @@ persist.sys.oem.otg_support=true
 # PASR
 vendor.power.pasr.enabled=false
 
+# OnePlus
+vendor.product.manufacturer=OPD
+
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 
