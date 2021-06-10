@@ -80,17 +80,16 @@
     <string name="slider_toast_dnd">DND - No interruptions</string>
     <string name="slider_toast_priority">DND - Priority only</string>
     <string name="slider_toast_silent">Calls and notifications will be muted</string>
-    
+
     <!-- Log Tile -->
     <string name="quick_settings_log_tile_label">LogTile</string>
     <string name="quick_settings_log_tile_dialog_title">Options</string>
     <string name="cannot_get_su">Action failed because of missing superuser access</string>
-    
-    <!-- Dolby Atmos -->
-    <string name="audio_title">Dolby Atmos</string>
-    <string name="dolby_title">Configuration</string>
-    <string name="dolby_summary">Configure the audio output based on media content.</string>
-    <string name="enable_dolby_title">Enable/Disable Dolby Atmos</string>
-    <string name="enable_dolby_summary">Switching REQUIRES a reboot to take effect!</string>
-    <string name="enable_dolby_info">Note: With Dolby Atmos enabled, other EQ effects like MusicFX are disabled on all outputs.</string>
+
+    <!-- Dolby -->
+    <string name="dolby_category">Dolby</string>
+    <string name="dolby_title">Dolby Atmos</string>
+    <string name="dolby_summary">Configure the audio output based on media content</string>
+    <string name="dolby_info">After making changes in Dolby Atmos, pause/play media for changes to take effect.</string>
+
 </resources>
