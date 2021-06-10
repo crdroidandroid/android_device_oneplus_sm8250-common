@@ -38,7 +38,7 @@
         <library name="proxy" path="libeffectproxy.so"/>
         <library name="offload_bundle" path="libqcompostprocbundle.so"/>
         <library name="audio_pre_processing" path="libqcomvoiceprocessing.so"/>
-        <library name="volume_listener" path="libvolumelistener.so"/>
+        <library name="volume_listener" path="libvolumelistener.so"/>        
         <library name="audiosphere" path="libasphere.so"/>
         <library name="shoebox" path="libshoebox.so"/>
         <!--DOLBY DAP-->
@@ -93,15 +93,15 @@
         <effect name="hw_acc" library="offload_bundle" uuid="7d1580bd-297f-4683-9239-e475b6d1d69f"/>
         <effect name="loudness_enhancer" library="loudness_enhancer" uuid="fa415329-2034-4bea-b5dc-5b381c8d1e2c"/>
         <effect name="dynamics_processing" library="dynamics_processing" uuid="e0e6539b-1781-7261-676f-6d7573696340"/>
-        <effect name="aec" library="audio_pre_processing" uuid="0f8d0d2a-59e5-45fe-b6e4-248c8a799109"/>
-        <effect name="ns" library="audio_pre_processing" uuid="1d97bb0b-9e2f-4403-9ae3-58c2554306f8"/>
-        <effect name="music_helper" library="volume_listener" uuid="08b8b058-0590-11e5-ac71-0025b32654a0"/>
+         <effect name="music_helper" library="volume_listener" uuid="08b8b058-0590-11e5-ac71-0025b32654a0"/>
         <effect name="ring_helper" library="volume_listener" uuid="0956df94-0590-11e5-bdbe-0025b32654a0"/>
         <effect name="alarm_helper" library="volume_listener" uuid="09f303e2-0590-11e5-8fdb-0025b32654a0"/>
         <effect name="voice_helper" library="volume_listener" uuid="0ace5c08-0590-11e5-ae9e-0025b32654a0"/>
         <effect name="notification_helper" library="volume_listener" uuid="0b776dde-0590-11e5-81ba-0025b32654a0"/>
         <effect name="audiosphere" library="audiosphere" uuid="184e62ab-2d19-4364-9d1b-c0a40733866c"/>
         <effect name="shoebox" library="shoebox" uuid="1eab784c-1a36-4b2a-b7fc-e34c44cab89e"/>
+        <effect name="aec" library="audio_pre_processing" uuid="0f8d0d2a-59e5-45fe-b6e4-248c8a799109"/>
+        <effect name="ns" library="audio_pre_processing" uuid="1d97bb0b-9e2f-4403-9ae3-58c2554306f8"/>
         <!--DOLBY DAP-->
         <effectProxy name="dap" library="proxy" uuid="9d4921da-8225-4f29-aefa-39537a04bcaa">
             <libsw library="dap_sw" uuid="6ab06da4-c516-4611-8166-452799218539"/>
@@ -118,23 +118,6 @@
         <effect name="haptic" library="haptic_effect" uuid="17852d51-161e-11e2-892e-0800200c9a66"/>
         <!--OP_FEATURE_MM_AW END-->
     </effects>
-    <postprocess>
-        <stream type="music">
-            <apply effect="music_helper"/>
-        </stream>
-        <stream type="ring">
-            <apply effect="ring_helper"/>
-        </stream>
-        <stream type="alarm">
-            <apply effect="alarm_helper"/>
-        </stream>
-        <stream type="voice_call">
-            <apply effect="voice_helper"/>
-        </stream>
-        <stream type="notification">
-            <apply effect="notification_helper"/>
-        </stream>
-    </postprocess>
     <preprocess>
         <stream type="voice_communication">
             <apply effect="aec"/>

@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.oneplus.sound.tuner.overlay"
+    android:versionCode="1"
+    android:versionName="1.0">
+    <overlay android:targetPackage="com.oneplus.sound.tuner" android:priority="1" android:isStatic="true" />
+
+    <application android:label="OPSoundTunerOverlay" android:hasCode="false"/>
+</manifest>

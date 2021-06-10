@@ -259,6 +259,39 @@ vendor/etc/init/dpmQmiMgr.rc
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
 vendor/lib64/libdpmqmihal.so
 
+# Dolby
+system/lib64/vendor.dolby.hardware.dms@2.0.so
+-system_ext/priv-app/DaxUI/DaxUI.apk|9cb00a47428375809ac05bf71f4a8e9bf8e557a5
+-system_ext/priv-app/daxService/daxService.apk
+system_ext/etc/permissions/privapp-com.dolby.daxappui.xml
+system_ext/etc/permissions/privapp-com.dolby.daxservice.xml
+system_ext/etc/sysconfig/config-com.dolby.daxappui.xml
+system_ext/etc/sysconfig/config-com.dolby.daxservice.xml
+system_ext/etc/sysconfig/hiddenapi-com.dolby.daxservice.xml
+vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
+vendor/etc/dolby/dax-default.xml
+vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc
+vendor/lib/libdapparamstorage.so
+vendor/lib/libdeccfg.so
+vendor/lib/libqtigef.so
+vendor/lib/soundfx/libeffectproxy.so
+vendor/lib/soundfx/libhwdap.so
+vendor/lib/soundfx/libswdap.so
+vendor/lib/vendor.dolby.hardware.dms@2.0.so
+vendor/lib64/libdapparamstorage.so
+vendor/lib64/libdeccfg.so
+vendor/lib64/libdlbdsservice.so
+vendor/lib64/libqtigef.so
+vendor/lib64/soundfx/libeffectproxy.so
+vendor/lib64/soundfx/libhwdap.so
+vendor/lib64/soundfx/libswdap.so
+vendor/lib64/vendor.dolby.hardware.dms@2.0.so
+vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so
+
+# Dolby (libswvqe) - from OnePlus8Oxygen_15.I.20_GLO_020_2008080048
+vendor/lib/soundfx/libswvqe.so|076a2d0d002b2ab044b9879ff6b82f79ada5caed
+vendor/lib64/soundfx/libswvqe.so|fa4082e95c001742746d29c6f76442086e2c9880
+
 # DRM
 vendor/bin/hw/vendor.qti.hardware.qseecom@1.0-service
 vendor/bin/qseecomd

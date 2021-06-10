@@ -17,6 +17,9 @@
 
 <resources>
 
+    <!-- Whether device supports Dolby -->
+    <bool name="config_deviceSupportsDolby">true</bool>
+
     <!-- Whether device supports Touch Screen Gestures -->
     <bool name="config_deviceSupportsTouchScreenGestures">true</bool>
 
