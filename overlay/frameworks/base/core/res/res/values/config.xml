@@ -374,4 +374,8 @@
     <!-- Whether to show settings for hiding notch fill -->
     <bool name="config_showHideNotchSettings">true</bool>
 
+    <!-- OnePlus uses a proprietary vibrator HAL to utilize the new powerful motor since the
+         OnePlus 7 Pro. -->
+    <bool name="config_hasOnePlusHapticMotor">true</bool>
+
 </resources>
