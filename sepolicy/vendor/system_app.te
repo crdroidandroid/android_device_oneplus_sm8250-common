@@ -1,0 +1,3 @@
+allow system_app hal_cameraHIDL_hwservice:hwservice_manager find;
+allow system_app oem_service:service_manager find;
+binder_call(system_app, hal_cameraHIDL_default)

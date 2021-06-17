@@ -9,13 +9,20 @@ allow hal_camera_default oem_file:file create_file_perms;
 allow hal_camera_default vendor_persist_file:dir w_dir_perms;
 allow hal_camera_default vendor_persist_file:file create_file_perms;
 
-allow hal_camera_default input_device:dir r_dir_perms;
-allow hal_camera_default input_device:chr_file r_file_perms;
+allow hal_camera_default input_device:dir { read open search };
+allow hal_camera_default input_device:chr_file { ioctl read open };
 
 allow hal_camera_default vl53l1_device:chr_file rw_file_perms;
 
 allow hal_camera_default proc_meminfo:file r_file_perms;
 allow hal_camera_default vendor_sysfs_video_call_on:file rw_file_perms;
+
+# Allow camera to read over /dev/adsprpc-smd-secure 
+allow hal_camera_default vendor_xdsp_device:chr_file { ioctl read write open };
+
+allow hal_camera_default cgroup:file getattr;
+allow hal_camera_default hal_cameraHIDL_hwservice:hwservice_manager find;
+allow hal_camera_default public_adsprpcd_file:file { read open getattr };
 
 get_prop(hal_camera_default, ctl_default_prop)
 get_prop(hal_camera_default, vendor_db_security_prop)

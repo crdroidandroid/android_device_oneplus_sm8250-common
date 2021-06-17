@@ -1,8 +1,12 @@
+# brightness
+type sysfs_oem, sysfs_type, fs_type;
+
 # files
 type oem_file, file_type;
 type op1_file, file_type;
 type op2_file, file_type;
 type opf_file, file_type;
+type public_adsprpcd_file, file_type;
 
 # procfs
 type proc_direct_swappiness, fs_type, proc_type;
