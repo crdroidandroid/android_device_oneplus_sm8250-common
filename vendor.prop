@@ -112,10 +112,8 @@ ro.vendor.bluetooth.wipower=false
 vendor.qcom.bluetooth.soc=hastings
 
 # Camera
-persist.vendor.camera.privapp.list=com.oneplus.camera,com.oem.autotest,com.oneplus.factorymode
 vendor.arcsoft.sn_isHardCopy=0
 vendor.camera.algo.jpeghwencode=1
-vendor.camera.aux.packagelist=com.oem.autotest,com.oneplus.factorymode,com.oneplus.camera,com.oneplus.healthcheck
 
 # Crypto
 ro.crypto.allow_encrypt_override=true
