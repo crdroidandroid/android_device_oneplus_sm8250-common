@@ -1,0 +1,14 @@
+allow platform_app vendor_sysfs_kgsl:file { read open getattr };
+allow platform_app oem_service:dir { search getattr read };
+allow platform_app oem_service:service_manager find;
+allow platform_app vendor_xdsp_device:chr_file { ioctl read getattr lock map open };
+allow platform_app vendor_sysfs_battery_supply:dir search;
+allow platform_app vendor_sysfs_battery_supply:file { read open getattr };
+allow platform_app adsprpcd_file:dir { search getattr read };
+dontaudit platform_app mnt_vendor_file:dir search;
+dontaudit platform_app vendor_hal_camera_postproc_hwservice:hwservice_manager find;
+
+get_prop(platform_app, ctl_default_prop)
+allow platform_app vendor_camera_data_file:dir getattr;
+binder_call(platform_app, hal_camera_default)
+r_dir_file(platform_app, oem_file)

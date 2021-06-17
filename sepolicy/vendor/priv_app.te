@@ -1,0 +1,1 @@
+allow priv_app oem_service:service_manager find;

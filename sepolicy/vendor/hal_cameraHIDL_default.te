@@ -15,7 +15,8 @@ allow hal_cameraHIDL_default vendor_hal_perf_hwservice:hwservice_manager find;
 allow hal_cameraHIDL_default ion_device:chr_file r_file_perms;
 allow hal_cameraHIDL_default tee_device:chr_file rw_file_perms;
 
-allow hal_cameraHIDL_default vendor_camera_data_file:dir create_dir_perms;
+allow hal_cameraHIDL_default vendor_camera_data_file:dir { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads add_name remove_name search };
+allow hal_cameraHIDL_default vendor_camera_data_file:file { ioctl read write create getattr setattr lock append map unlink rename open watch watch_reads };
 
 r_dir_file(hal_cameraHIDL_default, firmware_file)
 
