@@ -309,7 +309,7 @@ system_ext/etc/sysconfig/config-com.dolby.daxservice.xml|7690774632fe32269657fc1
 system_ext/etc/sysconfig/hiddenapi-com.dolby.daxservice.xml|29d10dff78b425e3464932178498dda169419a5e
 system_ext/etc/permissions/com.dolby.daxappui.xml|b783016728b17eadfcdad662ccaf546afbeab856
 system_ext/etc/permissions/com.dolby.daxservice.xml
--system_ext/priv-app/DaxUI/DaxUI.apk|6e9c532492d4371d0ddc203abdf858a5c7991091
+-system_ext/priv-app/DaxUI/DaxUI.apk|2832fa3bd4e24ab725a421d528b0f4be5a28e4cd
 -system_ext/priv-app/daxService/daxService.apk
 vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
 vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc
