@@ -1,0 +1,2 @@
+allow priv_app hal_ifaa_hwservice:hwservice_manager find;
+binder_call(priv_app, hal_ifaa_default)
