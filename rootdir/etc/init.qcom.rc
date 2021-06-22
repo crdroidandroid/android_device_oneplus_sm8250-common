@@ -79,6 +79,8 @@ on init
     chown root system /sys/fs/cgroup/memory/bg/tasks
     chmod 0660 /sys/fs/cgroup/memory/bg/tasks
 
+    setprop vendor.boot.project_name ${ro.boot.project_name}
+
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
 

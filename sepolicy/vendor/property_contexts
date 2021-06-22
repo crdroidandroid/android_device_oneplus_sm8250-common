@@ -73,3 +73,4 @@ persist.vendor.aps.debug.framenum         u:object_r:ctl_default_prop:s0
 vendor.oppo.enable.dump.flag              u:object_r:ctl_default_prop:s0
 vendor.arcsoft.                           u:object_r:ctl_default_prop:s0
 persist.vendor.arcsoft.sn.dumprawinfo     u:object_r:ctl_default_prop:s0
+vendor.boot.project_name                  u:object_r:ctl_default_prop:s0
