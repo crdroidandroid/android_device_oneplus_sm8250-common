@@ -1,0 +1,2 @@
+allow untrusted_app_27 proc_net:file { read open };
+allow untrusted_app_27 rootfs:dir { read open };
