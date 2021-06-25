@@ -8,6 +8,7 @@ persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
 
 # Bluetooth
 persist.vendor.btstack.enable.lpa=true
+persist.vendor.btstack.enable.twsplus=true
 ro.bluetooth.library_name=libbluetooth_qti.so
 
 # Camera
