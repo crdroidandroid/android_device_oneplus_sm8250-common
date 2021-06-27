@@ -48,9 +48,6 @@
         <!--DOLBY VQE-->
         <library name="vqe" path="libswvqe.so"/>
         <!--DOLBY END-->
-        <!--OZO capture START-->
-        <library name="ozo_processing" path="libozoprocessing.so"/>
-        <!--OZO capture END-->
         <!--OP_FEATURE_MM_AW START-->
         <library name="haptic_effect" path="libhaptic_effect.so"/>
         <!--OP_FEATURE_MM_AW END-->
@@ -111,9 +108,6 @@
         <!--DOLBY VQE-->
         <effect name="vqe" library="vqe" uuid="64a0f614-7fa4-48b8-b081-d59dc954616f"/>
         <!--DOLBY END-->
-        <!--OZO capture START-->
-        <effect name="ozo" library="ozo_processing" uuid="7e384a3b-7850-4a64-a097-884250d8a737"/>
-        <!--OZO capture END-->
         <!--OP_FEATURE_MM_AW START-->
         <effect name="haptic" library="haptic_effect" uuid="17852d51-161e-11e2-892e-0800200c9a66"/>
         <!--OP_FEATURE_MM_AW END-->
