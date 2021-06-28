@@ -10,86 +10,62 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
-    <!-- Panel modes -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
     <string name="device_title">OnePlus Settings</string>
     <string name="device_summary">Adjust OnePlus specific device settings</string>
-    <string name="display_title">Display</string>
-    <string name="hbm_mode_summary"></string>
-    <string name="hbm_mode_title">High brightness mode</string>
-    <string name="auto_hbm_summary"></string>
-    <string name="auto_hbm_title">Automatic High brightness mode</string>
-    <string name="hbm_mode_warning">Long time usage of High brightness mode may damage your display</string>
-    <string name="auto_hbm_threshold_title">Automatic High brightness mode threshold (lux)</string>
-    <string name="auto_hbm_threshold_summary"></string>
-    <string name="dc_mode_summary"></string>
-    <string name="dc_mode_title">DC-Dimming</string>
-    <string name="tile_hbm_mode">High brightness modes</string>
-    <string name="tile_dc_mode">DC-Dimming</string>
-
-    <!-- Refresh rate -->
-    <string name="refresh_title">Screen refresh</string>
-    <string name="tile_refresh_rate">Screen refresh rate</string>
-    <string name="auto_refresh_rate_summary">Let apps decide what refresh rate to use</string>
-    <string name="auto_refresh_rate_title">Auto refresh mode</string>
-    <string name="refresh_rate_summary">Choose between 60Hz or 120Hz peak refresh</string>
-    <string name="refresh_rate_title">Force 120Hz peak refresh rate</string>
-    <string name="refresh_rate_warning">Using forced 120Hz will impact battery life significantly</string>
-    <string name="fps_info_title">FPS overlay</string>
-    <string name="fps_info_summary">Show overlay with with current frames per second</string>
-    <string name="panel_mode_info">Disable panel mode requires reboot.</string>
 
     <!-- Notification slider -->
-    <string name="notification_slider_category_title">Notification slider</string>
+    <string name="notification_slider_category_title">Alert slider</string>
+    <string name="notification_slider_title">Alert slider settings</string>
     <string name="notification_slider_selection_dialog_title">Action</string>
     <string name="notification_slider_top_position">Top position</string>
     <string name="notification_slider_middle_position">Middle position</string>
     <string name="notification_slider_bottom_position">Bottom position</string>
     <string name="notification_slider_mode_total_silence">Total silence</string>
+    <string name="notification_slider_mode_alarms_only">Alarms only</string>
     <string name="notification_slider_mode_priority_only">Priority only</string>
-    <string name="notification_slider_mode_silent">Silent</string>
-    <string name="notification_slider_mode_vibrate">Vibrate</string>
-    <string name="notification_slider_mode_none">Normal</string>
-    <string name="buttons_dashboard_summary">Alert Slider Settings</string>
+    <string name="notification_slider_mode_none">All</string>
 
-    <!-- Vibration slider -->
+    <string name="notification_slider_usage_title">Use slider for</string>
+    <string name="notification_slider_for_notification">Notification</string>
+    <string name="notification_slider_for_flashlight">Flashlight</string>
+    <string name="notification_slider_for_brightness">Brightness</string>
+    <string name="notification_slider_for_rotation">Rotation</string>
+    <string name="notification_slider_for_ringer">Ringer</string>
+    <string name="notification_slider_for_notification_ringer">Notification and ringer</string>
+
+    <string name="notification_slider_flashlight_off">Off</string>
+    <string name="notification_slider_flashlight_on">On</string>
+    <string name="notification_slider_flashlight_blink">Blink</string>
+
+    <string name="notification_slider_brightness_auto">Auto</string>
+    <string name="notification_slider_brightness_brightest">Brightest</string>
+    <string name="notification_slider_brightness_darkest">Darkest</string>
+
+    <string name="notification_slider_rotation_auto">Auto</string>
+    <string name="notification_slider_rotation_portrait">Portrait</string>
+    <string name="notification_slider_rotation_landscape_90">Landscape (90°)</string>
+    <string name="notification_slider_rotation_landscape_270">Landscape (270°)</string>
+
+    <string name="notification_slider_ringer_normal">Normal</string>
+    <string name="notification_slider_ringer_vibrate">Vibrate</string>
+    <string name="notification_slider_ringer_silent">Silent</string>
+
+    <!-- Vibration control -->
     <string name="category_vibrator">Vibrator</string>
     <string name="vib_strength_title_head">Strength</string>
     <string name="vib_strength_summary_head">Define the strength of the vibrator</string>
-    <string name="vibration_warning">Setting strength too high may cause permanent hardware damage</string>
 
-    <!-- Doze -->
-    <string name="doze_panel_title">Doze</string>
-    <string name="doze_settings_title">Advanced doze settings</string>
-    <string name="doze_settings_summary">Handle sensor related wake events</string>
-
-    <!-- Selinux Switch -->
-    <string name="selinux_explanation_summary">SELinux is a set of kernel modifications and user-space tools. Changing modes can cause unwanted effects. Use at your own risk (will be grayed out if su not found!).</string>
-    <string name="selinux_category">SELinux</string>
-    <string name="selinux_mode_title">SELinux mode</string>
-    <string name="selinux_permissive_summary">Permissive</string>
-    <string name="selinux_enforcing_summary">Enforcing</string>
-    <string name="selinux_persistence_title">Persist across reboots</string>
-    <string name="selinux_persistence_summary">Restore the above set sepolicy mode on each boot</string>
-    <string name="selinux_permissive_toast_title">Selinux set to permissive!</string>
-    <string name="selinux_enforcing_toast_title">Selinux set to enforcing!</string>
-
-    <!-- Slider toasts -->
-    <string name="slider_toast_normal">Calls and notifications will ring</string>
-    <string name="slider_toast_vibrate">Calls and notifications will vibrate</string>
-    <string name="slider_toast_dnd">DND - No interruptions</string>
-    <string name="slider_toast_priority">DND - Priority only</string>
-    <string name="slider_toast_silent">Calls and notifications will be muted</string>
-
-    <!-- Log Tile -->
-    <string name="quick_settings_log_tile_label">LogTile</string>
-    <string name="quick_settings_log_tile_dialog_title">Options</string>
-    <string name="cannot_get_su">Action failed because of missing superuser access</string>
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">by default</string>
+    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong tap to set</string>
+    <string name="custom_seekbar_default_value_is_set">Default value is set</string>
 
     <!-- Dolby -->
     <string name="dolby_category">Dolby</string>
     <string name="dolby_title">Dolby Atmos</string>
     <string name="dolby_summary">Configure the audio output based on media content</string>
     <string name="dolby_info">After making changes in Dolby Atmos, pause/play media for changes to take effect.</string>
-
 </resources>

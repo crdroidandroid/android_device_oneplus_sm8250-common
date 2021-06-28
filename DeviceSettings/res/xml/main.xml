@@ -1,89 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright (C) 2014-2016 The OmniROM Project
+<!--
+     Copyright (C) 2021 crDroid Android Project
+
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
+
           http://www.apache.org/licenses/LICENSE-2.0
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory
-        android:key="graphics"
-        android:title="@string/display_title">
-            
-        <Preference
-            android:icon="@drawable/ic_info_outline_24dp"
-            android:persistent="false"
-            android:summary="@string/hbm_mode_warning" />
-
-        <SwitchPreference
-            android:key="hbm"
-            android:icon="@drawable/ic_hbm_mode_icon"
-            android:summary="@string/hbm_mode_summary"
-            android:title="@string/hbm_mode_title"
-            android:defaultValue="false" />
-
-        <SwitchPreference
-            android:key="auto_hbm"
-            android:icon="@drawable/ic_autohbm_mode_icon"
-            android:summary="@string/auto_hbm_summary"
-            android:title="@string/auto_hbm_title" />
-
-        <org.lineageos.device.DeviceSettings.AutoHBMThresholdPreference
-            android:key="auto_hbm_threshold"
-            android:title="@string/auto_hbm_threshold_title"
-            android:summary="@string/auto_hbm_threshold_summary" />
-    </PreferenceCategory>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:settings="http://schemas.android.com/apk/res/org.lineageos.device.DeviceSettings">
 
     <PreferenceCategory
         android:key="slider"
         android:title="@string/notification_slider_category_title">
 
         <ListPreference
-            android:key="keycode_top_position"
+            android:key="slider_usage"
+            android:icon="@drawable/ic_slider"
+            android:dialogTitle="@string/notification_slider_usage_title"
+            android:title="@string/notification_slider_usage_title"
+            android:entries="@array/notification_slider_usage_entries"
+            android:entryValues="@array/notification_slider_usage_entry_values"
+            android:summary="%s" />
+
+        <ListPreference
+            android:key="action_top_position"
             android:icon="@drawable/ic_up_icon"
             android:dialogTitle="@string/notification_slider_selection_dialog_title"
             android:title="@string/notification_slider_top_position"
-            android:summary="%s"
-            android:entries="@array/notification_slider_action_entries"
-            android:entryValues="@array/notification_slider_action_entry_values" />
+            android:summary="%s" />
 
         <ListPreference
-            android:key="keycode_middle_position"
+            android:key="action_middle_position"
             android:icon="@drawable/ic_middle_icon"
             android:dialogTitle="@string/notification_slider_selection_dialog_title"
             android:title="@string/notification_slider_middle_position"
-            android:summary="%s"
-            android:entries="@array/notification_slider_action_entries"
-            android:entryValues="@array/notification_slider_action_entry_values" />
+            android:summary="%s" />
 
         <ListPreference
-          android:key="keycode_bottom_position"
-          android:icon="@drawable/ic_down_icon"
-          android:dialogTitle="@string/notification_slider_selection_dialog_title"
-          android:title="@string/notification_slider_bottom_position"
-          android:summary="%s"
-          android:entries="@array/notification_slider_action_entries"
-          android:entryValues="@array/notification_slider_action_entry_values" />
+            android:key="action_bottom_position"
+            android:icon="@drawable/ic_down_icon"
+            android:dialogTitle="@string/notification_slider_selection_dialog_title"
+            android:title="@string/notification_slider_bottom_position"
+            android:summary="%s" />
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="vibrator"
         android:title="@string/category_vibrator">
-        <Preference
-            android:icon="@drawable/ic_info_outline_24dp"
-            android:persistent="false"
-            android:summary="@string/vibration_warning" />
 
-        <org.lineageos.device.DeviceSettings.VibratorStrengthPreference
+        <org.lineageos.device.DeviceSettings.CustomSeekBarPreference
             android:key="vib_strength"
-            android:icon="@drawable/ic_vibration_icon"
+            android:icon="@drawable/ic_intensity_icon"
             android:title="@string/vib_strength_title_head"
-            android:summary="@string/vib_strength_summary_head" />
+            android:summary="@string/vib_strength_summary_head"
+            android:persistent="true"
+            android:max="5"
+            android:min="0"
+            settings:units=""
+            android:defaultValue="3" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -105,5 +87,4 @@
             android:persistent="false"
             android:summary="@string/dolby_info" />
     </PreferenceCategory>
-
 </PreferenceScreen>

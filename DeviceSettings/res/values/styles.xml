@@ -13,7 +13,6 @@
 <resources>
     <style name="AppTheme" parent="@android:style/Theme.DeviceDefault.Settings">
         <item name="preferenceTheme">@style/PreferenceTheme</item>
-        <item name="android:navigationBarColor">?android:colorPrimary</item>
     </style>
 
     <style name="PreferenceTheme" parent="@style/PreferenceThemeOverlay.SettingsBase">
@@ -58,4 +57,6 @@
     <style name="Theme.Main.SwitchPreferenceStyle" parent="@style/Theme.Main.PreferenceStyle">
         <item name="widgetLayout">@*android:layout/preference_widget_switch</item>
     </style>
+
+    <style name="AlertDialogTheme" parent="@android:style/Theme.DeviceDefault.Light.Dialog.Alert"/>
 </resources>

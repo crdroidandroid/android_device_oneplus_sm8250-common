@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2015-2016 The CyanogenMod Project
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2018-2021 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,111 +16,107 @@
 
 package org.lineageos.device.DeviceSettings;
 
-import android.Manifest;
-import android.app.ActivityThread;
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.pm.PackageManager.NameNotFoundException;
-import android.content.res.Resources;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.media.AudioManager;
-import android.media.session.MediaSessionLegacyHelper;
 import android.os.FileObserver;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.os.PowerManager;
-import android.os.PowerManager.WakeLock;
 import android.os.RemoteException;
-import android.os.SystemClock;
-import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.os.Vibrator;
-import android.os.VibrationEffect;
 import android.provider.Settings;
 import android.util.Log;
 import android.util.SparseIntArray;
 import android.view.KeyEvent;
-import android.widget.Toast;
 
 import com.android.internal.os.DeviceKeyHandler;
-import com.android.internal.util.ArrayUtils;
+
+import java.util.Arrays;
 
 import org.lineageos.device.DeviceSettings.Constants;
-import org.lineageos.device.DeviceSettings.DeviceSettings;
-import org.lineageos.device.DeviceSettings.R;
+import org.lineageos.device.DeviceSettings.SliderControllerBase;
+import org.lineageos.device.DeviceSettings.slider.NotificationController;
+import org.lineageos.device.DeviceSettings.slider.FlashlightController;
+import org.lineageos.device.DeviceSettings.slider.BrightnessController;
+import org.lineageos.device.DeviceSettings.slider.RotationController;
+import org.lineageos.device.DeviceSettings.slider.RingerController;
+import org.lineageos.device.DeviceSettings.slider.NotificationRingerController;
+
 
 import vendor.oneplus.hardware.camera.V1_0.IOnePlusCameraProvider;
 
-
 public class KeyHandler implements DeviceKeyHandler {
-
     private static final String TAG = KeyHandler.class.getSimpleName();
-    private static final int GESTURE_REQUEST = 1;
     private static final boolean DEBUG = false;
-
-    private static final SparseIntArray sSupportedSliderZenModes = new SparseIntArray();
-    private static final SparseIntArray sSupportedSliderRingModes = new SparseIntArray();
-    private static final SparseIntArray sSupportedSliderHaptics = new SparseIntArray();
-    static {
-        sSupportedSliderZenModes.put(Constants.KEY_VALUE_TOTAL_SILENCE, Settings.Global.ZEN_MODE_NO_INTERRUPTIONS);
-        sSupportedSliderZenModes.put(Constants.KEY_VALUE_SILENT, Settings.Global.ZEN_MODE_OFF);
-        sSupportedSliderZenModes.put(Constants.KEY_VALUE_PRIORTY_ONLY, Settings.Global.ZEN_MODE_IMPORTANT_INTERRUPTIONS);
-        sSupportedSliderZenModes.put(Constants.KEY_VALUE_VIBRATE, Settings.Global.ZEN_MODE_OFF);
-        sSupportedSliderZenModes.put(Constants.KEY_VALUE_NORMAL, Settings.Global.ZEN_MODE_OFF);
-
-        sSupportedSliderRingModes.put(Constants.KEY_VALUE_TOTAL_SILENCE, AudioManager.RINGER_MODE_NORMAL);
-        sSupportedSliderRingModes.put(Constants.KEY_VALUE_SILENT, AudioManager.RINGER_MODE_SILENT);
-        sSupportedSliderRingModes.put(Constants.KEY_VALUE_PRIORTY_ONLY, AudioManager.RINGER_MODE_NORMAL);
-        sSupportedSliderRingModes.put(Constants.KEY_VALUE_VIBRATE, AudioManager.RINGER_MODE_VIBRATE);
-        sSupportedSliderRingModes.put(Constants.KEY_VALUE_NORMAL, AudioManager.RINGER_MODE_NORMAL);
-        
-        sSupportedSliderHaptics.put(Constants.KEY_VALUE_TOTAL_SILENCE, VibrationEffect.EFFECT_HEAVY_CLICK);
-        sSupportedSliderHaptics.put(Constants.KEY_VALUE_SILENT, VibrationEffect.EFFECT_DOUBLE_CLICK);
-        sSupportedSliderHaptics.put(Constants.KEY_VALUE_PRIORTY_ONLY, VibrationEffect.EFFECT_HEAVY_CLICK);
-        sSupportedSliderHaptics.put(Constants.KEY_VALUE_VIBRATE, VibrationEffect.EFFECT_TICK);
-        sSupportedSliderHaptics.put(Constants.KEY_VALUE_NORMAL, -1);
-    }
 
     public static final String CLIENT_PACKAGE_NAME = "com.oneplus.camera";
     public static final String CLIENT_PACKAGE_PATH = "/data/misc/lineage/client_package_name";
-    
-    private static Toast mToast;
 
     private final Context mContext;
-    private final Context mResContext;
-    private final Context mSysUiContext;
-    private final PowerManager mPowerManager;
-    private final NotificationManager mNotificationManager;
-    private final AudioManager mAudioManager;
-
-    private SensorManager mSensorManager;
-    private Sensor mProximitySensor;
-    private Vibrator mVibrator;
-    WakeLock mProximityWakeLock;
-    WakeLock mGestureWakeLock;
-    private int mProximityTimeOut;
-    private int mPrevKeyCode = 0;
-    private boolean mProximityWakeSupported;
-    private boolean mDispOn;
     private ClientPackageNameObserver mClientObserver;
     private IOnePlusCameraProvider mProvider;
-    private boolean isOPCameraAvail;
+    private final NotificationController mNotificationController;
+    private final FlashlightController mFlashlightController;
+    private final BrightnessController mBrightnessController;
+    private final RotationController mRotationController;
+    private final RingerController mRingerController;
+    private final NotificationRingerController mNotificationRingerController;
+
+    private SliderControllerBase mSliderController;
+
+    private final BroadcastReceiver mSliderUpdateReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int usage = intent.getIntExtra(Constants.EXTRA_SLIDER_USAGE, 0);
+            int[] actions = intent.getIntArrayExtra(Constants.EXTRA_SLIDER_ACTIONS);
+
+            Log.d(TAG, "update usage " + usage + " with actions " +
+                    Arrays.toString(actions));
+
+            if (mSliderController != null) {
+                mSliderController.reset();
+            }
+
+            switch (usage) {
+                case NotificationController.ID:
+                    mSliderController = mNotificationController;
+                    mSliderController.update(actions);
+                    break;
+                case FlashlightController.ID:
+                    mSliderController = mFlashlightController;
+                    mSliderController.update(actions);
+                    break;
+                case BrightnessController.ID:
+                    mSliderController = mBrightnessController;
+                    mSliderController.update(actions);
+                    break;
+                case RotationController.ID:
+                    mSliderController = mRotationController;
+                    mSliderController.update(actions);
+                    break;
+                case RingerController.ID:
+                    mSliderController = mRingerController;
+                    mSliderController.update(actions);
+                    break;
+                case NotificationRingerController.ID:
+                    mSliderController = mNotificationRingerController;
+                    mSliderController.update(actions);
+                    break;
+            }
+
+            mSliderController.restoreState();
+        }
+    };
 
     private BroadcastReceiver mSystemStateReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
-                mDispOn = true;
                 onDisplayOn();
             } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
-                mDispOn = false;
                 onDisplayOff();
             }
         }
@@ -129,26 +124,21 @@ public class KeyHandler implements DeviceKeyHandler {
 
     public KeyHandler(Context context) {
         mContext = context;
-        mResContext = getResContext(context);
-        mSysUiContext = ActivityThread.currentActivityThread().getSystemUiContext();
-        mPowerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
-        mNotificationManager
-                = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        mAudioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
-        mGestureWakeLock = mPowerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
-                "GestureWakeLock");
 
-        mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-        if (mVibrator == null || !mVibrator.hasVibrator()) {
-            mVibrator = null;
-        }
+        mNotificationController = new NotificationController(mContext);
+        mFlashlightController = new FlashlightController(mContext);
+        mBrightnessController = new BrightnessController(mContext);
+        mRotationController = new RotationController(mContext);
+        mRingerController = new RingerController(mContext);
+        mNotificationRingerController = new NotificationRingerController(mContext);
 
-        IntentFilter systemStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
-        systemStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
-        mContext.registerReceiver(mSystemStateReceiver, systemStateFilter);
+        mContext.registerReceiver(mSliderUpdateReceiver,
+                new IntentFilter(Constants.ACTION_UPDATE_SLIDER_SETTINGS));
 
-        isOPCameraAvail = Utils.isAvailableApp("com.oneplus.camera", context);
-        if (isOPCameraAvail) {
+        if (PackageUtils.isAvailableApp(CLIENT_PACKAGE_NAME, mContext)) {
+            IntentFilter systemStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
+            systemStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
+            mContext.registerReceiver(mSystemStateReceiver, systemStateFilter);
             mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
             mClientObserver.startWatching();
         }
@@ -161,11 +151,9 @@ public class KeyHandler implements DeviceKeyHandler {
 
     public KeyEvent handleKeyEvent(KeyEvent event) {
         int scanCode = event.getScanCode();
-        String keyCode = Constants.sKeyMap.get(scanCode);
-        int keyCodeValue = 0;
-        try {
-            keyCodeValue = Constants.getPreferenceInt(mContext, keyCode);
-        } catch (Exception e) {
+        boolean isSliderControllerSupported = mSliderController != null &&
+                mSliderController.isSupported(scanCode);
+        if (!isSliderControllerSupported) {
             return event;
         }
 
@@ -178,109 +166,22 @@ public class KeyHandler implements DeviceKeyHandler {
             return null;
         }
 
-        doHapticFeedback(sSupportedSliderHaptics.get(keyCodeValue));
-        mAudioManager.setRingerModeInternal(sSupportedSliderRingModes.get(keyCodeValue));
-        if (mPrevKeyCode == Constants.KEY_VALUE_TOTAL_SILENCE)
-            doHapticFeedback(sSupportedSliderHaptics.get(keyCodeValue));
-        mNotificationManager.setZenMode(sSupportedSliderZenModes.get(keyCodeValue), null, TAG);
-        int position = scanCode == 601 ? 2 : scanCode == 602 ? 1 : 0;
-        mPrevKeyCode = keyCodeValue;
-
-        int positionValue = 0;
-        String toastText;
-        Resources res = mResContext.getResources();
-        int key = sSupportedSliderRingModes.keyAt(
-                sSupportedSliderRingModes.indexOfKey(keyCodeValue));
-        switch (key) {
-            case Constants.KEY_VALUE_TOTAL_SILENCE: // DND - no int'
-                toastText = res.getString(R.string.slider_toast_dnd);
-                positionValue = Constants.MODE_TOTAL_SILENCE;
-                break;
-            case Constants.KEY_VALUE_SILENT: // Ringer silent
-                toastText = res.getString(R.string.slider_toast_silent);
-                positionValue = Constants.MODE_SILENT;
-                break;
-            case Constants.KEY_VALUE_PRIORTY_ONLY: // DND - priority
-                toastText = res.getString(R.string.slider_toast_priority);
-                positionValue = Constants.MODE_PRIORITY_ONLY;
-                break;
-            case Constants.KEY_VALUE_VIBRATE: // Ringer vibrate
-                toastText = res.getString(R.string.slider_toast_vibrate);
-                positionValue = Constants.MODE_VIBRATE;
-                break;
-            default:
-            case Constants.KEY_VALUE_NORMAL: // Ringer normal DND off
-                toastText = res.getString(R.string.slider_toast_normal);
-                positionValue = Constants.MODE_RING;
-                break;
-        }
-
-        sendUpdateBroadcast(position, positionValue);
-        mPrevKeyCode = keyCodeValue;
-
-        Handler handler = new Handler(Looper.getMainLooper());
-        handler.post(new Runnable() {
-            @Override
-            public void run() {
-                if (mToast != null) mToast.cancel();
-                mToast = Toast.makeText(
-                        mSysUiContext, toastText, Toast.LENGTH_SHORT);
-                mToast.show();
-            }
-        });
+        mSliderController.processEvent(mContext, scanCode);
 
         return null;
     }
 
-    private void sendUpdateBroadcast(int position, int position_value) {
-        Intent intent = new Intent(Constants.ACTION_UPDATE_SLIDER_POSITION);
-        intent.putExtra(Constants.EXTRA_SLIDER_POSITION, position);
-        intent.putExtra(Constants.EXTRA_SLIDER_POSITION_VALUE, position_value);
-        mContext.sendBroadcastAsUser(intent, UserHandle.CURRENT);
-        intent.setFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY);
-        Log.d(TAG, "slider change to positon " + position
-                            + " with value " + position_value);
-    }
-
-    private void doHapticFeedback(int effect) {
-        if (mVibrator != null && mVibrator.hasVibrator() && effect != -1) {
-            mVibrator.vibrate(VibrationEffect.get(effect));
+    private void onDisplayOn() {
+        if (mClientObserver == null) {
+            mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
+            mClientObserver.startWatching();
         }
     }
 
-    private Context getResContext(Context context) {
-        Context resContext;
-        try {
-            resContext = context.createPackageContext("org.lineageos.device.DeviceSettings",
-                    Context.CONTEXT_IGNORE_SECURITY | Context.CONTEXT_INCLUDE_CODE);
-        } catch (NameNotFoundException e) {
-            // nothing to do about this, shouldn't ever reach here anyway
-            resContext = context;
-        }
-        return resContext;
-    }
-
-    public void handleNavbarToggle(boolean enabled) {
-        // do nothing
-    }
-
-    public boolean canHandleKeyEvent(KeyEvent event) {
-        return false;
-    }
-
-        private void onDisplayOff() {
-        if (DEBUG) Log.i(TAG, "Display off");
+    private void onDisplayOff() {
         if (mClientObserver != null) {
             mClientObserver.stopWatching();
             mClientObserver = null;
-        }
-    }
-
-    private void onDisplayOn() {
-        if (DEBUG) Log.i(TAG, "Display on");
-        if ((mClientObserver == null) && (isOPCameraAvail)) {
-            mClientObserver = new ClientPackageNameObserver(CLIENT_PACKAGE_PATH);
-            mClientObserver.startWatching();
         }
     }
 
@@ -295,7 +196,7 @@ public class KeyHandler implements DeviceKeyHandler {
             String pkgName = Utils.getFileValue(CLIENT_PACKAGE_PATH, "0");
             if (event == FileObserver.MODIFY) {
                 try {
-                    Log.d(TAG, "client_package" + file + " and " + pkgName);
+                    Log.d(TAG, "client_package " + file + " and " + pkgName);
                     mProvider = IOnePlusCameraProvider.getService();
                     mProvider.setPackageName(pkgName);
                 } catch (RemoteException e) {
