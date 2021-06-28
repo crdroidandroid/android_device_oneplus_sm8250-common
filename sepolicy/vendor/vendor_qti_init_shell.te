@@ -1,19 +1,37 @@
 allow vendor_qti_init_shell proc_modules:file r_file_perms;
 
-allow vendor_qti_init_shell sysfs:file write;
+allow vendor_qti_init_shell sysfs:dir r_dir_perms;
+allow vendor_qti_init_shell sysfs:file rw_file_perms;
+
+allow vendor_qti_init_shell sysfs_devices_system_cpu:dir r_dir_perms;
+allow vendor_qti_init_shell sysfs_devices_system_cpu:file rw_file_perms;
+
+allow vendor_qti_init_shell sysfs_io_sched_tuneable:dir r_dir_perms;
+allow vendor_qti_init_shell sysfs_io_sched_tuneable:file rw_file_perms;
+
+allow vendor_qti_init_shell sysfs_project_info:dir r_dir_perms;
+allow vendor_qti_init_shell sysfs_project_info:file rw_file_perms;
 
 allow vendor_qti_init_shell sysfs_fsc:dir r_dir_perms;
 allow vendor_qti_init_shell sysfs_fsc:file rw_file_perms;
 
+allow vendor_qti_init_shell sysfs_memplus:dir r_dir_perms;
 allow vendor_qti_init_shell sysfs_memplus:file rw_file_perms;
+
+allow vendor_qti_init_shell sysfs_zram:dir r_dir_perms;
+allow vendor_qti_init_shell sysfs_zram:file rw_file_perms;
 
 allow vendor_qti_init_shell vendor_data_file:dir create_dir_perms;
 allow vendor_qti_init_shell vendor_data_file:file create_file_perms;
 
 allow vendor_qti_init_shell vendor_debugfs_wlan:dir r_dir_perms;
+allow vendor_qti_init_shell vendor_debugfs_wlan:file rw_file_perms;
 
 allow vendor_qti_init_shell vendor_file:file execute_no_trans;
 allow vendor_qti_init_shell vendor_file:system module_load;
+
+allow vendor_qti_init_shell vendor_sysfs_devfreq:dir r_dir_perms;
+allow vendor_qti_init_shell vendor_sysfs_devfreq:file rw_file_perms;
 
 allow vendor_qti_init_shell vendor_sysfs_scsi_host:dir r_dir_perms;
 allow vendor_qti_init_shell vendor_sysfs_scsi_host:file rw_file_perms;
