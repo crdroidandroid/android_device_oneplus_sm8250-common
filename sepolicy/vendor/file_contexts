@@ -207,6 +207,7 @@
 /sys/devices/virtual/misc/msm_qcelp/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
 /sys/devices/virtual/misc/msm_wma/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
 /sys/devices/virtual/misc/msm_wmapro/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
+/sys/devices(/platform)?/soc/soc:qcom,msm-audio-apr/soc:qcom,msm-audio-apr:qcom,q6core-audio/soc:qcom,msm-audio-apr:qcom,q6core-audio:sound/Listen.[0-9]+.Audio.Service/wakeup(/.*)?      u:object_r:sysfs_wakeup:s0
 
 # Proc files (DeviceExtras)
 /proc/touchpanel/force_game_switch_enable    u:object_r:proc_touchpanel:s0
