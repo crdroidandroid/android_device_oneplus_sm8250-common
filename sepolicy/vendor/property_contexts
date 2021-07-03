@@ -74,3 +74,9 @@ vendor.oppo.enable.dump.flag              u:object_r:ctl_default_prop:s0
 vendor.arcsoft.                           u:object_r:ctl_default_prop:s0
 persist.vendor.arcsoft.sn.dumprawinfo     u:object_r:ctl_default_prop:s0
 vendor.boot.project_name                  u:object_r:ctl_default_prop:s0
+
+# RIL
+ro.ril.supportLTE               u:object_r:radio_prop:s0
+ro.vendor.ril.svlte1x           u:object_r:radio_prop:s0
+ro.vendor.ril.svdo              u:object_r:radio_prop:s0
+vendor.oem.bt.addr              u:object_r:vendor_radio_prop:s0
