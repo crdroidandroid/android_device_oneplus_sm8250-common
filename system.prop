@@ -52,7 +52,19 @@ vendor.iop.enable_prefetch_ofr=1
 vendor.iop.enable_uxe=0
 
 # Media
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-scan=true
+media.stagefright.thumbnail.prefer_hw_codecs=true
+mmp.enable.3g2=true
+media.aac_51_output_enabled=true
+mm.enable.smoothstreaming=true
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+vendor.mm.enable.qcom_parser=16711679
+persist.mm.enable.prefetch=true
 
 # Netflix
 ro.netflix.bsp_rev=Q8250-19134-1
