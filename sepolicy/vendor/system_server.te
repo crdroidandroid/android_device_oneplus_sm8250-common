@@ -8,3 +8,4 @@ allow system_server sysfs_tri_state_key:lnk_file r_file_perms;
 binder_call(system_server, hal_cameraHIDL_default)
 
 allow system_server app_zygote:process { getattr getpgid };
+allow system_server lineage_data_file:file r_file_perms;
