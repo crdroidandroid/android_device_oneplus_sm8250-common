@@ -27,6 +27,12 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/spunvm             u:object_r:vendor_efs_boot_dev:s0
 /dev/block/platform/soc/1d84000.ufshc/by-name/storsec_[ab]       u:object_r:vendor_custom_ab_block_device:s0
 
+# Brightness
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm8150l@5:qcom,leds@d300/leds/led:torch_[0-9]/brightness u:object_r:sysfs_oem:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-05/c440000.qcom,spmi:qcom,pm8150l@5:qcom,leds@d300/leds/led:switch_[0-9]/brightness u:object_r:sysfs_oem:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8350c@2:qcom,flash_led@ee00/leds/led:torch_[0-9]/brightness u:object_r:sysfs_oem:s0
+/sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-02/c440000.qcom,spmi:qcom,pm8350c@2:qcom,flash_led@ee00/leds/led:switch_[0-9]/brightness u:object_r:sysfs_oem:s0
+
 # Data files
 /data/reserve-lib(/.*)?    u:object_r:apk_data_file:s0
 /data/vendor/dolby(/.*)?   u:object_r:vendor_data_file:s0
