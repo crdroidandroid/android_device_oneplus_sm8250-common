@@ -71,7 +71,7 @@ public class Utils {
 
     public static String getFileValue(String filename, String defValue) {
         String fileValue = readLine(filename);
-        if(fileValue!=null){
+        if (fileValue != null) {
             return fileValue;
         }
         return defValue;
