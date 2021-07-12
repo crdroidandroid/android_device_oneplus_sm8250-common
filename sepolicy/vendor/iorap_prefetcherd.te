@@ -1,1 +1,4 @@
-allow iorap_prefetcherd havoc_data_file:file { read open };
+allow iorap_prefetcherd lineage_data_file:file { read open };
+allow iorap_prefetcherd vendor_file:file { read open };
+allow iorap_prefetcherd system_app_data_file:dir search;
+allow iorap_prefetcherd system_app_data_file:file read;
