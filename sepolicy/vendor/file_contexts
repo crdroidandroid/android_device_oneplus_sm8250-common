@@ -51,6 +51,7 @@
 /(vendor|system/vendor)/lib/rfsa/adsp/libsnpe_dsp_v65_domains_v2_skel\.so          u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib/rfsa/adsp/libsnpe_dsp_v66_domains_v2_skel\.so          u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib/rfsa/adsp/libalCFR_skel\.so          u:object_r:same_process_hal_file:s0
+/(vendor|system/vendor)/lib64/camera/CFR_para2_OnePlus_EF017_UW_snapshot\.bin           u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib64/libarcsoft_tricam_calibration\.so          u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib64/libarcsoft_tricam_verification\.so          u:object_r:same_process_hal_file:s0
 /(vendor|system/vendor)/lib64/libmpbase\.so          u:object_r:same_process_hal_file:s0
