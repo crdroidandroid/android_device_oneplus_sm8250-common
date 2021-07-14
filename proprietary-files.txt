@@ -967,10 +967,6 @@ vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
-# Vibrator HAL
-vendor/lib/hw/vibrator.default.so
-vendor/lib64/hw/vibrator.default.so
-
 # Vibrator firmware
 vendor/firmware/20ms_RTP.bin
 vendor/firmware/40ms_RTP.bin
