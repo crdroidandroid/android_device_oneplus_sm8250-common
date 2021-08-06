@@ -686,29 +686,29 @@ vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
 vendor/lib64/libspcom.so
 
-# Perf
-vendor/bin/hw/vendor.qti.hardware.perf@2.0-service
-vendor/etc/init/vendor.qti.hardware.perf@2.0-service.rc
-vendor/etc/perf/commonresourceconfigs.xml
-vendor/etc/perf/perfboostsconfig.xml
-vendor/etc/perf/perfconfigstore.xml
-vendor/etc/perf/targetconfig.xml
-vendor/etc/perf/targetresourceconfigs.xml
-vendor/etc/powerhint.xml
-vendor/lib/libperfconfig.so
-vendor/lib/libperfgluelayer.so
-vendor/lib/libperfioctl.so
-vendor/lib/libqti-perfd-client.so
-vendor/lib/libqti-perfd.so
-vendor/lib/libqti-util.so
-vendor/lib64/liblearningmodule.so
-vendor/lib64/libmeters.so
-vendor/lib64/libperfconfig.so
-vendor/lib64/libperfgluelayer.so
-vendor/lib64/libperfioctl.so
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqti-perfd.so
-vendor/lib64/libqti-util.so
+# Perf - from LA.UM.9.12.r1-12000-SMxx50.0
+vendor/bin/hw/vendor.qti.hardware.perf@2.2-service|1e663df69249c93bef471e66aa70d9fe1d463c99
+vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc|459b4c23550a56ac545f78c6d391f3d7dd9ba45b
+vendor/etc/perf/commonresourceconfigs.xml|c80efdafc6c5ef4fe0602f4ffe3137092513db38
+vendor/etc/perf/perfboostsconfig.xml|905f1a3b060e6a6f8509e2a356a9d6abfb18b29f
+vendor/etc/perf/perfconfigstore.xml|cb7dc88156dca524812238165eed2365eabf5b3e
+vendor/etc/perf/targetconfig.xml|e257a9782c8548d371c79bf224bcecdd8074eb9e
+vendor/etc/perf/targetresourceconfigs.xml|7be09ffdc8b1108b6df6673fcf5004ec7366ec88
+vendor/etc/powerhint.xml|026d5a9414ce5e34ef257306ca8fdea682f126b4
+vendor/lib/libperfconfig.so|6a9eea50f488927daeea3e5413ffb4b4e2c78cee
+vendor/lib/libperfgluelayer.so|a29e6366e0f36941aeb8a6ea880573b5020743d7
+vendor/lib/libperfioctl.so|fcc14060de57a16c15f621679624e9845dda0fdb
+vendor/lib/libqti-perfd-client.so|683bacf0719c9b474fb45ca8d61988e7b401e9bc
+vendor/lib/libqti-perfd.so|92d3d19dae82ce65cb51746ffd179be833a03c81
+vendor/lib/libqti-util.so|25d97132108832fa3f4944cea2f82fabf18ec96a
+vendor/lib64/liblearningmodule.so|7526d5e7bbe85621fab8705826fa878721949229
+vendor/lib64/libmeters.so|06e92ebe0a02c862479995a9d74507fff14a633b
+vendor/lib64/libperfconfig.so|efb2b718b9dd9f5c3b9c709985a966441477735c
+vendor/lib64/libperfgluelayer.so|e9b58aa0863941c9d9602104848571ca2a26c2c4
+vendor/lib64/libperfioctl.so|f549443c16df6df58357c35566ec33ec4e1d394f
+vendor/lib64/libqti-perfd-client.so|e2d18ff007d19d440013ad16a3c32448b10b1ae8
+vendor/lib64/libqti-perfd.so|cf6af4ca6d5b56a0e3d74e9f4fb09fb13bf4aff3
+vendor/lib64/libqti-util.so|e1a3633b379b9060ba30496b87d94a639693cc96
 
 # Power-off alarm
 -product/app/PowerOffAlarm/PowerOffAlarm.apk|b7912c844da3541d64f04ed287266a9695f87fc5
