@@ -1,0 +1,3 @@
+allow vendor_sensors_qti vendor_persist_sensors_file:dir { search write };
+allow vendor_sensors_qti vendor_persist_sensors_file:fifo_file read;
+allow vendor_sensors_qti vendor_persist_sensors_file:file { read write };
