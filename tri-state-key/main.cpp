@@ -104,6 +104,31 @@ static int reportKey(int keyCode, int& uinputFd) {
     return 0;
 }
 
+static int reportCurrentState(int& uinputFd) {
+    int fd;
+    char curState;
+    int err = 0;
+
+    fd = open("/sys/devices/platform/soc/soc:tri_state_key/tri_state", O_RDONLY);
+    if (fd < 0)
+        return 1;
+
+    err = read(fd, &curState, sizeof(char));
+    close(fd);
+
+    if (err < 0)
+        return 1;
+
+    if (curState == '1')
+        err = reportKey(KEY_MODE_SILENCE, uinputFd);
+    else if (curState == '2')
+        err = reportKey(KEY_MODE_VIBRATION, uinputFd);
+    else if (curState == '3')
+        err = reportKey(KEY_MODE_NORMAL, uinputFd);
+
+    return 0;
+}
+
 int main() {
     int uinputFd;
     UeventListener uevent_listener;
@@ -117,6 +142,13 @@ int main() {
         LOG(ERROR) << "Unable to set up uinput fd";
         return 1;
     }
+
+    // Wait for 500ms to ensure the uinput configuration is complete
+    usleep(500 * 1000);
+
+    // Print error but don't stop here because it is not critical
+    if (reportCurrentState(uinputFd))
+        LOG(ERROR) << "Unable to set up initial state";
 
     uevent_listener.Poll([&uinputFd](const Uevent& uevent) {
         if (uevent.action != "change" || uevent.name != "soc:tri_state_key")
