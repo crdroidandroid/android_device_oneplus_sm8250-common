@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2018-2021 crDroid Android Project
+ * Copyright (C) 2015 The CyanogenMod Project
+ * Copyright (C) 2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,51 +31,61 @@ import android.media.AudioManager;
 
 public class Constants {
 
-    public static final String SLIDER_STATE
-            = "/sys/devices/platform/soc/soc:tri_state_key/tri_state";
+    // Preference keys
+    public static final String NOTIF_SLIDER_TOP_KEY = "keycode_top_position";
+    public static final String NOTIF_SLIDER_MIDDLE_KEY = "keycode_middle_position";
+    public static final String NOTIF_SLIDER_BOTTOM_KEY = "keycode_bottom_position";
 
-    public static final String NOTIF_SLIDER_PANEL_KEY = "notification_slider";
-    public static final String NOTIF_SLIDER_USAGE_KEY = "slider_usage";
-    public static final String NOTIF_SLIDER_ACTION_TOP_KEY = "action_top_position";
-    public static final String NOTIF_SLIDER_ACTION_MIDDLE_KEY = "action_middle_position";
-    public static final String NOTIF_SLIDER_ACTION_BOTTOM_KEY = "action_bottom_position";
+    // Button prefs
+    public static final String NOTIF_SLIDER_TOP_PREF = "pref_keycode_top_position";
+    public static final String NOTIF_SLIDER_MIDDLE_PREF = "pref_keycode_middle_position";
+    public static final String NOTIF_SLIDER_BOTTOM_PREF = "pref_keycode_bottom_position";
 
-    public static final String EXTRA_SLIDER_USAGE = "usage";
-    public static final String EXTRA_SLIDER_ACTIONS = "actions";
+    // Default values
+    public static final int KEY_VALUE_TOTAL_SILENCE = 0;
+    public static final int KEY_VALUE_SILENT = 1;
+    public static final int KEY_VALUE_PRIORTY_ONLY = 2;
+    public static final int KEY_VALUE_VIBRATE = 3;
+    public static final int KEY_VALUE_NORMAL = 4;
 
-    public static final String NOTIF_SLIDER_FOR_NOTIFICATION = "1";
-    public static final String NOTIF_SLIDER_FOR_FLASHLIGHT = "2";
-    public static final String NOTIF_SLIDER_FOR_BRIGHTNESS = "3";
-    public static final String NOTIF_SLIDER_FOR_ROTATION = "4";
-    public static final String NOTIF_SLIDER_FOR_RINGER = "5";
-    public static final String NOTIF_SLIDER_FOR_NOTIFICATION_RINGER = "6";
-
-    public static final String ACTION_UPDATE_SLIDER_POSITION
-            = "org.lineageos.device.DeviceSettings.UPDATE_SLIDER_POSITION";
-    public static final String ACTION_UPDATE_SLIDER_SETTINGS
-            = "org.lineageos.device.DeviceSettings.UPDATE_SLIDER_SETTINGS";
-    public static final String EXTRA_SLIDER_POSITION = "position";
-    public static final String EXTRA_SLIDER_POSITION_VALUE = "position_value";
-
+    // TriStateUI Modes
     public static final int MODE_TOTAL_SILENCE = 600;
     public static final int MODE_ALARMS_ONLY = 601;
     public static final int MODE_PRIORITY_ONLY = 602;
-    public static final int MODE_NONE = 603;
     public static final int MODE_VIBRATE = 604;
     public static final int MODE_RING = 605;
     public static final int MODE_SILENT = 620;
-    public static final int MODE_FLASHLIGHT_ON = 621;
-    public static final int MODE_FLASHLIGHT_OFF = 622;
-    public static final int MODE_FLASHLIGHT_BLINK = 623;
-    public static final int MODE_BRIGHTNESS_BRIGHT = 630;
-    public static final int MODE_BRIGHTNESS_DARK = 631;
-    public static final int MODE_BRIGHTNESS_AUTO = 632;
-    public static final int MODE_ROTATION_AUTO = 640;
-    public static final int MODE_ROTATION_0 = 641;
-    public static final int MODE_ROTATION_90 = 642;
-    public static final int MODE_ROTATION_270 = 643;
 
-    // Holds <preference_key> -> <proc_node> mapping
-    public static final Map<String, String> sBooleanNodePreferenceMap = new HashMap<>();
-    public static final Map<String, String> sStringNodePreferenceMap = new HashMap<>();
+    public static final Map<String, String> sStringKeyPreferenceMap = new HashMap<>();
+    public static final Map<Integer, String> sKeyMap = new HashMap<>();
+    public static final Map<String, Integer> sKeyDefaultMap = new HashMap<>();
+
+    public static final String ACTION_UPDATE_SLIDER_POSITION
+            = "org.lineageos.device.DeviceSettings.UPDATE_SLIDER_POSITION";
+    public static final String EXTRA_SLIDER_POSITION = "position";
+    public static final String EXTRA_SLIDER_POSITION_VALUE = "position_value";
+
+    static {
+        sStringKeyPreferenceMap.put(NOTIF_SLIDER_TOP_KEY, NOTIF_SLIDER_TOP_PREF);
+        sStringKeyPreferenceMap.put(NOTIF_SLIDER_MIDDLE_KEY, NOTIF_SLIDER_MIDDLE_PREF);
+        sStringKeyPreferenceMap.put(NOTIF_SLIDER_BOTTOM_KEY, NOTIF_SLIDER_BOTTOM_PREF);
+
+        sKeyMap.put(603, NOTIF_SLIDER_TOP_KEY);
+        sKeyMap.put(602, NOTIF_SLIDER_MIDDLE_KEY);
+        sKeyMap.put(601, NOTIF_SLIDER_BOTTOM_KEY);
+
+        sKeyDefaultMap.put(NOTIF_SLIDER_TOP_KEY, KEY_VALUE_TOTAL_SILENCE);
+        sKeyDefaultMap.put(NOTIF_SLIDER_MIDDLE_KEY, KEY_VALUE_VIBRATE);
+        sKeyDefaultMap.put(NOTIF_SLIDER_BOTTOM_KEY, KEY_VALUE_NORMAL);
+    }
+
+    public static int getPreferenceInt(Context context, String key) {
+        return Settings.System.getIntForUser(context.getContentResolver(),
+                sStringKeyPreferenceMap.get(key), sKeyDefaultMap.get(key), UserHandle.USER_CURRENT);
+    }
+
+    public static void setPreferenceInt(Context context, String key, int value) {
+        Settings.System.putIntForUser(context.getContentResolver(),
+                sStringKeyPreferenceMap.get(key), value, UserHandle.USER_CURRENT);
+    }
 }
