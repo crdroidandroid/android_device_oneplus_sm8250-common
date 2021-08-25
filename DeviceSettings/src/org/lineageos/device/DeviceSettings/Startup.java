@@ -33,7 +33,6 @@ public class Startup extends BroadcastReceiver {
         final String action = intent.getAction();
         if (lineageos.content.Intent.ACTION_INITIALIZE_LINEAGE_HARDWARE.equals(action)) {
             DeviceSettings.restoreSliderStates(context);
-            DeviceSettings.restoreVibStrengthSetting(context);
         }
     }
 }

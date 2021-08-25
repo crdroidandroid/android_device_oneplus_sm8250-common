@@ -30,7 +30,6 @@ import android.view.MenuItem;
 import androidx.preference.ListPreference;
 import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceFragment;
-import androidx.preference.PreferenceManager;
 import androidx.preference.Preference;
 import androidx.preference.SwitchPreference;
 
@@ -43,10 +42,12 @@ public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
     private static final String TAG = DeviceSettings.class.getSimpleName();
 
-    private static final String KEY_VIBSTRENGTH = "vib_strength";
+    public static final String KEY_SETTINGS_PREFIX = "device_setting_";
+    public static final String KEY_VIBSTRENGTH = "vib_strength";
 
     private static final String FILE_LEVEL = "/sys/devices/platform/soc/a8c000.i2c/i2c-3/3-005a/leds/vibrator/level";
     private static final long testVibrationPattern[] = {0,5};
+    private static final String SETTINGS_KEY = KEY_SETTINGS_PREFIX + KEY_VIBSTRENGTH;
     private static final String DEFAULT = "3";
 
     private ListPreference mTopKeyPref;
@@ -63,16 +64,10 @@ public class DeviceSettings extends PreferenceFragment
         getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
 
         mVibrator = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
 
         mVibratorStrengthPreference =  (CustomSeekBarPreference) findPreference(KEY_VIBSTRENGTH);
-        if (Utils.fileWritable(FILE_LEVEL)) {
-            mVibratorStrengthPreference.setValue(sharedPrefs.getInt(KEY_VIBSTRENGTH,
-                Integer.parseInt(Utils.getFileValue(FILE_LEVEL, DEFAULT))));
-            mVibratorStrengthPreference.setOnPreferenceChangeListener(this);
-        } else {
-            mVibratorStrengthPreference.setEnabled(false);
-        }
+        mVibratorStrengthPreference.setValue(Integer.parseInt(Utils.getFileValue(FILE_LEVEL, DEFAULT)));
+        mVibratorStrengthPreference.setOnPreferenceChangeListener(this);
 
         initNotificationSliderPreference();
     }
@@ -96,10 +91,8 @@ public class DeviceSettings extends PreferenceFragment
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mVibratorStrengthPreference) {
-            int value = Integer.parseInt(newValue.toString());
-            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-            sharedPrefs.edit().putInt(KEY_VIBSTRENGTH, value).commit();
-            Utils.writeValue(FILE_LEVEL, String.valueOf(value));
+    	    Utils.writeValue(FILE_LEVEL, String.valueOf(newValue));
+            Settings.System.putString(getContext().getContentResolver(), SETTINGS_KEY, String.valueOf(newValue));
             mVibrator.vibrate(testVibrationPattern, -1);
             return true;
         }
@@ -347,15 +340,6 @@ public class DeviceSettings extends PreferenceFragment
             Integer.parseInt(actionMiddle),
             Integer.parseInt(actionBottom)
         });
-    }
-
-    public static void restoreVibStrengthSetting(Context context) {
-        if (Utils.fileWritable(FILE_LEVEL)) {
-            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
-            int value = sharedPrefs.getInt(KEY_VIBSTRENGTH,
-                Integer.parseInt(Utils.getFileValue(FILE_LEVEL, DEFAULT)));
-            Utils.writeValue(FILE_LEVEL, String.valueOf(value));
-        }
     }
 
     private static int getDefaultResIdForUsage(String usage) {
