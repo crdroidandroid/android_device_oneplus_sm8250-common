@@ -140,24 +140,4 @@
             android:summary="@string/vib_strength_summary_head" />
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="dolby"
-        android:title="@string/dolby_category">
-
-        <Preference
-            android:key="audio_dolby_atmos"
-            android:icon="@drawable/ic_dolby_atmos"
-            android:title="@string/dolby_title"
-            android:summary="@string/dolby_summary">
-            <intent
-                 android:targetPackage="com.dolby.daxappui"
-                 android:targetClass="com.dolby.daxappui.MainActivity" />
-        </Preference>
-
-        <Preference
-            android:icon="@drawable/ic_info_outline"
-            android:persistent="false"
-            android:summary="@string/dolby_info" />
-    </PreferenceCategory>
-
 </PreferenceScreen>

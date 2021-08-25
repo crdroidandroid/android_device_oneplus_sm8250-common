@@ -125,7 +125,6 @@
 # Data files
 /data/reserve-lib(/.*)?    u:object_r:apk_data_file:s0
 /data/misc/lineage/client_package_name                u:object_r:lineage_data_file:s0
-/data/vendor/dolby(/.*)?   u:object_r:vendor_data_file:s0
 
 # Devices
 /dev/byte-cntr            u:object_r:byte_cntr_device:s0
@@ -150,7 +149,6 @@
 
 # HALs
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.oneplus_kona            u:object_r:hal_fingerprint_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.dolby\.hardware\.dms@2\.0-service                                        u:object_r:hal_dms_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.biometrics\.fingerprint\.inscreen@1\.0-service\.oneplus_kona    u:object_r:hal_lineage_fod_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.1-service\.oneplus_kona                          u:object_r:hal_lineage_livedisplay_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.powershare@1\.0-service\.oneplus_kona                           u:object_r:hal_lineage_powershare_default_exec:s0
