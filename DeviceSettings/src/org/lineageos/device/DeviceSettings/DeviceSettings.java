@@ -51,6 +51,8 @@ import androidx.preference.TwoStatePreference;
 import org.lineageos.device.DeviceSettings.FileUtils;
 import org.lineageos.device.DeviceSettings.Constants;
 import org.lineageos.device.DeviceSettings.R;
+import org.lineageos.device.DeviceSettings.SuShell;
+import org.lineageos.device.DeviceSettings.SuTask;
 
 public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -60,15 +62,30 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_AUTO_HBM_SWITCH = "auto_hbm";
     public static final String KEY_AUTO_HBM_THRESHOLD = "auto_hbm_threshold";
 
+    private static final String KEY_CATEGORY_REFRESH = "refresh";
+    public static final String KEY_REFRESH_RATE = "refresh_rate";
+    public static final String KEY_AUTO_REFRESH_RATE = "auto_refresh_rate";
+    public static final String KEY_FPS_INFO = "fps_info";
+
     public static final String KEY_VIBSTRENGTH = "vib_strength";
+
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
 
+    private static final String SELINUX_CATEGORY = "selinux";
+    private static final String PREF_SELINUX_MODE = "selinux_mode";
+    private static final String PREF_SELINUX_PERSISTENCE = "selinux_persistence";
+    
     private static TwoStatePreference mHBMModeSwitch;
     private static TwoStatePreference mAutoHBMSwitch;
+    private static TwoStatePreference mRefreshRate;
+    private static SwitchPreference mAutoRefreshRate;
+    private static SwitchPreference mFpsInfo;
     private ListPreference mTopKeyPref;
     private ListPreference mMiddleKeyPref;
     private ListPreference mBottomKeyPref;
     private VibratorStrengthPreference mVibratorStrength;
+    private SwitchPreference mSelinuxMode;
+    private SwitchPreference mSelinuxPersistence;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -108,15 +125,76 @@ public class DeviceSettings extends PreferenceFragment
         mAutoHBMSwitch = (TwoStatePreference) findPreference(KEY_AUTO_HBM_SWITCH);
         mAutoHBMSwitch.setChecked(PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean(DeviceSettings.KEY_AUTO_HBM_SWITCH, false));
         mAutoHBMSwitch.setOnPreferenceChangeListener(this);
+
+        if (getResources().getBoolean(R.bool.config_deviceHasHighRefreshRate)) {
+            boolean autoRefresh = AutoRefreshRateSwitch.isCurrentlyEnabled(this.getContext());
+            mAutoRefreshRate = (SwitchPreference) findPreference(KEY_AUTO_REFRESH_RATE);
+            mAutoRefreshRate.setChecked(autoRefresh);
+            mAutoRefreshRate.setOnPreferenceChangeListener(this);
+
+            mRefreshRate = (TwoStatePreference) findPreference(KEY_REFRESH_RATE);
+            mRefreshRate.setChecked(RefreshRateSwitch.isCurrentlyEnabled(this.getContext()));
+            mRefreshRate.setOnPreferenceChangeListener(this);
+            updateRefreshRateState(autoRefresh);
+
+            mFpsInfo = (SwitchPreference) findPreference(KEY_FPS_INFO);
+            mFpsInfo.setChecked(prefs.getBoolean(KEY_FPS_INFO, false));
+            mFpsInfo.setOnPreferenceChangeListener(this);
+        } else {
+            getPreferenceScreen().removePreference((Preference) findPreference(KEY_CATEGORY_REFRESH));
+        }
+
+        // SELinux
+        boolean isRooted = SuShell.detectValidSuInPath();
+        Preference selinuxCategory = findPreference(SELINUX_CATEGORY);
+        mSelinuxMode = (SwitchPreference) findPreference(PREF_SELINUX_MODE);
+        mSelinuxMode.setChecked(SELinux.isSELinuxEnforced());
+        mSelinuxMode.setOnPreferenceChangeListener(this);
+        mSelinuxMode.setEnabled(isRooted);
+
+        mSelinuxPersistence =
+        (SwitchPreference) findPreference(PREF_SELINUX_PERSISTENCE);
+        mSelinuxPersistence.setOnPreferenceChangeListener(this);
+        mSelinuxPersistence.setChecked(getContext()
+        .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE)
+        .contains(PREF_SELINUX_MODE));
+        mSelinuxPersistence.setEnabled(isRooted);
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mAutoHBMSwitch) {
+        if (preference == mFpsInfo) {
+            boolean enabled = (Boolean) newValue;
+            Intent fpsinfo = new Intent(this.getContext(),
+                    org.lineageos.device.DeviceSettings.FPSInfoService.class);
+            if (enabled) {
+                this.getContext().startService(fpsinfo);
+            } else {
+                this.getContext().stopService(fpsinfo);
+            }
+        } else if (preference == mAutoHBMSwitch) {
             Boolean enabled = (Boolean) newValue;
             SharedPreferences.Editor prefChange = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
             prefChange.putBoolean(KEY_AUTO_HBM_SWITCH, enabled).commit();
             Utils.enableService(getContext());
+        } else if (preference == mSelinuxMode) {
+            boolean enabled = (Boolean) newValue;
+            new SwitchSelinuxTask(getActivity()).execute(enabled);
+            setSelinuxEnabled(enabled, mSelinuxPersistence.isChecked());
+        } else if (preference == mSelinuxPersistence) {
+            setSelinuxEnabled(mSelinuxMode.isChecked(), (Boolean) newValue);
+        } else if (preference == mAutoRefreshRate) {
+            Boolean enabled = (Boolean) newValue;
+            Settings.System.putFloat(getContext().getContentResolver(),
+                    Settings.System.PEAK_REFRESH_RATE, 120f);
+            Settings.System.putFloat(getContext().getContentResolver(),
+                    Settings.System.MIN_REFRESH_RATE, 60f);
+            Settings.System.putInt(getContext().getContentResolver(),
+                    AutoRefreshRateSwitch.SETTINGS_KEY, enabled ? 1 : 0);
+            updateRefreshRateState(enabled);
+        } else if (preference == mRefreshRate) {
+            Boolean enabled = (Boolean) newValue;
+            RefreshRateSwitch.setPeakRefresh(getContext(), enabled);
         } else if (preference == mHBMModeSwitch) {
             Boolean enabled = (Boolean) newValue;
             Utils.writeValue(HBMModeSwitch.getFile(), enabled ? "5" : "0");
@@ -130,7 +208,7 @@ public class DeviceSettings extends PreferenceFragment
         } else {
             Constants.setPreferenceInt(getContext(), preference.getKey(),
                     Integer.parseInt((String) newValue));
-        }
+        } 
         return true;
     }
 
@@ -151,5 +229,47 @@ public class DeviceSettings extends PreferenceFragment
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void setSelinuxEnabled(boolean status, boolean persistent) {
+      SharedPreferences.Editor editor = getContext()
+          .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE).edit();
+      if (persistent) {
+        editor.putBoolean(PREF_SELINUX_MODE, status);
+      } else {
+        editor.remove(PREF_SELINUX_MODE);
+      }
+      editor.apply();
+      mSelinuxMode.setChecked(status);
+    }
+
+    private class SwitchSelinuxTask extends SuTask<Boolean> {
+      public SwitchSelinuxTask(Context context) {
+        super(context);
+      }
+      @Override
+      protected void sudoInBackground(Boolean... params) throws SuShell.SuDeniedException {
+        if (params.length != 1) {
+          return;
+        }
+        if (params[0]) {
+          SuShell.runWithSuCheck("setenforce 1");
+        } else {
+          SuShell.runWithSuCheck("setenforce 0");
+        }
+      }
+
+      @Override
+      protected void onPostExecute(Boolean result) {
+        super.onPostExecute(result);
+        if (!result) {
+          // Did not work, so restore actual value
+          setSelinuxEnabled(SELinux.isSELinuxEnforced(), mSelinuxPersistence.isChecked());
+        }
+      }
+    }
+    private void updateRefreshRateState(boolean auto) {
+        mRefreshRate.setEnabled(!auto);
+        if (auto) mRefreshRate.setChecked(false);
     }
 }
