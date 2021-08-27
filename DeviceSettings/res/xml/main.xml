@@ -96,29 +96,6 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="selinux"
-        android:title="@string/selinux_category">
-
-       <Preference
-          android:summary="@string/selinux_explanation_summary"
-          android:selectable="false"/>
-
-       <SwitchPreference
-          android:key="selinux_mode"
-          android:icon="@drawable/ic_linux"
-          android:title="@string/selinux_mode_title"
-          android:summaryOn="@string/selinux_enforcing_summary"
-          android:summaryOff="@string/selinux_permissive_summary" />
-
-        <SwitchPreference
-          android:key="selinux_persistence"
-          android:icon="@drawable/ic_power"
-          android:title="@string/selinux_persistence_title"
-          android:summary="@string/selinux_persistence_summary"
-          android:defaultValue="true" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="slider"
         android:title="@string/notification_slider_category_title">
 

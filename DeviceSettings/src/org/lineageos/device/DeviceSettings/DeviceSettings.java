@@ -51,8 +51,6 @@ import androidx.preference.TwoStatePreference;
 import org.lineageos.device.DeviceSettings.FileUtils;
 import org.lineageos.device.DeviceSettings.Constants;
 import org.lineageos.device.DeviceSettings.R;
-import org.lineageos.device.DeviceSettings.SuShell;
-import org.lineageos.device.DeviceSettings.SuTask;
 
 public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -72,10 +70,6 @@ public class DeviceSettings extends PreferenceFragment
 
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
 
-    private static final String SELINUX_CATEGORY = "selinux";
-    private static final String PREF_SELINUX_MODE = "selinux_mode";
-    private static final String PREF_SELINUX_PERSISTENCE = "selinux_persistence";
-    
     private static TwoStatePreference mEnableDolbyAtmos;
     private static TwoStatePreference mHBMModeSwitch;
     private static TwoStatePreference mAutoHBMSwitch;
@@ -86,8 +80,6 @@ public class DeviceSettings extends PreferenceFragment
     private ListPreference mMiddleKeyPref;
     private ListPreference mBottomKeyPref;
     private VibratorStrengthPreference mVibratorStrength;
-    private SwitchPreference mSelinuxMode;
-    private SwitchPreference mSelinuxPersistence;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -148,22 +140,6 @@ public class DeviceSettings extends PreferenceFragment
         } else {
             getPreferenceScreen().removePreference((Preference) findPreference(KEY_CATEGORY_REFRESH));
         }
-
-        // SELinux
-        boolean isRooted = SuShell.detectValidSuInPath();
-        Preference selinuxCategory = findPreference(SELINUX_CATEGORY);
-        mSelinuxMode = (SwitchPreference) findPreference(PREF_SELINUX_MODE);
-        mSelinuxMode.setChecked(SELinux.isSELinuxEnforced());
-        mSelinuxMode.setOnPreferenceChangeListener(this);
-        mSelinuxMode.setEnabled(isRooted);
-
-        mSelinuxPersistence =
-        (SwitchPreference) findPreference(PREF_SELINUX_PERSISTENCE);
-        mSelinuxPersistence.setOnPreferenceChangeListener(this);
-        mSelinuxPersistence.setChecked(getContext()
-        .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE)
-        .contains(PREF_SELINUX_MODE));
-        mSelinuxPersistence.setEnabled(isRooted);
     }
 
     @Override
@@ -182,12 +158,6 @@ public class DeviceSettings extends PreferenceFragment
             SharedPreferences.Editor prefChange = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
             prefChange.putBoolean(KEY_AUTO_HBM_SWITCH, enabled).commit();
             Utils.enableService(getContext());
-        } else if (preference == mSelinuxMode) {
-            boolean enabled = (Boolean) newValue;
-            new SwitchSelinuxTask(getActivity()).execute(enabled);
-            setSelinuxEnabled(enabled, mSelinuxPersistence.isChecked());
-        } else if (preference == mSelinuxPersistence) {
-            setSelinuxEnabled(mSelinuxMode.isChecked(), (Boolean) newValue);
         } else if (preference == mAutoRefreshRate) {
             Boolean enabled = (Boolean) newValue;
             Settings.System.putFloat(getContext().getContentResolver(),
@@ -226,13 +196,6 @@ public class DeviceSettings extends PreferenceFragment
                 this.getContext().getPackageManager().setComponentEnabledSetting(name,
                         PackageManager.COMPONENT_ENABLED_STATE_DISABLED, 0);
             }
-        } else if (preference == mVibratorStrengthPreference) {
-            int value = Integer.parseInt(newValue.toString());
-            SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
-            sharedPrefs.edit().putInt(KEY_VIBSTRENGTH, value).commit();
-            Utils.writeValue(FILE_LEVEL, String.valueOf(value));
-            mVibrator.vibrate(testVibrationPattern, -1);
-            return true;
         } else {
             Constants.setPreferenceInt(getContext(), preference.getKey(),
                     Integer.parseInt((String) newValue));
@@ -259,43 +222,6 @@ public class DeviceSettings extends PreferenceFragment
         return super.onOptionsItemSelected(item);
     }
 
-    private void setSelinuxEnabled(boolean status, boolean persistent) {
-      SharedPreferences.Editor editor = getContext()
-          .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE).edit();
-      if (persistent) {
-        editor.putBoolean(PREF_SELINUX_MODE, status);
-      } else {
-        editor.remove(PREF_SELINUX_MODE);
-      }
-      editor.apply();
-      mSelinuxMode.setChecked(status);
-    }
-
-    private class SwitchSelinuxTask extends SuTask<Boolean> {
-      public SwitchSelinuxTask(Context context) {
-        super(context);
-      }
-      @Override
-      protected void sudoInBackground(Boolean... params) throws SuShell.SuDeniedException {
-        if (params.length != 1) {
-          return;
-        }
-        if (params[0]) {
-          SuShell.runWithSuCheck("setenforce 1");
-        } else {
-          SuShell.runWithSuCheck("setenforce 0");
-        }
-      }
-
-      @Override
-      protected void onPostExecute(Boolean result) {
-        super.onPostExecute(result);
-        if (!result) {
-          // Did not work, so restore actual value
-          setSelinuxEnabled(SELinux.isSELinuxEnforced(), mSelinuxPersistence.isChecked());
-        }
-      }
-    }
     private void updateRefreshRateState(boolean auto) {
         mRefreshRate.setEnabled(!auto);
         if (auto) mRefreshRate.setChecked(false);
