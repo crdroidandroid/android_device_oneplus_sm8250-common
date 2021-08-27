@@ -43,7 +43,7 @@ public class VibratorStrengthPreference extends Preference implements
     private Vibrator mVibrator;
 
     private static final String FILE_LEVEL = "/sys/devices/platform/soc/a8c000.i2c/i2c-3/3-005a/leds/vibrator/level";
-    private static final long testVibrationPattern[] = {0,50};
+    private static final long testVibrationPattern[] = {0,5};
     public static final String SETTINGS_KEY = DeviceSettings.KEY_SETTINGS_PREFIX + DeviceSettings.KEY_VIBSTRENGTH;
     public static final String DEFAULT = "3";
 
@@ -53,7 +53,7 @@ public class VibratorStrengthPreference extends Preference implements
         // #define QPNP_HAP_VMAX_MIN_MV		116
         // #define QPNP_HAP_VMAX_MAX_MV		3596
         mMinValue = 0;
-        mMaxValue = 3;
+        mMaxValue = 4;
 
         mVibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
         setLayoutResource(R.layout.preference_seek_bar);
