@@ -188,6 +188,7 @@ on fs
 #   BSP add for display  2020/04/17 @Leo_BSP
     chmod 0666 /sys/class/drm/card0-DSI-1/hbm
     chmod 0666 /sys/class/drm/card0-DSI-1/hbm_brightness
+	chmod 0666 /sys/class/drm/card0-DSI-1/panel_serial_number_AT
     chmod 0666 /sys/class/backlight/panel0-backlight/brightness
 #endif
 
