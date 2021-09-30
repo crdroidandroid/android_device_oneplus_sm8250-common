@@ -1,0 +1,4 @@
+allow hal_secure_element_default nfc_device:chr_file rw_file_perms;
+
+hal_client_domain(hal_secure_element_default, hal_nfc)
+get_prop(hal_secure_element_default, hwservicemanager_prop)
