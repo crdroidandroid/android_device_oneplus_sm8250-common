@@ -4,6 +4,13 @@ allow hal_fingerprint_default self:netlink_socket create_socket_perms_no_ioctl;
 
 binder_call(hal_fingerprint_default, vendor_hal_perf_default)
 
+# Allow binder communication with hal_display_default
+binder_call(hal_fingerprint_default, hal_display_default)
+
+# Allow hal_fingerprint_default to find hal_display_hwservice
+allow hal_fingerprint_default hal_display_hwservice:hwservice_manager find;
+
+# Allow hal_fingerprint_default to find vendor_hal_perf_hwservice
 allow hal_fingerprint_default vendor_hal_perf_hwservice:hwservice_manager find;
 
 allow hal_fingerprint_default fingerprintd_device:chr_file rw_file_perms;
