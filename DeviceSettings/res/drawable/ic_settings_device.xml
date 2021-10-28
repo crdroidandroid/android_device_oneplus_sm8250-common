@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2021 The Evolution X Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+   android:width="24dp"
+   android:height="24dp"
+   android:viewportWidth="24"
+   android:viewportHeight="24">
+
+    <path
+        android:fillColor="?android:attr/colorPrimary"
+        android:pathData="M12.57359,5.73791l-0.02382,1.67805l-6.86798,0l0,11.52508l11.60919,0l0,-6.84444l1.6393,0l0,8.47841l-14.88778,0l0,-14.83711l8.53109,0zm6.35669,-2.73791l0,2.73791l2.74723,0l0,1.67805l-2.74723,0l0,2.73769l-1.6393,0l0,-2.73769l-2.79157,0l0,-1.67805l2.79157,0l0,-2.73791l1.6393,0zm-8.06414,13.73317l0,-4.63657l-1.55085,0l0,-1.19231l0.17712,0c0.48747,0 0.88626,-0.08816 1.15205,-0.30899c0.26601,-0.22083 0.44313,-0.61819 0.44313,-1.10393l1.46218,0l0,7.2418l-1.68363,0z" />
+</vector>

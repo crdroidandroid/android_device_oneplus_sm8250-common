@@ -1,0 +1,4 @@
+allow system_app sysfs_dm:file rw_file_perms;
+allow system_app sysfs_vibrator:file rw_file_perms;
+allow system_app sysfs_vibrator:dir r_dir_perms;
+allow system_app sysfs_leds:dir search;

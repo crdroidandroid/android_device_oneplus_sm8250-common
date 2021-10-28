@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014-2017 The OmniROM Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Panel modes -->
+    <string name="device_title">一加设置</string>
+    <string name="device_summary">调整一加特定设备设置</string>
+    <string name="display_title">显示</string>
+    <string name="hbm_mode_summary"></string>
+    <string name="hbm_mode_title">高亮度模式</string>
+    <string name="auto_hbm_summary"></string>
+    <string name="auto_hbm_title">自动高亮度模式</string>
+    <string name="hbm_mode_warning">长时间使用高亮度模式可能会损坏您的显示器</string>
+    <string name="auto_hbm_threshold_title">自动高亮度模式阈值 (lux)</string>
+    <string name="auto_hbm_threshold_summary"></string>
+    <string name="dc_mode_summary"></string>
+    <string name="dc_mode_title">DC 调光</string>
+    <string name="tile_hbm_mode">高亮度模式</string>
+    <string name="tile_dc_mode">DC 调光</string>
+
+    <!-- Refresh rate -->
+    <string name="refresh_title">屏幕刷新</string>
+    <string name="tile_refresh_rate">屏幕刷新率</string>
+    <string name="auto_refresh_rate_summary">让应用决定使用什么刷新率</string>
+    <string name="auto_refresh_rate_title">自动刷新模式</string>
+    <string name="refresh_rate_summary">选择 60Hz 或 120Hz 峰值刷新</string>
+    <string name="refresh_rate_title">强制 120Hz 峰值刷新率</string>
+    <string name="refresh_rate_warning">强制使用 120Hz 会显着影响电池寿命</string>
+    <string name="fps_info_title">FPS 叠加</string>
+    <string name="fps_info_summary">以每秒当前帧数显示叠加层</string>
+    <string name="panel_mode_info">禁用面板模式需要重新启动</string>
+
+    <!-- Notification slider -->
+    <string name="notification_slider_category_title">通知滑块</string>
+    <string name="notification_slider_selection_dialog_title">行为</string>
+    <string name="notification_slider_top_position">顶部位置</string>
+    <string name="notification_slider_middle_position">中间位置</string>
+    <string name="notification_slider_bottom_position">底部位置</string>
+    <string name="notification_slider_mode_total_silence">完全阻止</string>
+    <string name="notification_slider_mode_priority_only">仅限优先</string>
+    <string name="notification_slider_mode_silent">静音</string>
+    <string name="notification_slider_mode_vibrate">振动</string>
+    <string name="notification_slider_mode_none">正常</string>
+    <string name="buttons_dashboard_summary">警报滑块设置</string>
+
+    <!-- Vibration slider -->
+    <string name="category_vibrator">振动马达</string>
+    <string name="vib_strength_title_head">强度</string>
+    <string name="vib_strength_summary_head">定义振动马达的强度</string>
+    <string name="vibration_warning">设置强度过高可能会导致永久性硬件损坏</string>
+
+    <!-- Doze -->
+    <string name="doze_panel_title">Doze</string>
+    <string name="doze_settings_title">高级 doze 设置</string>
+    <string name="doze_settings_summary">处理传感器相关的唤醒事件</string>
+
+    <!-- Selinux Switch -->
+    <string name="selinux_explanation_summary">SELinux 是一组内核修改和用户空间工具，更改模式可能会导致不良影响，使用风险自负 (如果未找到 su 将显示为灰色！)</string>
+    <string name="selinux_category">SELinux</string>
+    <string name="selinux_mode_title">SELinux 模式</string>
+    <string name="selinux_permissive_summary">宽容模式</string>
+    <string name="selinux_enforcing_summary">强制执行</string>
+    <string name="selinux_persistence_title">坚持重启</string>
+    <string name="selinux_persistence_summary">每次开机都恢复上面设置的 sepolicy 模式</string>
+    <string name="selinux_permissive_toast_title">Selinux 设置为宽容模式！</string>
+    <string name="selinux_enforcing_toast_title">Selinux 设置为强行执行！</string>
+
+    <!-- Slider toasts -->
+    <string name="slider_toast_normal">来电和通知将会响起</string>
+    <string name="slider_toast_vibrate">来电和通知会将振动</string>
+    <string name="slider_toast_dnd">勿扰模式：不要打扰</string>
+    <string name="slider_toast_priority">勿扰模式：仅限优先</string>
+    <string name="slider_toast_silent">来电和通知将会静音</string>
+    
+    <!-- Log Tile -->
+    <string name="quick_settings_log_tile_label">日志磁贴</string>
+    <string name="quick_settings_log_tile_dialog_title">选项</string>
+    <string name="cannot_get_su">由于缺少超级用户访问权限，操作失败</string>
+    
+    <!-- Dolby Atmos -->
+    <string name="audio_title">杜比全景声</string>
+    <string name="dolby_title">配置</string>
+    <string name="dolby_summary">根据媒体内容配置音频输出</string>
+    <string name="enable_dolby_title">启用/禁用杜比全景声</string>
+    <string name="enable_dolby_summary">切换需要重启才能生效！</string>
+    <string name="enable_dolby_info">注意：启用杜比全景声后，其他均衡器的效果（如：MusicFX）在所有输出上均被禁用</string>
+</resources>

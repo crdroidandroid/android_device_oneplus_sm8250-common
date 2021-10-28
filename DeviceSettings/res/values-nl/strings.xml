@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2014-2017 The OmniROM Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+    <!-- Panel modes -->
+    <string name="device_title">OnePlus Instellingen</string>
+    <string name="device_summary">OnePlus specifieke toestel instellingen</string>
+    <string name="display_title">Display</string>
+    <string name="hbm_mode_summary"></string>
+    <string name="hbm_mode_title">High brightness modus</string>
+    <string name="auto_hbm_summary"></string>
+    <string name="auto_hbm_title">Automatische High brightness modus</string>
+    <string name="hbm_mode_warning">Lang gebruik van High brightness modus kan de display beschadigen</string>
+    <string name="auto_hbm_threshold_title">Automatische High brightness modus drempel (lux)</string>
+    <string name="auto_hbm_threshold_summary"></string>
+    <string name="dc_mode_summary"></string>
+    <string name="dc_mode_title">DC-Dimmen</string>
+    <string name="tile_hbm_mode">High brightness modus</string>
+    <string name="tile_dc_mode">DC-Dimmen</string>
+
+    <!-- Refresh rate -->
+    <string name="refresh_title">Scherm verversing</string>
+    <string name="tile_refresh_rate">Scherm verversinng frequentie</string>
+    <string name="auto_refresh_rate_summary">Laat apps bepalen welke frequentie te gebruiken</string>
+    <string name="auto_refresh_rate_title">Auto ververs modus</string>
+    <string name="refresh_rate_summary">Kies tussen 60Hz of 90Hz frequentie</string>
+    <string name="refresh_rate_title">Forceer 90Hz scherm frequentie</string>
+    <string name="refresh_rate_warning">Gebruik van 90Hz gebruikt meer batterij</string>
+    <string name="fps_info_title">FPS overlay</string>
+    <string name="fps_info_summary">Laat overlay met frames per second zien</string>
+    <string name="panel_mode_info">Reboot toestel wanneer je Panel modus uitschakeld</string>
+
+    <!-- Notification slider -->
+    <string name="notification_slider_category_title">Notificatie schuif</string>
+    <string name="notification_slider_selection_dialog_title">Actie</string>
+    <string name="notification_slider_top_position">Bovenste positie</string>
+    <string name="notification_slider_middle_position">Middelste positie</string>
+    <string name="notification_slider_bottom_position">Onderste positie</string>
+    <string name="notification_slider_mode_total_silence">Totale stilte</string>
+    <string name="notification_slider_mode_priority_only">Alleen belangrijk</string>
+    <string name="notification_slider_mode_silent">Stil</string>
+    <string name="notification_slider_mode_vibrate">Vibratie</string>
+    <string name="notification_slider_mode_none">Normaal</string>
+    <string name="buttons_dashboard_summary">Notificatieschuif instellingen</string>
+
+    <!-- Vibration slider -->
+    <string name="category_vibrator">Vibratie</string>
+    <string name="vib_strength_title_head">Sterkte</string>
+    <string name="vib_strength_summary_head">Sterkte van de vibratie</string>
+    <string name="vibration_warning">Te hoge instellingen kan de vibrator beschadigen</string>
+
+    <!-- Doze -->
+    <string name="doze_panel_title">Doze</string>
+    <string name="doze_settings_title">Advanced doze settings</string>
+    <string name="doze_settings_summary">Handle sensor related wake events</string>
+
+    <!-- Selinux Switch -->
+    <string name="selinux_explanation_summary">SELinux is a set of kernel modifications and user-space tools. Changing modes can cause unwanted effects. Use at your own risk (will be grayed out if su not found!).</string>
+    <string name="selinux_category">SELinux</string>
+    <string name="selinux_mode_title">SELinux mode</string>
+    <string name="selinux_permissive_summary">Permissive</string>
+    <string name="selinux_enforcing_summary">Enforcing</string>
+    <string name="selinux_persistence_title">Persist across reboots</string>
+    <string name="selinux_persistence_summary">Restore the above set sepolicy mode on each boot</string>
+    <string name="selinux_permissive_toast_title">Selinux set to permissive!</string>
+    <string name="selinux_enforcing_toast_title">Selinux set to enforcing!</string>
+
+    <!-- Slider toasts -->
+    <string name="slider_toast_normal">Bellen en notificaties maken geluid</string>
+    <string name="slider_toast_vibrate">Bellen en notificaties vibreren</string>
+    <string name="slider_toast_dnd">DND - Geen onderbrekingen</string>
+    <string name="slider_toast_priority">DND - Alleen belangrijk</string>
+    <string name="slider_toast_silent">Bellen en notificaties zijn onderdrukt</string>
+    
+    <!-- Log Tile -->
+    <string name="quick_settings_log_tile_label">LogTegel</string>
+    <string name="quick_settings_log_tile_dialog_title">Opties</string>
+    <string name="cannot_get_su">Mislukt omdat er geen root toegang is</string>
+    
+    <!-- Dolby Atmos -->
+    <string name="audio_title">Dolby Atmos</string>
+    <string name="dolby_title">Configuratie</string>
+    <string name="dolby_summary">Configureer audio uitgang gebaseerd op media content.</string>
+    <string name="enable_dolby_title">Aan/Uit Dolby Atmos</string>
+    <string name="enable_dolby_summary">Bij omschakelen is een herstart nodig!</string>
+    <string name="enable_dolby_info">Noot: Met Dolby Atmos ingeschakeld, andere EQ effecten als MusicFX zijn uitgeschakeld</string>
+</resources>

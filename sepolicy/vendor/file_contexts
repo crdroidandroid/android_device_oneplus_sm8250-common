@@ -28,7 +28,7 @@
 /dev/block/platform/soc/1d84000.ufshc/by-name/storsec_[ab]       u:object_r:vendor_custom_ab_block_device:s0
 
 # Data files
-/data/reserve-lib(/.*)?    u:object_r:apk_data_file:s0
+/data/reserve-lib(/.*)?                                          u:object_r:apk_data_file:s0
 
 # Devices
 /dev/byte-cntr            u:object_r:byte_cntr_device:s0
@@ -46,6 +46,13 @@
 /dev/skin_thermal         u:object_r:therm_device:s0
 /dev/stmvl53l1_ranging    u:object_r:vl53l1_device:s0
 /dev/wlchg                u:object_r:wlchg_device:s0
+
+# Display Modes
+/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/hbm         u:object_r:sysfs_dm:s0
+
+#FPS
+/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dynamic_fps                               u:object_r:sysfs_dm:s0
+/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps                               u:object_r:sysfs_dm:s0
 
 # HALs
 /(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.3-service\.oneplus            u:object_r:hal_fingerprint_default_exec:s0
@@ -103,3 +110,6 @@
 /sys/devices/virtual/misc/msm_qcelp/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
 /sys/devices/virtual/misc/msm_wma/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
 /sys/devices/virtual/misc/msm_wmapro/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
+
+# Vibrator
+/sys/devices/platform/soc/a8c000.i2c/i2c-3/3-005a/leds/vibrator/level               u:object_r:sysfs_vibrator:s0
