@@ -28,7 +28,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
 # OnePlus Camera
-$(call inherit-product-if-exists, vendor/oneplus/opcamera/opcamera-vendor.mk)
+$(call inherit-product-if-exists, vendor/oneplus/apps/sm8250/config.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
