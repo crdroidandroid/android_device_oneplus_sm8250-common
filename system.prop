@@ -33,6 +33,9 @@ persist.dbg.wfc_avail_ovr=1
 vendor.iop.enable_prefetch_ofr=1
 vendor.iop.enable_uxe=0
 
+# IORap I/O Prefetching
+persist.device_config.runtime_native_boot.iorap_perfetto_enable=true
+
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
