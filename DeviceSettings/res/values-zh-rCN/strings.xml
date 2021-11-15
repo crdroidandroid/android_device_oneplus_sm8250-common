@@ -34,7 +34,7 @@
     <string name="auto_refresh_rate_title">自动刷新模式</string>
     <string name="refresh_rate_summary">选择 60Hz 或 120Hz 峰值刷新</string>
     <string name="refresh_rate_title">强制 120Hz 峰值刷新率</string>
-    <string name="refresh_rate_warning">强制使用 120Hz 会显着影响电池寿命</string>
+    <string name="refresh_rate_warning">强制使用 120Hz 会显著影响电池寿命</string>
     <string name="fps_info_title">FPS 叠加</string>
     <string name="fps_info_summary">以每秒当前帧数显示叠加层</string>
     <string name="panel_mode_info">禁用面板模式需要重新启动</string>
@@ -75,9 +75,9 @@
     <string name="selinux_enforcing_toast_title">Selinux 设置为强行执行！</string>
 
     <!-- Slider toasts -->
-    <string name="slider_toast_normal">来电和通知将会响起</string>
-    <string name="slider_toast_vibrate">来电和通知会将振动</string>
-    <string name="slider_toast_dnd">勿扰模式：不要打扰</string>
+    <string name="slider_toast_normal">来电和通知将会响铃</string>
+    <string name="slider_toast_vibrate">来电和通知将会振动</string>
+    <string name="slider_toast_dnd">勿扰模式：请勿打扰</string>
     <string name="slider_toast_priority">勿扰模式：仅限优先</string>
     <string name="slider_toast_silent">来电和通知将会静音</string>
     
