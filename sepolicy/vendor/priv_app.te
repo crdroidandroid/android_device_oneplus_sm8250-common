@@ -2,3 +2,5 @@ allow priv_app hal_ifaa_hwservice:hwservice_manager find;
 binder_call(priv_app, hal_ifaa_default)
 
 allow priv_app oem_service:service_manager find;
+
+allow priv_app zygote:unix_stream_socket getopt;

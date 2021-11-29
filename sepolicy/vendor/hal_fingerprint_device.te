@@ -23,6 +23,9 @@ allow hal_fingerprint_default proc_touchpanel:file rw_file_perms;
 
 allow hal_fingerprint_default sysfs_fod:file rw_file_perms;
 
+allow hal_fingerprint_default vendor_sysfs_battery_supply:dir search;
+allow hal_fingerprint_default vendor_sysfs_battery_supply:file { read open };
+
 get_prop(hal_fingerprint_default, vendor_adsprpc_prop)
 get_prop(hal_fingerprint_default, vendor_default_prop)
 set_prop(hal_fingerprint_default, vendor_fingerprint_prop)

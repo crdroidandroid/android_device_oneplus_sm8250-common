@@ -1,0 +1,3 @@
+allow vendor_poweroffalarm_app zygote:unix_stream_socket getopt;
+allow vendor_poweroffalarm_app system_data_file:dir { search getattr };
+allow vendor_poweroffalarm_app system_app_data_file:dir getattr;

@@ -1,0 +1,2 @@
+get_prop(bluetooth, incremental_prop)
+allow bluetooth proc_filesystems:file { read open getattr };

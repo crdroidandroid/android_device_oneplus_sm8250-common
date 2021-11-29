@@ -1,2 +1,4 @@
 allow cameraserver hal_cameraHIDL_hwservice:hwservice_manager find;
 binder_call(cameraserver, hal_cameraHIDL_default)
+
+allow cameraserver system_data_file:dir { add_name write create };
