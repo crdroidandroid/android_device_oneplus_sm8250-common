@@ -31,3 +31,6 @@ vendor.oppo.num.denoise                                 u:object_r:ctl_default_p
 vendor.oppo.rawhdr.algo                                 u:object_r:ctl_default_prop:s0
 vendor.oppo.rotate.dump					u:object_r:ctl_default_prop:s0
 vendor.oppo.scale.enable                                u:object_r:ctl_default_prop:s0
+
+# Hardware
+ro.hardware.chipname            u:object_r:exported_default_prop:s0
