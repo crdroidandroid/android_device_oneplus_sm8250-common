@@ -233,6 +233,9 @@ persist.vendor.radio.sib16_support=1
 persist.vendor.radio.uicc_se_enabled=true
 ro.com.android.dataroaming=false
 
+# Refresh Rate
+ro.surface_flinger.use_content_detection_for_refresh_rate=true
+
 # Seamless transfer
 sys.fflag.override.settings_seamless_transfer=true
 
