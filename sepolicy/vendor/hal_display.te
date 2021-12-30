@@ -1,4 +1,5 @@
 binder_call(hal_display_client, hal_display_server)
 binder_call(hal_display_server, hal_display_client)
 
-hal_attribute_hwservice(hal_display, hal_display_hwservice)
+add_hwservice(hal_display_server, hal_display_hwservice)
+allow hal_display_client hal_display_hwservice:hwservice_manager find;

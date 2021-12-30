@@ -1,4 +1,5 @@
 binder_call(hal_display_iris_client, hal_display_iris_server)
 binder_call(hal_display_iris_server, hal_display_iris_client)
 
-hal_attribute_hwservice(hal_display_iris, hal_display_iris_hwservice)
+add_hwservice(hal_display_iris_server, hal_display_iris_hwservice)
+allow hal_display_iris_client hal_display_iris_hwservice:hwservice_manager find;

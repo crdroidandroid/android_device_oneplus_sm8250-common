@@ -1,4 +1,5 @@
 binder_call(hal_hdcpkey_client, hal_hdcpkey_server)
 binder_call(hal_hdcpkey_server, hal_hdcpkey_client)
 
-hal_attribute_hwservice(hal_hdcpkey, hal_hdcpkey_hwservice)
+add_hwservice(hal_hdcpkey_server, hal_hdcpkey_hwservice)
+allow hal_hdcpkey_client hal_hdcpkey_hwservice:hwservice_manager find;

@@ -2,3 +2,4 @@ binder_call(hal_cameraHIDL_client, hal_cameraHIDL_server)
 binder_call(hal_cameraHIDL_server, hal_cameraHIDL_client)
 
 add_hwservice(hal_cameraHIDL_server, hal_cameraHIDL_hwservice)
+allow hal_cameraHIDL_client hal_cameraHIDL_hwservice:hwservice_manager find;
