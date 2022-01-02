@@ -273,10 +273,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@3.0.vendor \
     vendor.qti.hardware.display.mapper@4.0.vendor
 
-# Doze
-PRODUCT_PACKAGES += \
-    OnePlusDoze
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.3.vendor \
@@ -410,6 +406,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     oneplus-fwk
+
+# OnePlus Apps
+PRODUCT_PACKAGES += \
+    OnePlusCameraOverlay \
+    OnePlusGalleryOverlay
 
 # Power
 PRODUCT_PACKAGES += \
