@@ -23,7 +23,10 @@ android_app {
         "SettingsLibDefaults",
     ],
 
-    srcs: ["src/**/*.java"],
+    srcs: [
+    "src/**/*.java",
+    "src/**/*.aidl",
+    ],
     certificate: "platform",
     platform_apis: true,
     system_ext_specific: true,

@@ -23,10 +23,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.SharedPreferences;
+import android.content.ServiceConnection;
+import android.os.IBinder;
 import android.os.Bundle;
 import android.os.SELinux;
 import android.os.Vibrator;
 import android.provider.Settings;
+import android.telephony.SubscriptionManager;
+import android.widget.Toast;
 import androidx.preference.SwitchPreference;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
@@ -38,6 +42,8 @@ import androidx.preference.TwoStatePreference;
 import org.lineageos.device.DeviceSettings.FileUtils;
 import org.lineageos.device.DeviceSettings.Constants;
 import org.lineageos.device.DeviceSettings.R;
+
+import com.qualcomm.qcrilmsgtunnel.IQcrilMsgTunnel;
 
 public class DeviceSettings extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -54,6 +60,7 @@ public class DeviceSettings extends PreferenceFragment
     public static final String KEY_HBM_SWITCH = "hbm";
     public static final String KEY_AUTO_HBM_SWITCH = "auto_hbm";
     public static final String KEY_AUTO_HBM_THRESHOLD = "auto_hbm_threshold";
+    public static final String KEY_NR_MODE_SWITCHER = "nr_mode_switcher";
 
     private static final String KEY_CATEGORY_REFRESH = "refresh";
     public static final String KEY_REFRESH_RATE = "refresh_rate";
@@ -66,9 +73,11 @@ public class DeviceSettings extends PreferenceFragment
     private static TwoStatePreference mRefreshRate;
     private static SwitchPreference mAutoRefreshRate;
     private static SwitchPreference mFpsInfo;
+    private static ListPreference mNrModeSwitcher;
 
     private CustomSeekBarPreference mVibratorStrengthPreference;
     private Vibrator mVibrator;
+    private Protocol mProtocol;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -84,8 +93,27 @@ public class DeviceSettings extends PreferenceFragment
         mAutoHBMSwitch.setChecked(PreferenceManager.getDefaultSharedPreferences(getContext()).getBoolean(DeviceSettings.KEY_AUTO_HBM_SWITCH, false));
         mAutoHBMSwitch.setOnPreferenceChangeListener(this);
 
+        Intent mIntent = new Intent();
+        mIntent.setClassName("com.qualcomm.qcrilmsgtunnel", "com.qualcomm.qcrilmsgtunnel.QcrilMsgTunnelService");
+        getContext().bindService(mIntent, new ServiceConnection() {
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder service) {
+                IQcrilMsgTunnel tunnel = IQcrilMsgTunnel.Stub.asInterface(service);
+                if (tunnel != null)
+                    mProtocol = new Protocol(tunnel);
+            }
+
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+                mProtocol = null;
+            }
+        }, getContext().BIND_AUTO_CREATE);
+
         mEnableDolbyAtmos = (TwoStatePreference) findPreference(KEY_ENABLE_DOLBY_ATMOS);
         mEnableDolbyAtmos.setOnPreferenceChangeListener(this);
+
+        mNrModeSwitcher = (ListPreference) findPreference(KEY_NR_MODE_SWITCHER);
+        mNrModeSwitcher.setOnPreferenceChangeListener(this);
 
         if (getResources().getBoolean(R.bool.config_deviceHasHighRefreshRate)) {
             boolean autoRefresh = AutoRefreshRateSwitch.isCurrentlyEnabled(this.getContext());
@@ -178,6 +206,9 @@ public class DeviceSettings extends PreferenceFragment
                 this.getContext().getPackageManager().setComponentEnabledSetting(name,
                         PackageManager.COMPONENT_ENABLED_STATE_DISABLED, 0);
             }
+        } else if (preference == mNrModeSwitcher) {
+            int mode = Integer.parseInt(newValue.toString());
+            return setNrModeChecked(mode);
         } else if (preference == mVibratorStrengthPreference) {
             int value = Integer.parseInt(newValue.toString());
             SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getContext());
@@ -212,5 +243,29 @@ public class DeviceSettings extends PreferenceFragment
     private void updateRefreshRateState(boolean auto) {
         mRefreshRate.setEnabled(!auto);
         if (auto) mRefreshRate.setChecked(false);
+    }
+    private boolean setNrModeChecked(int mode) {
+        switch (mode) {
+            case 0:
+                return setNrModeChecked(Protocol.NR_5G_DISABLE_MODE_TYPE.NAS_NR5G_DISABLE_MODE_SA);
+            case 1:
+                return setNrModeChecked(Protocol.NR_5G_DISABLE_MODE_TYPE.NAS_NR5G_DISABLE_MODE_NSA);
+            default:
+                return setNrModeChecked(Protocol.NR_5G_DISABLE_MODE_TYPE.NAS_NR5G_DISABLE_MODE_NONE);
+        }
+    }
+
+    private boolean setNrModeChecked(Protocol.NR_5G_DISABLE_MODE_TYPE mode) {
+        if (mProtocol == null) {
+            Toast.makeText(getContext(), R.string.service_not_ready, Toast.LENGTH_LONG).show();
+            return false;
+        }
+        int index = SubscriptionManager.getSlotIndex(SubscriptionManager.getDefaultDataSubscriptionId());
+        if (index == SubscriptionManager.INVALID_SIM_SLOT_INDEX) {
+            Toast.makeText(getContext(), R.string.unavailable_sim_slot, Toast.LENGTH_LONG).show();
+            return false;
+        }
+        new Thread(() -> mProtocol.setNrMode(index, mode)).start();
+        return true;
     }
 }

@@ -23,6 +23,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="com.qualcomm.permission.USE_QCRIL_MSG_TUNNEL" />
 
     <protected-broadcast android:name=">org.lineageos.device.DeviceSettings.UPDATE_SLIDER_POSITION" />
 

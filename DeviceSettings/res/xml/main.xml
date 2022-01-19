@@ -114,4 +114,23 @@
             android:defaultValue="3" />
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="network"
+        android:title="@string/network_title">
+
+        <ListPreference
+            android:key="nr_mode_switcher"
+            android:defaultValue="2"
+            android:icon="@drawable/ic_5g"
+            android:title="@string/nr_mode_switcher_title"
+            android:summary="%s"
+            android:entries="@array/nr_mode_switcher_entries"
+            android:entryValues="@array/nr_mode_switcher_values" />
+
+        <Preference
+            android:icon="@drawable/ic_info_outline"
+            android:summary="@string/nr_mode_switcher_warning" 
+            android:persistent="false" />
+    </PreferenceCategory>
+
 </PreferenceScreen>
