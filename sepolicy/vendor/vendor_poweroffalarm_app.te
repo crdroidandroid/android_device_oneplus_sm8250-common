@@ -1,0 +1,1 @@
+allow vendor_poweroffalarm_app user_profile_root_file:dir search;
