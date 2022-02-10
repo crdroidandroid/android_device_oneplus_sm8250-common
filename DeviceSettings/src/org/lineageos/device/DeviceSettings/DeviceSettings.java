@@ -53,7 +53,7 @@ public class DeviceSettings extends PreferenceFragment
 
     private static final String FILE_LEVEL = "/sys/devices/platform/soc/a8c000.i2c/i2c-3/3-005a/leds/vibrator/level";
     private static final long testVibrationPattern[] = {0,5};
-    private static final String DEFAULT = "3";
+    private static final String DEFAULT = "2";
 
     private static final String KEY_ENABLE_DOLBY_ATMOS = "enable_dolby_atmos";
     private static final String KEY_CATEGORY_GRAPHICS = "graphics";
