@@ -18,4 +18,20 @@
 
     <!-- Allow devices override audio panel location to the left side -->
     <bool name="config_audioPanelOnLeftSide">true</bool>
+
+    <!-- Color of the UDFPS Pressed view -->
+    <color name="config_udfpsColor">#ffffe6</color>
+
+    <!-- HBM type of UDFPS overlay.
+            0 - GLOBAL HBM
+            1 - LOCAL HBM
+    -->
+    <integer name="config_udfpsHbmType">0</integer>
+
+    <!-- UDFPS vendor code -->
+    <integer name="config_udfpsVendorCode">0</integer>
+
+    <!-- Whether to pulse onFingerDown actions instead
+        of waking the screen while the screen is off or in lpm. -->
+    <bool name="config_pulseOnFingerDown">true</bool>
 </resources>

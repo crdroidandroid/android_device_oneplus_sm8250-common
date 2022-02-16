@@ -62,4 +62,7 @@
 
     <!-- Does the device have a notification led -->
     <bool name="config_hasNotificationLed">false</bool>
+
+    <!-- Whether to disable Night Light feature during UDFPS unlock -->
+    <bool name="config_udfpsDisableNightLight">true</bool>
 </resources>
