@@ -1,0 +1,3 @@
+allow crash_dump vendor_camera_prop:file { open getattr map };
+get_prop(crash_dump, ctl_default_prop)
+get_prop(crash_dump, hwservicemanager_prop)

@@ -1,1 +1,11 @@
+allow cameraserver hal_cameraHIDL_hwservice:hwservice_manager find;
+allow cameraserver evolution_data_file:file rw_file_perms;
+allow cameraserver evolution_data_file:dir write;
+allow cameraserver system_data_file:dir { add_name write };
+allow cameraserver hal_cameraHIDL_hwservice:hwservice_manager { find };
+allow cameraserver property_socket:sock_file { read open write getattr };
+allow cameraserver init:unix_stream_socket { connectto };
+allow cameraserver system_data_file:file { create };
+allow cameraserver system_prop:file { create };
+allow cameraserver system_prop:property_service { set };
 binder_call(cameraserver, hal_cameraHIDL_default)

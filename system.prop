@@ -5,6 +5,11 @@ persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
 
 # Camera
 camera.disable_zsl_mode=true
+persist.camera.assert.panic=true
+persist.camera.privapp.list=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap,com.oneplus.camera
+persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap,com.oneplus.camera
+ro.opcamera.support=true
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap,com.oneplus.camera
 
 # Charger
 ro.charger.disable_init_blank=true

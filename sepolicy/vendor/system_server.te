@@ -1,3 +1,14 @@
 allow system_server sysfs_tri_state_key:file rw_file_perms;
 
 allow system_server vendor_sysfs_battery_supply:file { getattr open read };
+
+allow system_server hal_cameraHIDL_hwservice:hwservice_manager find;
+binder_call(system_server, hal_cameraHIDL_default)
+
+allow system_server app_zygote:process { getattr getpgid };
+
+get_prop(system_server, vendor_persist_camera_prop)
+allow system_server vendor_persist_camera_prop:file { read open write getattr map };
+allow system_server vendor_camera_prop:file { read open write getattr map };
+allow system_server sysfs_oem:file { read open write getattr };
+allow system_server evolution_data_file:file { read open write getattr };
