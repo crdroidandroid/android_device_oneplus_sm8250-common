@@ -1,4 +1,8 @@
 allow system_server hal_cameraHIDL_hwservice:hwservice_manager find;
 binder_call(system_server, hal_cameraHIDL_default)
 
+# Allow system_server to set vendor_persist_camera_prop
+get_prop(system_server, vendor_camera_prop)
+get_prop(system_server,vendor_persist_camera_prop)
+
 allow system_server app_zygote:process { getattr getpgid };
