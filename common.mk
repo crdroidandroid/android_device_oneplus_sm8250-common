@@ -490,6 +490,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     tri-state-key_daemon.vendor
 
+# UDFPS
+TARGET_HAS_UDFPS := true
+EXTRA_UDFPS_ANIMATIONS := true
+
 # Update engine
 PRODUCT_PACKAGES += \
     update_engine \
