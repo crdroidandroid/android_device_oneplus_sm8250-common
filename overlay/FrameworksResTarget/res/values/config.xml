@@ -79,5 +79,8 @@
     <bool name="config_dozePulsePickup">true</bool>
     <bool name="config_dozePulseProximity">true</bool>
     <bool name="config_deviceHaveWakeUpProximity">true</bool>
-    
+
+    <!-- The maximum range of gamma adjustment possible using the screen
+         auto-brightness adjustment setting. -->
+    <fraction name="config_autoBrightnessAdjustmentMaxGamma">150%</fraction>
 </resources>
