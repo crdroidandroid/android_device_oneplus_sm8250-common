@@ -1,0 +1,2 @@
+allow hal_chargecontrol_default vendor_sysfs_battery_supply:file { open read write };
+allow hal_chargecontrol_default vendor_sysfs_battery_supply:dir search;
