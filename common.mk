@@ -474,10 +474,6 @@ PRODUCT_PACKAGES += \
     KeyHandler \
     tri-state-key-calibrate
 
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
-
 # UDFPS
 TARGET_HAS_UDFPS := true
 EXTRA_UDFPS_ANIMATIONS := true
