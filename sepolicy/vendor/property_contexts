@@ -51,3 +51,6 @@ vendor.wlan.write.con_mode                u:object_r:vendor_set_wlan_prop:s0
 
 # Camera
 vendor.camera.aux.packageblacklist        u:object_r:vendor_camera_prop:s0
+
+# Dolby
+persist.vendor.dolby.loglevel                 u:object_r:vendor_dolby_loglevel_prop:s0
