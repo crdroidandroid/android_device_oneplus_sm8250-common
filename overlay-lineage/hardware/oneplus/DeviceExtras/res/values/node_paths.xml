@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2021-2022 The Evolution X project
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+        http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<resources>
+
+    <!-- DC-dimming sysfs node path -->
+    <string name="node_dc_mode_switch">/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/dimlayer_bl_en</string>
+
+    <!-- High Brightnes sysfs node path -->
+    <string name="node_hbm_mode_switch">/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm</string>
+
+    <!-- Auto High Brightness sysfs node path -->
+    <string name="node_auto_hbm_service">/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm</string>
+
+    <!-- USB 2.0 Force fastcharge sysfs node path -->
+    <string name="node_usb2_fast_charge_mode_switch">/sys/kernel/fast_charge/force_fast_charge</string>
+
+    <!-- System vibration sysfs node path -->
+    <string name="node_vibrator_strength_preference">/sys/devices/platform/soc/a8c000.i2c/i2c-3/3-005a/leds/vibrator/level</string>
+
+    <!-- Measuered FPS sysfs node path -->
+    <string name="node_fps_info_service">/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps</string>
+
+    <!-- GameMode procfs node path -->
+    <string name="node_game_mode_switch">/proc/touchpanel/force_game_switch_enable</string>
+
+    <!-- TP Edge Limit procfs node path -->
+    <string name="node_tp_edge_limit_mode_switch">/proc/touchpanel/tpedge_limit_enable</string>
+</resources>

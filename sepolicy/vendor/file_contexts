@@ -1,7 +1,7 @@
 # Binaries
 /(vendor|system/vendor)/bin/dashd                      u:object_r:dashd_exec:s0
 /(vendor|system/vendor)/bin/opf-service                u:object_r:opf_exec:s0
-/(vendor|system/vendor)/bin/tri-state-key-calibrate    u:object_r:tri-state-key-calibrate_exec:s0
+/(vendor|system/vendor)/bin/tri-state-key_daemon       u:object_r:tri-state-key_daemon_exec:s0
 /(vendor|system/vendor)/bin/vl53l1_daemon_main         u:object_r:vl53l1_daemon_main_exec:s0
 /(vendor|system/vendor)/bin/wlchgd                     u:object_r:wlchgd_exec:s0
 
@@ -204,3 +204,14 @@
 /sys/devices/virtual/misc/msm_qcelp/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
 /sys/devices/virtual/misc/msm_wma/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
 /sys/devices/virtual/misc/msm_wmapro/wakeup[0-9]+(/.*)? u:object_r:sysfs_wakeup:s0
+
+# Proc files (DeviceExtras)
+/proc/touchpanel/force_game_switch_enable    u:object_r:proc_touchpanel:s0
+/proc/touchpanel/tpedge_limit_enable         u:object_r:proc_touchpanel:s0
+
+# Sys files (DeviceExtras)
+/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/dimlayer_bl_en    u:object_r:sysfs_dm:s0
+/sys/devices/platform/soc/ae00000\.qcom\,mdss_mdp/drm/card0/card0-DSI-1/hbm               u:object_r:sysfs_dm:s0
+/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps         u:object_r:sysfs_dm:s0
+/sys/devices/platform/soc/a8c000.i2c/i2c-3/3-005a/leds/vibrator/level                     u:object_r:sysfs_vibrator:s0
+/sys/kernel/fast_charge/force_fast_charge                                                 u:object_r:sysfs_fastcharge:s0

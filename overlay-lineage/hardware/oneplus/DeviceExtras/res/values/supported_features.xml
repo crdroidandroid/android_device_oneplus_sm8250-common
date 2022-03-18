@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2021-2022 The Evolution X project
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+        http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<resources>
+    <!-- Whether device supports Touch Screen Gestures
+    <bool name="config_deviceSupportsTouchScreenGestures">true</bool>-->
+
+    <!-- Whether device supports DC-dimming -->
+    <bool name="config_deviceSupportsDCdimming">true</bool>
+
+    <!-- Whether device supports High Brightness Mode -->
+    <bool name="config_deviceSupportsHBM">true</bool>
+
+    <!-- Whether device supports Auto High Brightness Mode -->
+    <bool name="config_deviceSupportsAutoHBM">true</bool>
+
+    <!-- Whether device supports USB2.0 Force Fastcharge -->
+    <bool name="config_deviceSupportsUSB2FC">true</bool>
+
+    <!-- Whether device supports System vibration intensity -->
+    <bool name="config_deviceSupportsSysVib">true</bool>
+
+    <!-- Whether device supports Alert Slider -->
+    <bool name="config_deviceSupportsAlertSlider">true</bool>
+
+    <!-- Whether device supports FPS overlay -->
+    <bool name="config_deviceSupportsFPS">true</bool>
+
+    <!-- Whether device supports TP Edge Limit -->
+    <bool name="config_deviceSupportsTPEdgeLimit">true</bool>
+</resources>

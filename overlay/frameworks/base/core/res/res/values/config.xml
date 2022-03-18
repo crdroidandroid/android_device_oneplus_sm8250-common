@@ -323,4 +323,15 @@
 
     <!-- Whether to force enable multi resolution configuration for camera -->
     <bool name="config_forceMultiResolution">true</bool>
+
+    <!-- Whether device has physical tri state switch -->
+    <bool name="config_hasAlertSlider">true</bool>
+
+    <!-- Whether key handler sends intent when changing slider position -->
+    <string name="config_alertSliderIntent">org.lineageos.device.DeviceExtras.UPDATE_SLIDER_POSITION</string>
+
+    <!-- The location of the devices physical tri state switch
+         0: Left side
+         1: Right side -->
+    <integer name="config_alertSliderLocation">1</integer>
 </resources>

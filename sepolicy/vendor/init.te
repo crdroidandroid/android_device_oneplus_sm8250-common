@@ -1,1 +1,2 @@
 allow init adsprpcd_file:file mounton;
+allow init sysfs_tri_state_key:file { open write };
