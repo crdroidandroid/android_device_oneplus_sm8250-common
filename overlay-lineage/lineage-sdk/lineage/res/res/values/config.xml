@@ -16,6 +16,29 @@
      limitations under the License.
 -->
 <resources>
+  <!-- Paths to the libraries that contain device specific key handlers -->
+    <string-array name="config_deviceKeyHandlerLibs" translatable="false">
+        <item>/system_ext/priv-app/LineageParts/LineageParts.apk</item>
+        <item>/system_ext/priv-app/DeviceExtras/DeviceExtras.apk</item>
+    </string-array>
+
+    <!-- Names of the key handler classes -->
+    <string-array name="config_deviceKeyHandlerClasses" translatable="false">
+        <item>org.lineageos.device.DeviceExtras.KeyHandler</item>
+        <item>org.lineageos.device.DeviceExtras.TouchKeyHandler</item>
+    </string-array>
+
+    <!-- Whether device has physical tri state switch -->
+    <bool name="config_hasAlertSlider">true</bool>
+
+    <!-- Whether key handler sends intent when changing slider position -->
+    <string name="config_alertSliderIntent">org.lineageos.device.DeviceExtras.UPDATE_SLIDER_POSITION</string>
+
+    <!-- The location of the devices physical tri state switch
+         0: Left side
+         1: Right side -->
+    <integer name="config_alertSliderLocation">1</integer>
+
     <!-- Default value for proximity check on screen wake
      NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)-->
     <bool name="config_proximityCheckOnWake">true</bool>
