@@ -16,6 +16,9 @@
     <!-- Whether device supports Touch Screen Gestures
     <bool name="config_deviceSupportsTouchScreenGestures">true</bool>-->
 
+    <!-- Whether device supports Dolby -->
+    <bool name="config_deviceSupportsDolby">true</bool>
+
     <!-- Whether device supports DC-dimming -->
     <bool name="config_deviceSupportsDCdimming">true</bool>
 

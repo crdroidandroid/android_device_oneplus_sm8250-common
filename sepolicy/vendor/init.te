@@ -1,2 +1,5 @@
 allow init adsprpcd_file:file mounton;
 allow init sysfs_tri_state_key:file { open write };
+allow init vendor_data_file:file lock;
+allow init hal_audio_default:binder call;
+allow init platform_app:binder call;
