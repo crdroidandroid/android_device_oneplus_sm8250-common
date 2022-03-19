@@ -1,5 +1,4 @@
 allow system_app hal_cameraHIDL_hwservice:hwservice_manager find;
-allow system_app oem_service:service_manager find;
 binder_call(system_app, hal_cameraHIDL_default)
 
 allow system_app proc_touchpanel:dir r_dir_perms;
@@ -12,3 +11,4 @@ allow system_app sysfs_tri_state_key:file rw_file_perms;
 allow system_app sysfs_leds:dir search;
 allow system_app sysfs_vibrator:dir r_dir_perms;
 allow system_app sysfs_vibrator:file rw_file_perms;
+allow system_app sysfs_oem:file write;

@@ -1,0 +1,1 @@
+allow vendor_vppservice public_adsprpcd_file:file { getattr open read };
