@@ -3,3 +3,7 @@ allow init sysfs_tri_state_key:file { open write };
 allow init vendor_data_file:file lock;
 allow init hal_audio_default:binder call;
 allow init platform_app:binder call;
+allow init op2_file:dir mounton;
+allow init self:netlink_kobject_uevent_socket { bind create getopt read setopt };
+allow init sysfs_tri_state_key:file { open write };
+allow init uhid_device:chr_file { ioctl open write };

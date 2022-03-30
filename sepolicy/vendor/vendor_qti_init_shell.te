@@ -19,6 +19,10 @@ allow vendor_qti_init_shell vendor_sysfs_scsi_host:dir r_dir_perms;
 allow vendor_qti_init_shell vendor_sysfs_scsi_host:file rw_file_perms;
 
 allow vendor_qti_init_shell vendor_wcnss_service_exec:file execute_no_trans;
+allow vendor_qti_init_shell configfs:dir { add_name create write };
+allow vendor_qti_init_shell configfs:file create;
+allow vendor_qti_init_shell configfs:lnk_file create;
+allow vendor_qti_init_shell kmsg_device:chr_file { open write };
 
 get_prop(vendor_qti_init_shell, exported_system_prop)
 set_prop(vendor_qti_init_shell, ctl_default_prop)

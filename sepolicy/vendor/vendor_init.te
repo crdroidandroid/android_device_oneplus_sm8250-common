@@ -7,6 +7,9 @@ allow vendor_init proc_direct_swappiness:file w_file_perms;
 allow vendor_init proc_hung_task:file w_file_perms;
 allow vendor_init proc_swappiness:file w_file_perms;
 allow vendor_init proc_watermark_boost_factor:file rw_file_perms;
+allow vendor_init block_device:lnk_file setattr;
+
+allow vendor_init persist_debug_prop:file read;
 
 get_prop(vendor_init, vendor_db_security_prop)
 set_prop(vendor_init, vendor_oem_bluetooth_prop)

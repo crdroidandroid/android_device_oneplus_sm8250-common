@@ -8,10 +8,20 @@ allow hal_param_default self:qipcrtr_socket create_socket_perms_no_ioctl;
 
 allow hal_param_default block_device:dir search;
 
-allow hal_param_default param_block_device:blk_file rw_file_perms;
+allow hal_param_default init:unix_stream_socket connectto;
 
+allow hal_param_default param_block_device:blk_file rw_file_perms;
 allow hal_param_default param_device:chr_file rw_file_perms;
+
+allow hal_param_default property_socket:sock_file write;
+
+allow hal_param_default sysfs_project_info:dir search;
+allow hal_param_default sysfs_project_info:file r_file_perms;
+
+allow hal_param_default hwservicemanager_prop:file { open read getattr map };
+allow hal_param_default hwservicemanager:binder call;
 
 r_dir_file(hal_param_default, sysfs_project_info)
 
 get_prop(hal_param_default, exported_default_prop)
+get_prop(hal_param_default, build_prop)
