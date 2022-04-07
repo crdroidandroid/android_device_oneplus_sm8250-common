@@ -337,4 +337,13 @@
          running in WAL mode.
          Choices are: FULL, NORMAL, OFF. -->
     <string name="db_wal_sync_mode" translatable="false">OFF</string>
+    
+    <!-- The package name for the system's smartspace service.
+     This service returns smartspace results.
+
+     This service must be trusted, as it can be activated without explicit consent of the user.
+     If no service with the specified name exists on the device, smartspace will be disabled.
+     Example: "com.android.intelligence/.SmartspaceService"
+-->
+    <string name="config_defaultSmartspaceService" translatable="false"></string>    
 </resources>
