@@ -213,10 +213,6 @@
         <version>1.0</version>
         <interface>
             <name>ITouchscreenGesture</name>
-        <name>vendor.kscope.chgctrl</name>
-        <version>1.0</version>
-        <interface>
-            <name>IChargeControl</name>
             <instance>default</instance>
         </interface>
     </hal>
