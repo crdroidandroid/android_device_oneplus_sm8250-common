@@ -174,7 +174,7 @@ VENDOR_SECURITY_PATCH := 2022-02-01
 
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
-
+SELINUX_IGNORE_NEVERALLOWS := true
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 
 # Verified Boot
