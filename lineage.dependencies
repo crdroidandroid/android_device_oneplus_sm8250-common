@@ -1,10 +1,26 @@
 [
   {
-    "repository": "android_hardware_oneplus",
-    "target_path": "hardware/oneplus"
+    "remote"        : "crdroid",
+    "repository"    : "crdroidandroid/android_hardware_oneplus",
+    "branch"        : "12.1-op8",
+    "target_path"   : "hardware/oneplus"
   },
   {
-    "repository": "android_kernel_oneplus_sm8250",
-    "target_path": "kernel/oneplus/sm8250"
+    "remote"        : "crdroid",
+    "repository"    : "crdroidandroid/android_kernel_oneplus_sm8250",
+    "branch"        : "12.1",
+    "target_path"   : "kernel/oneplus/sm8250"
+  },
+  {
+    "remote"        : "crdroid-gitlab",
+    "repository"    : "crdroidandroid/android_vendor_oneplus_apps",
+    "branch"        : "12.1",
+    "target_path"   : "vendor/oneplus/apps"
+  },
+  {
+    "remote"        : "crdroid-gitlab",
+    "repository"    : "crdroidandroid/proprietary_vendor_oneplus_sm8250-common",
+    "branch"        : "12.1",
+    "target_path"   : "vendor/oneplus/sm8250-common"
   }
 ]
