@@ -19,8 +19,6 @@ ro.charger.disable_init_blank=true
 
 # Display
 debug.gralloc.gfx_ubwc_disable=0
-debug.sf.enable_hwc_vds=0
-debug.sf.latch_unsignaled=1
 debug.sf.enable_hwc_vds=1
 debug.sf.latch_unsignaled=0
 persist.vendor.color.matrix=2
@@ -58,7 +56,6 @@ ro.vendor.qti.core_ctl_max_cpu=4
 ro.vendor.qti.core_ctl_min_cpu=2
 
 # Radio
-ro.telephony.default_network=33,22
 ro.telephony.default_network=33,33
 persist.sys.fflag.override.settings_provider_model=false
 
