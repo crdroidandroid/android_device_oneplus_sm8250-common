@@ -1,0 +1,4 @@
+get_prop(hal_wifi_default, persist_vendor_debug_wifi_prop)
+
+allow hal_wifi_default proc_net:file write;
+allow hal_wifi_default self:capability sys_module;
