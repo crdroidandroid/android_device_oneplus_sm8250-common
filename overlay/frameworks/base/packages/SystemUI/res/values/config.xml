@@ -22,11 +22,4 @@
 <resources>
     <!-- Doze: does this device support STATE_DOZE?  -->
     <bool name="doze_display_state_supported">true</bool>
-    
-    <!-- The maximum number of tiles in the QuickQSPanel -->
-    <integer name="quick_qs_panel_max_tiles">6</integer>
-    
-    <!-- The maximum number of rows in the QuickQSPanel -->
-    <integer name="quick_qs_panel_max_rows">2</integer>
-          
 </resources>
