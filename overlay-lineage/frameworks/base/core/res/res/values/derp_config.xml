@@ -59,6 +59,9 @@
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
     <integer name="config_deviceHardwareKeys">64</integer>
+    
+    <!-- Whether the device supports Smart Pixels -->
+    <bool name="config_supportSmartPixels">true</bool>
 
     <!-- Does the device have a notification led -->
     <bool name="config_hasNotificationLed">false</bool>
