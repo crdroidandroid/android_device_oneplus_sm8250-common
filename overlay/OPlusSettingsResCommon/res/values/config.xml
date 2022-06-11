@@ -31,4 +31,9 @@
     <!-- Whether to show Smooth Display feature in Settings Options -->
     <bool name="config_show_smooth_display">true</bool>
 
+    <string name="pickup_sensor" translatable="false">android.sensor.tilt_detector</string>
+
+    <!-- Sensor trigger values -->
+    <item name="pickup_sensor_value" format="float" type="dimen">0.0</item>
+
 </resources>
