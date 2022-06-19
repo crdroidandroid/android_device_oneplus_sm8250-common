@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2023 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="device_title">OnePlus Settings</string>
+    <string name="device_summary">Adjust OnePlus specific device settings</string>
+
+    <!-- Notification slider -->
+    <string name="notification_slider_category_title">Alert slider</string>
+    <string name="notification_slider_title">Alert slider settings</string>
+    <string name="notification_slider_selection_dialog_title">Action</string>
+    <string name="notification_slider_top_position">Top position</string>
+    <string name="notification_slider_middle_position">Middle position</string>
+    <string name="notification_slider_bottom_position">Bottom position</string>
+    <string name="notification_slider_mode_total_silence">Total silence</string>
+    <string name="notification_slider_mode_alarms_only">Alarms only</string>
+    <string name="notification_slider_mode_priority_only">Priority only</string>
+    <string name="notification_slider_mode_none">All</string>
+
+    <string name="notification_slider_usage_title">Use slider for</string>
+    <string name="notification_slider_for_notification">Notification</string>
+    <string name="notification_slider_for_flashlight">Flashlight</string>
+    <string name="notification_slider_for_brightness">Brightness</string>
+    <string name="notification_slider_for_rotation">Rotation</string>
+    <string name="notification_slider_for_ringer">Ringer</string>
+    <string name="notification_slider_for_notification_ringer">Notification and ringer</string>
+
+    <string name="notification_slider_flashlight_off">Off</string>
+    <string name="notification_slider_flashlight_on">On</string>
+    <string name="notification_slider_flashlight_blink">Blink</string>
+
+    <string name="notification_slider_brightness_auto">Auto</string>
+    <string name="notification_slider_brightness_brightest">Brightest</string>
+    <string name="notification_slider_brightness_darkest">Darkest</string>
+
+    <string name="notification_slider_rotation_auto">Auto</string>
+    <string name="notification_slider_rotation_portrait">Portrait</string>
+    <string name="notification_slider_rotation_landscape_90">Landscape (90°)</string>
+    <string name="notification_slider_rotation_landscape_270">Landscape (270°)</string>
+
+    <string name="notification_slider_ringer_normal">Normal</string>
+    <string name="notification_slider_ringer_vibrate">Vibrate</string>
+    <string name="notification_slider_ringer_silent">Silent</string>
+
+</resources>

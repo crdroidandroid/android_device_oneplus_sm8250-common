@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+     Copyright (C) 2021-2023 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:settings="http://schemas.android.com/apk/res/org.lineageos.device.DeviceSettings">
+
+    <PreferenceCategory
+        android:key="slider"
+        android:title="@string/notification_slider_category_title">
+
+        <ListPreference
+            android:key="slider_usage"
+            android:icon="@drawable/ic_slider"
+            android:dialogTitle="@string/notification_slider_usage_title"
+            android:title="@string/notification_slider_usage_title"
+            android:entries="@array/notification_slider_usage_entries"
+            android:entryValues="@array/notification_slider_usage_entry_values"
+            android:summary="%s" />
+
+        <ListPreference
+            android:key="action_top_position"
+            android:icon="@drawable/ic_up_icon"
+            android:dialogTitle="@string/notification_slider_selection_dialog_title"
+            android:title="@string/notification_slider_top_position"
+            android:summary="%s" />
+
+        <ListPreference
+            android:key="action_middle_position"
+            android:icon="@drawable/ic_middle_icon"
+            android:dialogTitle="@string/notification_slider_selection_dialog_title"
+            android:title="@string/notification_slider_middle_position"
+            android:summary="%s" />
+
+        <ListPreference
+            android:key="action_bottom_position"
+            android:icon="@drawable/ic_down_icon"
+            android:dialogTitle="@string/notification_slider_selection_dialog_title"
+            android:title="@string/notification_slider_bottom_position"
+            android:summary="%s" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
