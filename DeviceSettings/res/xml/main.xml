@@ -52,4 +52,15 @@
             android:summary="%s" />
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="usb"
+        android:title="@string/usb_title">
+
+        <SwitchPreference
+            android:key="usb2_fast_charge"
+            android:icon="@drawable/ic_usb2_fc"
+            android:summary="@string/usb2_fc_summary"
+            android:title="@string/usb2_fc_title" />
+    </PreferenceCategory>
+
 </PreferenceScreen>

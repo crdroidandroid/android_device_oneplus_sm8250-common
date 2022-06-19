@@ -56,4 +56,9 @@
     <string name="notification_slider_ringer_vibrate">Vibrate</string>
     <string name="notification_slider_ringer_silent">Silent</string>
 
+    <!-- USB 2.0 Force FastCharge -->
+    <string name="usb_title">USB</string> 
+    <string name="usb2_fc_title">Fast charge</string>
+    <string name="usb2_fc_summary">Force fast charging of up to 900mA in USB 2.0 mode</string>
+
 </resources>
