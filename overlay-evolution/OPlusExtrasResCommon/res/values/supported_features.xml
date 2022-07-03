@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <!-- Whether device supports Alert Slider -->
+    <bool name="config_deviceSupportsAlertSlider">true</bool>
+
+    <!-- Whether device supports Per-App ColorSpace -->
+    <bool name="config_deviceSupportsPerAppColorSpace">true</bool>
+
+    <!-- Whether device supports Per-App Refresh Rate -->
+    <bool name="config_deviceSupportsPerAppRefreshRate">true</bool>
+
+    <!-- Whether device supports Kcal -->
+    <bool name="config_deviceSupportsKcal">true</bool>
+
+    <!-- Whether device supports High Brightness Mode -->
+    <bool name="config_deviceSupportsHBM">true</bool>
+
+    <!-- Whether device supports Power Efficient Workqueue -->
+    <bool name="config_deviceSupportsPowerEfficientWorkqueue">true</bool>
+
+    <!-- Whether device supports MSM touchboost -->
+    <bool name="config_deviceSupportsTouchBoost">true</bool>
+
+    <!-- Whether device supports disabling of fsync -->
+    <bool name="config_deviceSupportsFSyncOff">true</bool>
+
+    <!-- Whether device supports FPS overlay -->
+    <bool name="config_deviceSupportsFPS">true</bool>
+
+    <!-- Whether device supports AdrenoBoost -->
+    <bool name="config_deviceSupportsAdrenoBoost">true</bool>
+
+    <!-- Whether device supports Touch Screen Gestures -->
+    <bool name="config_deviceSupportsTouchScreenGestures">true</bool>
+
+    <!-- Whether to show Jitter Test -->
+    <bool name="config_deviceSupportsJitterTest">true</bool>
+
+    <!-- Whether device supports USB-OTG -->
+    <bool name="config_deviceSupportsOTG">true</bool>
+
+    <!-- Whether device supports USB2.0 Force Fastcharge -->
+    <bool name="config_deviceSupportsUSB2FC">true</bool>
+
+    <!-- Whether device supports System vibration intensity -->
+    <bool name="config_deviceSupportsSysVib">true</bool>
+
+</resources>
