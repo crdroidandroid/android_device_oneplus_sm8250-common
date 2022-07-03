@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <!-- Whether device supports Alert Slider -->
+    <bool name="config_deviceSupportsAlertSlider">true</bool>
+
+    <!-- Whether device supports MSM Touchboost -->
+    <bool name="config_deviceSupportsTouchboost">true</bool>
+
+    <!-- Whether device supports Ambient Display Gestures -->
+    <bool name="config_deviceSupportsAmbientDisplayGestures">true</bool>
+
+    <!-- Whether device supports High Brightness Mode -->
+    <bool name="config_deviceSupportsHBM">true</bool>
+
+    <!-- Whether device supports Kcal -->
+    <bool name="config_deviceSupportsKcal">true</bool>
+
+    <!-- Whether device supports Keep PCC -->
+    <bool name="config_deviceSupportsKeepPCC">true</bool>
+
+    <!-- Whether device supports Changing Maximum Brightness -->
+    <bool name="config_deviceSupportsChangingMaxBrightness">true</bool>
+
+    <!-- Whether device supports Disabling fsync -->
+    <bool name="config_deviceSupportsFSyncOff">true</bool>
+
+    <!-- Whether device supports AdrenoBoost -->
+    <bool name="config_deviceSupportsAdrenoboost">true</bool>
+
+    <!-- Whether device supports Touch Gestures -->
+    <bool name="config_deviceSupportsTouchGestures">true</bool>
+
+    <!-- Whether device supports USB2.0 Force Fastcharge -->
+    <bool name="config_deviceSupportsUSB2FC">true</bool>
+
+    <!-- Whether device supports USB-OTG -->
+    <bool name="config_deviceSupportsOTG">true</bool>
+
+    <!-- Whether device supports Vibration Strength -->
+    <bool name="config_deviceSupportsVibStrength">true</bool>
+
+</resources>

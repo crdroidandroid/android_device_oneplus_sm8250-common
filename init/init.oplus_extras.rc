@@ -1,0 +1,72 @@
+on boot
+    # Adrenoboost
+    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost
+    chmod 0666 /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost
+
+    # DC-Dimming
+    chown system system /sys/kernel/oplus_display/dimlayer_bl_en
+    chmod 0666 /sys/kernel/oplus_display/dimlayer_bl_en
+
+    # Fsync Switch
+    chown system system /sys/module/sync/parameters/fsync_enabled
+    chmod 0666 /sys/module/sync/parameters/fsync_enabled
+
+    # Force Fast Charge
+    chown system system /sys/kernel/fast_charge/force_fast_charge
+    chmod 0666 /sys/kernel/fast_charge/force_fast_charge
+
+    # HBM
+    chown system system /sys/kernel/oplus_display/hbm
+    chmod 0666 /sys/kernel/oplus_display/hbm
+
+    # Game Mode
+    chown system system /proc/touchpanel/game_switch_enable
+    chmod 0666 /proc/touchpanel/game_switch_enable
+
+    # Kcal
+    chown system graphics /sys/module/msm_drm/parameters/kcal_red
+    chmod 0666 /sys/module/msm_drm/parameters/kcal_red
+    chown system graphics /sys/module/msm_drm/parameters/kcal_green
+    chmod 0666 /sys/module/msm_drm/parameters/kcal_green
+    chown system graphics /sys/module/msm_drm/parameters/kcal_blue
+    chmod 0666 /sys/module/msm_drm/parameters/kcal_blue
+    chown system graphics /sys/module/msm_drm/parameters/kcal_sat
+    chmod 0666 /sys/module/msm_drm/parameters/kcal_sat
+    chown system graphics /sys/module/msm_drm/parameters/kcal_hue
+    chmod 0666 /sys/module/msm_drm/parameters/kcal_hue
+    chown system graphics /sys/module/msm_drm/parameters/kcal_val
+    chmod 0666 /sys/module/msm_drm/parameters/kcal_val
+    chown system graphics /sys/module/msm_drm/parameters/kcal_cont
+    chmod 0666 /sys/module/msm_drm/parameters/kcal_cont
+
+    # Max Brightness
+    chown system system /sys/kernel/oplus_display/max_brightness
+    chmod 0666 /sys/kernel/oplus_display/max_brightness
+
+    # Measured FPS
+    chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
+    chmod 0666 /sys/class/drm/sde-crtc-0/measured_fps
+
+    # MSM Touchboost
+    chown system system /sys/module/msm_performance/parameters/touchboost
+    chmod 0666 /sys/module/msm_performance/parameters/touchboost
+
+    # PCC Override
+    chown system system /sys/kernel/oplus_display/skip_pcc_override
+    chmod 0666 /sys/kernel/oplus_display/skip_pcc_override
+
+    # Powershare
+    chown system system /proc/wireless/enable_tx
+    chmod 0666 /proc/wireless/enable_tx
+
+    # Quiet Mode
+    chown system system /proc/wireless/quiet_mode
+    chmod 0666 /proc/wireless/quiet_mode
+
+    # USB-OTG
+    chown system /sys/devices/virtual/oplus_chg/usb/otg_switch
+    chmod 0666 /sys/devices/virtual/oplus_chg/usb/otg_switch
+
+    # Vibration Intensity
+    chown system system /sys/devices/platform/soc/a8c000.i2c/i2c-6/6-005a/leds/vibrator/level
+    chmod 0666 /sys/devices/platform/soc/a8c000.i2c/i2c-6/6-005a/leds/vibrator/level

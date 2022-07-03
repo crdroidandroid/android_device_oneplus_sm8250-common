@@ -229,6 +229,7 @@ PRODUCT_PACKAGES += \
     init.oplus.hw.rc \
     init.oplus.hw.rc.recovery \
     init.oplus.rc \
+    init.oplus_extras.rc \
     init.oplus.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
@@ -302,6 +303,11 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# OPlusExtras
+PRODUCT_PACKAGES += \
+    OPlusExtras \
+    tri-state-key-calibrate
+
 # Overlays
 $(call inherit-product, hardware/oplus/overlay/qssi/qssi.mk)
 
@@ -313,6 +319,7 @@ PRODUCT_PACKAGES += \
     EvolutionSettingsResCommon \
     EvolutionSystemUIResCommon \
     FrameworksResTarget \
+    OPlusExtrasResCommon \
     OPlusFrameworksResCommon \
     OPlusSettingsResCommon \
     OPlusSystemUIResCommon \

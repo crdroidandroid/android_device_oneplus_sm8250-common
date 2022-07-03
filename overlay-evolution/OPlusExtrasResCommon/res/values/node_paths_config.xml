@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2023 The Evolution X Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources>
+
+    <!-- MSM Touchboost sysfs node path -->
+    <string name="node_touchboost_switch" translatable="false">/sys/module/msm_performance/parameters/touchboost</string>
+
+    <!-- High Brightness sysfs node path -->
+    <string name="node_hbm_switch" translatable="false">/sys/kernel/oplus_display/hbm</string>
+
+    <!-- Kcal sysfs node paths -->
+    <string name="node_red_preference" translatable="false">/sys/module/msm_drm/parameters/kcal_red</string>
+    <string name="node_green_preference" translatable="false">/sys/module/msm_drm/parameters/kcal_green</string>
+    <string name="node_blue_preference" translatable="false">/sys/module/msm_drm/parameters/kcal_blue</string>
+    <string name="node_saturation_preference" translatable="false">/sys/module/msm_drm/parameters/kcal_sat</string>
+    <string name="node_contrast_preference" translatable="false">/sys/module/msm_drm/parameters/kcal_cont</string>
+    <string name="node_hue_preference" translatable="false">/sys/module/msm_drm/parameters/kcal_hue</string>
+    <string name="node_value_preference" translatable="false">/sys/module/msm_drm/parameters/kcal_val</string>
+
+    <!-- Keep PCC sysfs node path -->
+    <string name="node_keep_pcc_switch" translatable="false">/sys/kernel/oplus_display/skip_pcc_override</string>
+
+    <!-- Max Brightness sysfs node path-->
+    <string name="node_max_brightness_preference" translatable="false">/sys/kernel/oplus_display/max_brightness</string>
+
+    <!-- FSync sysfs node path-->
+    <string name="node_fsync_switch" translatable="false">/sys/module/sync/parameters/fsync_enabled</string>
+
+    <!-- AdrenoBoost sysfs node path -->
+    <string name="node_adrenoboost_preference" translatable="false">/sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost</string>
+
+    <!-- USB 2.0 Force fastcharge sysfs node path -->
+    <string name="node_usb2_fast_charge_switch" translatable="false">/sys/kernel/fast_charge/force_fast_charge</string>
+
+    <!-- USB-OTG sysfs node path -->
+    <string name="node_usb_otg_switch" translatable="false">/sys/devices/virtual/oplus_chg/usb/otg_switch</string>
+
+    <!-- Vibration strength sysfs node path -->
+    <string name="node_vibrator_strength_preference" translatable="false">/sys/devices/platform/soc/a8c000.i2c/i2c-6/6-005a/leds/vibrator/level</string>
+
+</resources>
