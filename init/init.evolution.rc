@@ -1,0 +1,4 @@
+on boot
+    # Smart charging input suspend node
+    chown system system /sys/devices/virtual/oplus_chg/battery/mmi_charging_enable
+    chmod 0666 /sys/devices/virtual/oplus_chg/battery/mmi_charging_enable
