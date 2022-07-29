@@ -61,4 +61,12 @@
     <string name="usb2_fc_title">Быстрая зарядка</string>
     <string name="usb2_fc_summary">Принудительно увеличивать ток заряда до 900 мА в режиме USB 2.0</string>
 
+    <!-- Touchpanel -->
+    <string name="touchpanel_title">Сенсорная панель</string>
+    <string name="game_mode_title">Игровой режим</string>
+    <string name="game_mode_summary">Повышение реакции на касания и частоты опроса сенсорного экрана</string>
+    <string name="game_mode_warning">Может увеличить расход заряда батареи</string>
+    <string name="edge_touch_title">Снять ограничения касаний</string>
+    <string name="edge_touch_summary">Улучшение в играх нескольких касаний</string>
+    <string name="edge_touch_warning">Может увеличить вероятность случайного прикосновения</string>
 </resources>

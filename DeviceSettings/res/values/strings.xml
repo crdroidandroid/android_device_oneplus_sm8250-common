@@ -61,4 +61,12 @@
     <string name="usb2_fc_title">Fast charge</string>
     <string name="usb2_fc_summary">Force fast charging of up to 900mA in USB 2.0 mode</string>
 
+    <!-- Touchpanel -->
+    <string name="touchpanel_title">Touchpanel</string>
+    <string name="game_mode_title">Hyper touch</string>
+    <string name="game_mode_summary">Improve touch response and frame rate stability in games</string>
+    <string name="game_mode_warning">May increase power consumption</string>
+    <string name="edge_touch_title">Unlimit edge touch</string>
+    <string name="edge_touch_summary">Improve your multi-touch experience in games</string>
+    <string name="edge_touch_warning">May increase the possibility of accidental touch</string>
 </resources>
