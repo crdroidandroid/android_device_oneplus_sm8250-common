@@ -115,6 +115,10 @@ ro.bluetooth.a2dp_offload.supported=true
 ro.vendor.bluetooth.wipower=false
 vendor.qcom.bluetooth.soc=hastings
 
+# Camera
+vendor.camera.algo.jpeghwencode=0
+vendor.camera.aux.packagelist=android,com.oneplus.camera
+
 # Chipset
 ro.soc.manufacturer=QTI
 ro.soc.model=SM8250
