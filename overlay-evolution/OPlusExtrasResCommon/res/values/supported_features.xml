@@ -50,4 +50,6 @@
     <!-- Whether device supports System vibration intensity -->
     <bool name="config_deviceSupportsSysVib">true</bool>
 
+    <!-- Whether device supports Dolby -->
+    <bool name="config_deviceSupportsDolby">true</bool>
 </resources>
