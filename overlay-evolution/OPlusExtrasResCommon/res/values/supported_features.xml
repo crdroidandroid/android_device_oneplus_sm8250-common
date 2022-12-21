@@ -9,7 +9,7 @@
     <bool name="config_deviceSupportsAlertSlider">true</bool>
 
     <!-- Whether device supports Per-App ColorSpace -->
-    <bool name="config_deviceSupportsPerAppColorSpace">true</bool>
+    <bool name="config_deviceSupportsPerAppColorSpace">false</bool>
 
     <!-- Whether device supports Per-App Refresh Rate -->
     <bool name="config_deviceSupportsPerAppRefreshRate">true</bool>
