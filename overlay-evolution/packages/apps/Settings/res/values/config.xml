@@ -12,5 +12,10 @@
 
     <!-- Sensor trigger values -->
     <item name="pickup_sensor_value" format="float" type="dimen">0.0</item>
+    
+    <!-- Whether to show peak refresh rate in display settings -->
+    <bool name="config_show_peak_refresh_rate_switch">true</bool>
 
+    <!-- Whether to show min refresh rate in display settings -->
+    <bool name="config_show_min_refresh_rate_switch">true</bool>
 </resources>
