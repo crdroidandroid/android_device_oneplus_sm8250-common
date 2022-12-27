@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+ ********************************************************************************
+ ** Copyright (C) 2018-2021 Oplus. All rights reserved.
+ ** All rights reserved.
+ **
+ ** File: - privapp-permission-oplus.xml
+ ** Description:
+ **     Customization of Android default_grant_permissions_list.xml
+ **
+ ** Version: 1.0
+ ** Date: 2021-08-26
+ ********************************************************************************/
+  -->
+<exceptions>
+    <exception package="com.oplus.camera" >
+        <permission name="android.permission.CAMERA"/>
+        <permission name="android.permission.RECORD_AUDIO"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+        <permission name="android.permission.READ_PHONE_STATE"/>
+    </exception>
+</exceptions>

@@ -11,6 +11,12 @@ persist.bluetooth.bqr.min_interval_ms=60000
 debug.sf.enable_hwc_vds=1
 debug.sf.latch_unsignaled=1
 
+# Camera
+ro.oplus.system.camera.name=com.oplus.camera
+ro.oplus.system.camera.flashlight=com.oplus.motor.flashlight
+ro.oplus.camera.video_beauty.prefix=oplus.video.beauty.
+ro.oplus.camera.video.beauty.switch=oplus.switch.video.beauty
+
 # CNE
 persist.vendor.cne.feature=1
 

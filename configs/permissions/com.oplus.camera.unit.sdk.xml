@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name = "com.oplus.camera.unit.sdk"
+        file = "/system_ext/framework/com.oplus.camera.unit.sdk.jar" />
+</permissions>

@@ -1,0 +1,9 @@
+java_library {
+    name: "oplus-fwk.lahaina",
+    installable: true,
+
+    srcs: [
+        "src/**/*.aidl",
+        "src/**/*.java",
+    ],
+}

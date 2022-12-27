@@ -1,0 +1,4 @@
+libAPSClient-jni.qti.so
+libAncHumBokeh-jni.qti.so
+libApsFaceBeautyPreviewJni.qti.so
+libjnistblur_api.qti.so

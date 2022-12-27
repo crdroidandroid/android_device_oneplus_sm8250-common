@@ -13,6 +13,35 @@ on fs
     # Update touchpanel firmware in case we ship newer firmware in /odm
     write /proc/touchpanel/tp_fw_update 0
 
+on post-fs-data
+    # Add permision for ams-tof and ois
+    chown system system /sys/kernel/tof_control/app0/capture
+    chmod 666 /sys/kernel/tof_control/app0/capture
+    chown system system /sys/kernel/tof_control/app0/app0_get_fac_calib
+    chmod 666 /sys/kernel/tof_control/app0/app0_get_fac_calib
+    chown system system /sys/kernel/tof_control/app0/app0_get_distance
+    chmod 666 /sys/kernel/tof_control/app0/app0_get_distance
+    chown system system /sys/kernel/tof_control/app0/app0_read_peak_crosstalk
+    chmod 666 /sys/kernel/tof_control/app0/app0_read_peak_crosstalk
+    chown system system /sys/kernel/tof_control/app0/period
+    chmod 666 /sys/kernel/tof_control/app0/period
+    chown system system /sys/kernel/tof_control/app0/iterations
+    chmod 666 /sys/kernel/tof_control/app0/iterations
+    chown system system /sys/kernel/tof_control/app0/alg_setting
+    chmod 666 /sys/kernel/tof_control/app0/alg_setting
+    chown system system /sys/kernel/tof_control/app0/app0_clk_iterations
+    chmod 666 /sys/kernel/tof_control/app0/app0_clk_iterations
+    chown system system /sys/kernel/tof_control/chip_enable
+    chmod 666 /sys/kernel/tof_control/chip_enable
+    chown system system /sys/kernel/tof_control/app0/app0_clk_trim_set
+    chmod 666 /sys/kernel/tof_control/app0/app0_clk_trim_set
+    chown system system /sys/kernel/tof_control/app0/app0_apply_fac_calib
+    chmod 666 /sys/kernel/tof_control/app0/app0_apply_fac_calib
+    chown system system /sys/kernel/tof_control/driver_debug
+    chmod 666 /sys/kernel/tof_control/driver_debug
+    chown system system /sys/kernel/ois_control/dump_registers
+    chmod 666 /sys/kernel/ois_control/dump_registers
+
 on early-boot
     # Radio
     exec_start oplus-sh

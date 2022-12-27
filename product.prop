@@ -1,5 +1,14 @@
 # Audio
 af.fast_track_multiplier=1
 
+# Camera
+persist.vendor.camera.privapp.list=com.oplus.camera,org.lineageos.aperture,org.codeaurora.snapcam
+vendor.camera.algo.jpeghwencode=0
+vendor.camera.aux.packagelist=com.oplus.camera,org.lineageos.aperture,org.codeaurora.snapcam
+
 # GMS
 ro.opa.device_model_id=ga-oplus-skill-os121-211011
+
+# Google Lens
+ro.com.google.lens.oem_camera_package=com.oplus.camera
+ro.com.google.lens.oem_image_package=com.oneplus.gallery

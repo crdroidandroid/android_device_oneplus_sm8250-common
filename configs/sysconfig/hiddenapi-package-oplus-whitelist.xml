@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This XML file declares which system apps should be exempted from the hidden API blacklisting, i.e.
+which apps should be allowed to access the entire private API.
+
+Only apps NOT signed with the platform cert need to be included, as apps signed with the platform
+cert are exempted by default.
+
+Do NOT include any apps that are updatable via Play Store!
+-->
+
+<config>
+  <hidden-api-whitelisted-app package="com.oplus.camera" />
+  <hidden-api-whitelisted-app package="com.oneplus.gallery" />
+</config>

@@ -72,6 +72,9 @@ function blob_fixup() {
         odm/lib64/libpwirissoft.so)
             "${SIGSCAN}" -p "72 1F 00 94" -P "1F 20 03 D5" -f "${2}"
             ;;
+        odm/lib64/libui.so)
+            "${PATCHELF}" --replace-needed "android.hardware.graphics.common-V1-ndk_platform.so" "android.hardware.graphics.common-V1-ndk.so" "${2}"
+            ;;
         product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml)
             sed -i "s/\/my_product/\/product/" "${2}"
             ;;
@@ -81,10 +84,6 @@ function blob_fixup() {
         vendor/etc/libnfc-nxp.conf)
             sed -i "s/^NXP_RF_CONF_BLK_9/#NXP_RF_CONF_BLK_9/" "${2}"
             sed -i "s/^NXP_RF_CONF_BLK_10/#NXP_RF_CONF_BLK_10/" "${2}"
-            ;;
-        vendor/lib64/hw/com.qti.chi.override.so)
-            grep -q libcamera_metadata_shim.so "${2}" || "${PATCHELF}" --add-needed libcamera_metadata_shim.so "${2}"
-            sed -i "s/com.oem.autotest/\x00om.oem.autotest/" "${2}"
             ;;
         vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so)
             "${SIGSCAN}" -p "1F 0A 00 94" -P "1F 20 03 D5" -f "${2}"
