@@ -3557,6 +3557,10 @@
             <item value="405873" />
             <item value="405874" />
         </string-array>
+		<!-- PA: Do not allow 5G NSA on Jio -->
+        	<int-array name="carrier_nr_availabilities_int_array" num="1">
+            		<item value="2" />
+        	</int-array>
     </carrier_config>
     <carrier_config operator="AIRTEL">
         <boolean name="carrier_volte_available_bool" value="true" />
