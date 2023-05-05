@@ -3529,7 +3529,7 @@
         <boolean name="config_disable_clir_over_ut" value="true" />
         <boolean name="config_oplus_show_5g_pref" value="true" />
         <boolean name="config_oplus_4g_pref_default" value="false" />
-        <boolean name="vonr_enabled_bool" value="false" />
+        <boolean name="vonr_enabled_bool" value="true" />
         <boolean name="vonr_setting_visibility_bool" value="true" />
         <int name="carrier_oplus_auto_nr_mode" value="3" />
         <boolean name="oplus_carrier_call_disable_endc" value="true" />
