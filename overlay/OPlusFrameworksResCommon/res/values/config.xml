@@ -127,4 +127,10 @@
          fp screen off unlock-->
     <bool name="config_screen_off_udfps_default_on">false</bool>
 
+    <!-- Whether device has warp charging support -->
+    <bool name="config_hasWarpCharger">true</bool>
+
+     <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
+    <string name="config_oemFastChargerStatusPath" translatable="false">"/sys/class/oplus_chg/battery/fast_charge"</string>
+
 </resources>
