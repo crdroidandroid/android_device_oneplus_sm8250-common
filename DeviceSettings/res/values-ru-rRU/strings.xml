@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016-2023 crDroid Android Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="device_title">Настройки OnePlus</string>
+    <string name="device_summary">Изменение особых настроек устройства OnePlus</string>
+
+    <!-- Notification slider -->
+    <string name="notification_slider_category_title">Переключатель режима</string>
+    <string name="notification_slider_title">Настройки переключателя режима</string>
+    <string name="notification_slider_selection_dialog_title">Действие</string>
+    <string name="notification_slider_top_position">Верхнее положение</string>
+    <string name="notification_slider_middle_position">Среднее положение</string>
+    <string name="notification_slider_bottom_position">Нижнее положение</string>
+    <string name="notification_slider_mode_total_silence">Полностью бесшумный</string>
+    <string name="notification_slider_mode_alarms_only">Только будильник</string>
+    <string name="notification_slider_mode_priority_only">Только важные</string>
+    <string name="notification_slider_mode_none">Все оповещения</string>
+
+    <string name="notification_slider_usage_title">Назначение переключателя</string>
+    <string name="notification_slider_for_notification">Уведомления</string>
+    <string name="notification_slider_for_flashlight">Фонарик</string>
+    <string name="notification_slider_for_brightness">Яркость</string>
+    <string name="notification_slider_for_rotation">Ориентация экрана</string>
+    <string name="notification_slider_for_ringer">Звонок</string>
+    <string name="notification_slider_for_notification_ringer">Уведомления и звонок</string>
+
+    <string name="notification_slider_flashlight_off">Выключить</string>
+    <string name="notification_slider_flashlight_on">Включить</string>
+    <string name="notification_slider_flashlight_blink">Мигать</string>
+
+    <string name="notification_slider_brightness_auto">Автояркость</string>
+    <string name="notification_slider_brightness_brightest">Светлее</string>
+    <string name="notification_slider_brightness_darkest">Темнее</string>
+
+    <string name="notification_slider_rotation_auto">Автоповорот</string>
+    <string name="notification_slider_rotation_portrait">Портретная</string>
+    <string name="notification_slider_rotation_landscape_90">Ландшафтная (90°)</string>
+    <string name="notification_slider_rotation_landscape_270">Ландшафтная (270°)</string>
+
+    <string name="notification_slider_ringer_normal">Обычный</string>
+    <string name="notification_slider_ringer_vibrate">Вибрация</string>
+    <string name="notification_slider_ringer_silent">Без звука</string>
+
+    <!-- USB 2.0 Force FastCharge -->
+    <string name="usb_title">USB</string> 
+    <string name="usb2_fc_title">Быстрая зарядка</string>
+    <string name="usb2_fc_summary">Принудительно увеличивать ток заряда до 900 мА в режиме USB 2.0</string>
+
+</resources>
