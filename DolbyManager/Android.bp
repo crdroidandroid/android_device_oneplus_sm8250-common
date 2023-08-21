@@ -1,0 +1,18 @@
+//
+// Copyright (C) 2017-2021 The LineageOS Project
+//           (C) 2023 Paranoid Android
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+android_app {
+    name: "DolbyManager",
+    srcs: ["src/**/*.java"],
+    certificate: "platform",
+    platform_apis: true,
+    privileged: true,
+    system_ext_specific: true,
+    static_libs: [
+        "SettingsLib",
+    ],
+}
