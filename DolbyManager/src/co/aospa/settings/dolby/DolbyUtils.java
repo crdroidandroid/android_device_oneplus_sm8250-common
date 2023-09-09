@@ -133,9 +133,7 @@ public final class DolbyUtils {
         checkEffect();
         Log.i(TAG, "setDsOn: " + on);
         mDolbyAtmos.setDsOn(on);
-        if (on) {
-            refreshPlaybackIfNecessary();
-        }
+        refreshPlaybackIfNecessary();
     }
 
     public boolean getDsOn() {
