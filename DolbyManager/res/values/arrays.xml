@@ -17,12 +17,18 @@
         <item>@string/dolby_profile_dynamic</item>
         <item>@string/dolby_profile_movie</item>
         <item>@string/dolby_profile_music</item>
+        <item>@string/dolby_profile_game1</item>
+        <item>@string/dolby_profile_game2</item>
+        <item>@string/dolby_profile_voice</item>
     </string-array>
 
     <string-array name="dolby_profile_values">
         <item>0</item>
         <item>1</item>
         <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
     </string-array>
 
     <string-array name="dolby_preset_entries" translatable="false">

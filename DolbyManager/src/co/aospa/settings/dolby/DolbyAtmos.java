@@ -28,10 +28,10 @@ public class DolbyAtmos extends AudioEffect {
             UUID.fromString("9d4921da-8225-4f29-aefa-39537a04bcaa");
     private static final int DAP_PARAM = 5;
     private static final int DAP_PARAM_PROFILE = 0xA000000;
-    private static final int DAP_PARAM_VALUE = 0x2000000;
+    private static final int DAP_PARAM_VALUE = 0x1000000;
     private static final int DAP_PARAM_GEQ = 110;
     private static final int DAP_PARAM_VOLUME_LEVELER = 103;
-    private static final int DAP_PROFILES_COUNT = 9;
+    private static final int DAP_PROFILES_COUNT = 10;
 
     public DolbyAtmos(int priority, int audioSession) {
         super(EFFECT_TYPE_NULL, EFFECT_TYPE_DAP, priority, audioSession);

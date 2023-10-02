@@ -24,8 +24,11 @@
 
     <!-- Dolby Atmos: Sound Profiles -->
     <string name="dolby_profile_dynamic">Dynamic</string>
-    <string name="dolby_profile_music">Music</string>
     <string name="dolby_profile_movie">Movie</string>
+    <string name="dolby_profile_music">Music</string>
+    <string name="dolby_profile_game1">Game1</string>
+    <string name="dolby_profile_game2">Game2</string>
+    <string name="dolby_profile_voice">Voice</string>
 
     <!-- Dolby Atmos: Equalizer presets -->
     <string name="dolby_preset_default">Default</string>
