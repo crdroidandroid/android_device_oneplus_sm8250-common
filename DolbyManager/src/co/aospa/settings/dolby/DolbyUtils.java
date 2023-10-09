@@ -17,18 +17,7 @@
 package co.aospa.settings.dolby;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.media.AudioManager;
-import android.media.session.MediaController;
-import android.media.session.MediaSessionManager;
-import android.media.session.PlaybackState;
-import android.os.Handler;
-import android.os.SystemClock;
-import android.os.UserHandle;
-import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.KeyEvent;
 
 import com.android.settingslib.widget.R;
 
@@ -43,14 +32,11 @@ public final class DolbyUtils {
 
     private static DolbyUtils mInstance;
     private DolbyAtmos mDolbyAtmos;
-    private MediaSessionManager mMediaSessionManager;
     private Context mContext;
-    private Handler mHandler = new Handler();
 
     private DolbyUtils(Context context) {
         mContext = context;
         mDolbyAtmos = new DolbyAtmos(EFFECT_PRIORITY, 0);
-        mMediaSessionManager = context.getSystemService(MediaSessionManager.class);
     }
 
     public static synchronized DolbyUtils getInstance(Context context) {
@@ -66,63 +52,6 @@ public final class DolbyUtils {
         mDolbyAtmos.setVolumeLevelerEnabled(false);
     }
 
-    private void triggerPlayPause(MediaController controller) {
-        long when = SystemClock.uptimeMillis();
-        final KeyEvent evDownPause = new KeyEvent(when, when, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_MEDIA_PAUSE, 0);
-        final KeyEvent evUpPause = KeyEvent.changeAction(evDownPause, KeyEvent.ACTION_UP);
-        final KeyEvent evDownPlay = new KeyEvent(when, when, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_MEDIA_PLAY, 0);
-        final KeyEvent evUpPlay = KeyEvent.changeAction(evDownPlay, KeyEvent.ACTION_UP);
-        mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                controller.dispatchMediaButtonEvent(evDownPause);
-            }
-        });
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                controller.dispatchMediaButtonEvent(evUpPause);
-            }
-        }, 20);
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                controller.dispatchMediaButtonEvent(evDownPlay);
-            }
-        }, 1000);
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                controller.dispatchMediaButtonEvent(evUpPlay);
-            }
-        }, 1020);
-    }
-
-    private int getMediaControllerPlaybackState(MediaController controller) {
-        if (controller != null) {
-            final PlaybackState playbackState = controller.getPlaybackState();
-            if (playbackState != null) {
-                return playbackState.getState();
-            }
-        }
-        return PlaybackState.STATE_NONE;
-    }
-
-    private void refreshPlaybackIfNecessary(){
-        if (mMediaSessionManager == null) return;
-
-        final List<MediaController> sessions
-                = mMediaSessionManager.getActiveSessionsForUser(
-                null, UserHandle.ALL);
-        for (MediaController controller : sessions) {
-            if (PlaybackState.STATE_PLAYING ==
-                    getMediaControllerPlaybackState(controller)) {
-                triggerPlayPause(controller);
-                break;
-            }
-        }
-    }
-
     private void checkEffect() {
         if (!mDolbyAtmos.hasControl()) {
             Log.w(TAG, "lost control, recreating effect");
@@ -135,7 +64,6 @@ public final class DolbyUtils {
         checkEffect();
         Log.i(TAG, "setDsOn: " + on);
         mDolbyAtmos.setDsOn(on);
-        refreshPlaybackIfNecessary();
     }
 
     public boolean getDsOn() {
