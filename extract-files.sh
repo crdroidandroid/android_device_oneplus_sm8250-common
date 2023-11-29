@@ -103,6 +103,9 @@ function blob_fixup() {
         vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so)
             "${SIGSCAN}" -p "1F 0A 00 94" -P "1F 20 03 D5" -f "${2}"
             ;;
+        odm/lib/libdlbdsservice_v3_6.so | odm/lib/libstagefright_soft_ddpdec.so | odm/lib/libstagefrightdolby.so | odm/lib64/libdlbdsservice_v3_6.so)
+            "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
+            ;;
     esac
 }
 
