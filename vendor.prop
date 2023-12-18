@@ -178,6 +178,7 @@ ro.surface_flinger.use_color_management=true
 ro.surface_flinger.use_content_detection_for_refresh_rate=true
 ro.surface_flinger.wcg_composition_dataspace=143261696
 vendor.opengles.version=196610
+ro.surface_flinger.enable_frame_rate_override=false
 
 # Incremental FS
 ro.incremental.enable=yes
@@ -207,7 +208,6 @@ ro.telephony.default_network=33,22
 # Sensors
 persist.vendor.sensors.allow_non_default_discovery=true
 persist.vendor.sensors.sync_request=true
-persist.vendor.sensors.debug.hal=0
 
 # USB
 vendor.usb.diag.func.name=diag
