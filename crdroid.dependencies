@@ -10,6 +10,7 @@
   {
     "repository": "crdroidandroid/proprietary_vendor_oneplus_sm8250-common",
     "target_path": "vendor/oneplus/sm8250-common",
+    "branch": "14.0",
     "remote": "crdroid-gitlab"
   }
 ]
