@@ -6,5 +6,10 @@
   {
     "repository": "android_kernel_oneplus_sm8250",
     "target_path": "kernel/oneplus/sm8250"
+  },
+  {
+    "repository": "crdroidandroid/proprietary_vendor_oneplus_sm8250-common",
+    "target_path": "vendor/oneplus/sm8250-common",
+    "remote": "crdroid-gitlab"
   }
 ]
