@@ -12,7 +12,7 @@ android_app {
     platform_apis: true,
     privileged: true,
     system_ext_specific: true,
-    overrides: ["MusicFX"],
+    overrides: ["MusicFX","AudioFX"],
     static_libs: [
         "SettingsLib",
     ],
