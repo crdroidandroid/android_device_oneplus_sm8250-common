@@ -166,11 +166,11 @@ vendor.gatekeeper.disable_spu=true
 # Graphics
 debug.sf.disable_backpressure=1
 debug.sf.enable_advanced_sf_phase_offset=1
-debug.sf.enable_gl_backpressure=1
+debug.sf.disable_gl_backpressure=1
 debug.sf.high_fps_early_gl_phase_offset_ns=-2000000
 debug.sf.high_fps_early_phase_offset_ns=-4000000
 debug.sf.high_fps_late_sf_phase_offset_ns=-2000000
-debug.sf.latch_unsignaled=1
+debug.sf.latch_unsignaled=0
 persist.sys.sf.color_saturation=1.0
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
@@ -215,6 +215,7 @@ ro.telephony.default_network=33,22
 # Sensors
 persist.vendor.sensors.allow_non_default_discovery=true
 persist.vendor.sensors.sync_request=true
+persist.vendor.sensors.debug.hal=0
 
 # USB
 vendor.usb.diag.func.name=diag
