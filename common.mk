@@ -27,9 +27,6 @@ PRODUCT_PACKAGES += \
     AntHalService-Soong \
     com.dsi.ant@1.0.vendor
 
-# APEX
-$(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
-
 # Atrace
 PRODUCT_PACKAGES += \
     android.hardware.atrace@1.0-service
