@@ -36,4 +36,6 @@
     <!-- Sensor trigger values -->
     <item name="pickup_sensor_value" format="float" type="dimen">0.0</item>
 
+    <!-- Show battery cycle count -->
+    <bool name="config_show_battery_cycle_count" translatable="false">true</bool>
 </resources>
