@@ -21,7 +21,7 @@ import static co.aospa.settings.dolby.DolbyAtmos.DsParam;
 import android.content.Context;
 import android.util.Log;
 
-import com.android.settingslib.widget.R;
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
 import java.util.Arrays;
 import java.util.List;
@@ -83,11 +83,11 @@ public final class DolbyUtils {
     public String getProfileName() {
         String profile = Integer.toString(mDolbyAtmos.getProfile());
         List<String> profiles = Arrays.asList(mContext.getResources().getStringArray(
-                R.array.dolby_profile_values));
+                com.android.settingslib.collapsingtoolbar.R.array.dolby_profile_values));
         int profileIndex = profiles.indexOf(profile);
         Log.d(TAG, "getProfileName: profile=" + profile + " index=" + profileIndex);
         return profileIndex == -1 ? null : mContext.getResources().getStringArray(
-                R.array.dolby_profile_entries)[profileIndex];
+                com.android.settingslib.collapsingtoolbar.R.array.dolby_profile_entries)[profileIndex];
     }
 
     public void resetProfileSpecificSettings() {

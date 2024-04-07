@@ -25,7 +25,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 
-import com.android.settingslib.widget.R;
+import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 import co.aospa.settings.dolby.DolbyUtils;
 
 /** Provide preference summary for injected items. */
@@ -83,13 +83,13 @@ public class SummaryProvider extends ContentProvider {
         final DolbyUtils dolbyUtils = DolbyUtils.getInstance(getContext());
         final boolean dsOn = dolbyUtils.getDsOn();
         if (!dsOn) {
-            return getContext().getString(R.string.dolby_off);
+            return getContext().getString(com.android.settingslib.collapsingtoolbar.R.string.dolby_off);
         }
         final String profileName = dolbyUtils.getProfileName();
         if (profileName == null) {
-            return getContext().getString(R.string.dolby_on);
+            return getContext().getString(com.android.settingslib.collapsingtoolbar.R.string.dolby_on);
         } else {
-            return getContext().getString(R.string.dolby_on_with_profile, profileName);
+            return getContext().getString(com.android.settingslib.collapsingtoolbar.R.string.dolby_on_with_profile, profileName);
         }
     }
 }
