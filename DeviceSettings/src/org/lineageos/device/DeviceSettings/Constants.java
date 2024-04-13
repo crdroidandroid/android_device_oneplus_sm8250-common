@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2023 crDroid Android Project
+ * Copyright (C) 2018-2024 crDroid Android Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.UserHandle;
 import android.provider.Settings;
-import androidx.preference.SwitchPreference;
 import androidx.preference.PreferenceManager;
 
 import android.media.AudioManager;
