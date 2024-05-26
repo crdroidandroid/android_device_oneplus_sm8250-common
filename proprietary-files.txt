@@ -504,6 +504,30 @@ vendor/lib64/vendor.display.color@1.4.so
 vendor/lib64/vendor.display.color@1.5.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
+# Dolby - MT2111_14.0.0.730(EX01)
+odm/etc/dolby/multimedia_dolby_dax_default.xml|be49c4cde1bc41f67fbfa2c49ba6d8f4e40eb8dc
+odm/etc/init/vendor.dolby_v3_6.hardware.dms360@2.0-service.rc|5da96cf855061860f27dff6399505f8d1f1daeee
+odm/bin/hw/vendor.dolby_v3_6.hardware.dms360@2.0-service|7951f0ede5108f0080bb8abb18651058db9e46ae
+odm/etc/vintf/manifest/manifest_dax_dolby_v3_6.xml|c4704e5bc4da7cdf291c79389f379c8355eaf730
+odm/lib/libdapparamstorage_v3_6.so:odm/etc/libdapparamstorage_v3_6_etc.so;SYMLINK=odm/lib/libdapparamstorage_v3_6.so|c6c36fba280f2373034cf754870611614bf0f22f
+odm/lib/libdeccfg_v3_6.so:odm/etc/libdeccfg_v3_6_etc.so;SYMLINK=odm/lib/libdeccfg_v3_6.so|742cadaf61aea20eabdac099668bfd43ddf4bb35
+odm/lib/libdlbdsservice_v3_6.so:odm/etc/libdlbdsservice_v3_6_etc.so;SYMLINK=odm/lib/libdlbdsservice_v3_6.so|eac269dfbf334f4cc9d5900fb1c53dbfbaea4d6b|d0c30c56c88635392d05ccbca8d6b136b7f405e2
+odm/lib/libqtigef.so:odm/etc/libqtigef_etc.so;SYMLINK=odm/lib/libqtigef.so|c7d588a80c3aac52b160db6ded1528bb8b8fd7bd
+odm/lib/libstagefright_soft_ddpdec_v3_6.so:odm/etc/libstagefright_soft_ddpdec_etc.so;SYMLINK=odm/lib/libstagefright_soft_ddpdec.so|7b9a91a1d15c90a0d804d372554e561380cd109e|893c61e2e39f977406e4c7a6214838fd4fe3eceb
+odm/lib/libstagefrightdolby.so:odm/etc/libstagefrightdolby_etc.so;SYMLINK=odm/lib/libstagefrightdolby.so|47b7e78597d7d047ff28a573092ed3ad7f88df48|e34e83479cfdaa9d55fe790815742d7a5bde1e52
+odm/lib/soundfx/libhwdap_v3_6.so:odm/etc/soundfx/libhwdap_v3_6_etc.so;SYMLINK=odm/lib/soundfx/libhwdap_v3_6.so|1992eea271d67bef7482377605a2efa4c2f6dba8
+odm/lib/soundfx/libswdap_v3_6.so:odm/etc/soundfx/libswdap_v3_6_etc.so;SYMLINK=odm/lib/soundfx/libswdap_v3_6.so|3e521eb43ea5b43e2436f2c46d7b8f169b2f1553
+odm/lib/vendor.dolby_v3_6.hardware.dms360@2.0-impl.so:odm/etc/vendor.dolby_v3_6.hardware.dms360@2.0-impl_etc.so;SYMLINK=odm/lib/vendor.dolby_v3_6.hardware.dms360@2.0-impl.so|b535d7ebc47cb933fe7654a53cc36a5bfc928639
+odm/lib/vendor.dolby_v3_6.hardware.dms360@2.0.so:odm/etc/vendor.dolby_v3_6.hardware.dms360@2.0_etc.so;SYMLINK=odm/lib/vendor.dolby_v3_6.hardware.dms360@2.0.so|d6f89d6499661023dc8fe451ca5c55f1a3ba7d55
+odm/lib64/libdapparamstorage_v3_6.so|d0c9e16ec5a589a9e47a8d3907d7949fd4fdb439
+odm/lib64/libdeccfg_v3_6.so|25a64da2aa3bf9cb2b6fd644547ba1e94cdb47f4
+odm/lib64/libdlbdsservice_v3_6.so|08ae454ff029791ba436f750ca6c717cb6d7bf36|55f2884a2305886b20f904820664bf6e6e390883
+odm/lib64/libqtigef.so|09fb25411b4767ab2f7eebdccd7cc7fd9a85feee
+odm/lib64/soundfx/libhwdap_v3_6.so|e4bf45ccd3ae9d4347d1416019d96681b2c651ea
+odm/lib64/soundfx/libswdap_v3_6.so|92dca01e5bc4cd654a1b72197fc744d8e5bb1b74
+odm/lib64/vendor.dolby_v3_6.hardware.dms360@2.0-impl.so|5b5f4b383c03a6aaa759b1cc7f6f0aea7d1f6ba0
+odm/lib64/vendor.dolby_v3_6.hardware.dms360@2.0.so|e62f04117fead61eea7f2593e7ccbb565436a0ee
+
 # DPM
 system_ext/bin/dpmd
 system_ext/bin/tcmd

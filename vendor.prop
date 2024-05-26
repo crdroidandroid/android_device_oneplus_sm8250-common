@@ -128,6 +128,19 @@ ro.soc.model=SM8250
 # Crypto
 ro.crypto.volume.filenames_mode=aes-256-cts
 
+# Dolby
+vendor.audio.dolby.ds2.enabled=false
+vendor.audio.dolby.ds2.hardbypass=false
+ro.vendor.dolby.dax.version=DAX3_3.6.0.12_r1
+ro.vendor.dolby.model=PAFM00
+ro.vendor.dolby.device=OP46C3
+ro.vendor.dolby.manufacturer=OPLUS
+ro.vendor.dolby.brand=OPLUS
+
+# DPM
+persist.vendor.dpm.idletimer.mode=default
+persist.vendor.dpmhalservice.enable=1
+
 # Display
 vendor.display.disable_hw_recovery_dump=1
 vendor.display.disable_offline_rotator=1
