@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2022 The LineageOS Project
+# Copyright (C) 2022-2024 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -98,58 +98,6 @@ on property:vendor.post_boot.parsed=1
     # IRQ 338: kgsl_3d0_irq
     write /proc/irq/300/smp_affinity_list 2
     write /proc/irq/338/smp_affinity_list 1
-
-on property:sys.usb.config=adb && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x22D9
-    write /config/usb_gadget/g1/idProduct 0x2769
-
-on property:sys.usb.config=mass_storage && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idProduct 0x2768
-    write /config/usb_gadget/g1/idVendor 0x22D9
-
-on property:sys.usb.config=mtp && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x22D9
-    write /config/usb_gadget/g1/idProduct 0x2764
-
-on property:sys.usb.config=mtp,adb && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x22D9
-    write /config/usb_gadget/g1/idProduct 0x2765
-
-on property:sys.usb.config=ptp && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x22D9
-    write /config/usb_gadget/g1/idProduct 0x2771
-
-on property:sys.usb.config=ptp,adb && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x22D9
-    write /config/usb_gadget/g1/idProduct 0x2772
-
-on property:sys.usb.config=rndis,none && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x22D9
-    write /config/usb_gadget/g1/idProduct 0x276A
-
-on property:sys.usb.config=rndis,serial_cdev,diag && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x22D9
-    write /config/usb_gadget/g1/idProduct 0x2783
-
-on property:sys.usb.ffs.ready=1 && property:sys.usb.config=diag,adb && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x22D9
-    write /config/usb_gadget/g1/idProduct 0x276C
-
-on property:sys.usb.ffs.ready=1 && property:sys.usb.config=diag,diag_mdm,adb && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x22D9
-    write /config/usb_gadget/g1/idProduct 0x276E
-
-on property:sys.usb.ffs.ready=1 && property:sys.usb.config=mass_storage,adb && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x22D9
-    write /config/usb_gadget/g1/idProduct 0x2767
-
-on property:sys.usb.ffs.ready=1 && property:sys.usb.config=rndis,diag,adb && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x22D9
-    write /config/usb_gadget/g1/idProduct 0x2775
-
-on property:sys.usb.ffs.ready=1 && property:sys.usb.config=rndis,none,adb && property:sys.usb.configfs=1
-    write /config/usb_gadget/g1/idVendor 0x22D9
-    write /config/usb_gadget/g1/idProduct 0x2766
 
 service oplus-sh /odm/bin/init.oplus.sh
     user root
