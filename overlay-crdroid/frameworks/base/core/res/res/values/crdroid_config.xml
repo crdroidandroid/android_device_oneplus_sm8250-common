@@ -5,12 +5,6 @@
 -->
 <resources>
 
-    <!-- Whether device has VOOC charging support -->
-    <bool name="config_hasVoocCharger">true</bool>
-
-    <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
-    <string name="config_oemFastChargerStatusPath" translatable="false">/sys/devices/virtual/oplus_chg/battery/voocchg_ing</string>
-
      <!-- Whether devices suports in-display fingerprint when screen is off -->
     <bool name="config_supportScreenOffUdfps">true</bool>
 
