@@ -210,6 +210,7 @@ ro.telephony.default_network=33,33
 # Sensors
 persist.vendor.sensors.allow_non_default_discovery=true
 persist.vendor.sensors.sync_request=true
+persist.vendor.sensors.debug.hal=0
 
 # USB
 vendor.usb.diag.func.name=diag
