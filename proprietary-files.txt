@@ -304,6 +304,7 @@ vendor/lib64/libnightvision.so
 vendor/lib64/libofflinelog.so
 vendor/lib64/libop-bokeh.so
 vendor/lib64/libos.so
+vendor/lib64/liboppojpeg.so
 vendor/lib64/libsnpe_adsp.so
 vendor/lib64/libsnpe_dsp_domains.so
 vendor/lib64/libsnpe_dsp_domains_v2.so
