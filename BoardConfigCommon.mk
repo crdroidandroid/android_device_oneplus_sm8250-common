@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-
+BUILD_BROKEN_DUP_RULES := true
 COMMON_PATH := device/oneplus/sm8250-common
 
 # A/B
