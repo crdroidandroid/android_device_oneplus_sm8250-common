@@ -1,5 +1,5 @@
 ## All proprietary files from this list, unless pinned and noted otherwise, are
-## from OnePlus 8T (KB2005_14.0.0.602(EX01)).
+## from OnePlus 8T (KB2005_14.0.0.603(EX01)).
 
 # ACDBs
 vendor/etc/acdbdata/adsp_avs_config.acdb;SYMLINK=odm/etc/acdbdata/adsp_avs_config.acdb
@@ -1295,7 +1295,7 @@ vendor/lib64/libsnsapi.so
 vendor/lib64/libsnsdiaglog.so
 vendor/lib64/libssc.so
 vendor/lib64/libssc_default_listener.so
-vendor/lib64/sensors.ssc.so|b0bb87ad34a618851bd3dc8a377b2dde1e4e2fe0|7435f65e41d94ddfe060a9f3000083f48333296d
+vendor/lib64/sensors.ssc.so|073bf1ad552b1615177b24aebda0668cc3f5d7fc|d1ceee93b0135646cbe8a49dfe0e33017c1c0605
 vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 
 # Snapdragon Computer Vision Engine
