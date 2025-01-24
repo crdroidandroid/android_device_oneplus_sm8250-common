@@ -265,8 +265,8 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # OPlusExtras
-PRODUCT_PACKAGES += \
-    OPlusExtras \
+#PRODUCT_PACKAGES += \
+#    OPlusExtras \
 
 # Overlays
 $(call inherit-product, hardware/oplus/overlay/generic/generic.mk)
