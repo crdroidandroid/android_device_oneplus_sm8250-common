@@ -196,6 +196,9 @@ vendor.opengles.version=196610
 # Incremental FS
 ro.incremental.enable=yes
 
+# Media
+debug.stagefright.c2inputsurface=-1
+
 # Netflix
 ro.netflix.bsp_rev=Q8250-19134-1
 
