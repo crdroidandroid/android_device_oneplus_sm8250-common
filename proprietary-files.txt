@@ -468,8 +468,8 @@ vendor/etc/init/feature_enabler_client.rc
 vendor/etc/OPlus_QC_LTM_Commercial_SM8250_2020_02_07.pfm
 vendor/etc/Oppo_QC_LTM_Commercial_SM8250_2020_01_15.pfm
 
-# Display (HDR)
-vendor/lib64/libhdr_tm.so
+# Graphics (HDR) - from LA.UM.9.14.r1-21000-LAHAINA.QSSI13.0 (tundra T1SJC33.51-11-2)
+vendor/lib64/libhdr_tm.so|7954c5cd5c0b23fe8d0609361c22d24c59f1448b
 
 # Display (HWC)
 vendor/bin/hw/vendor.qti.hardware.display.composer-service
@@ -665,51 +665,57 @@ vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
 # Graphics (Adreno)
-vendor/lib/egl/eglSubDriverAndroid.so
-vendor/lib/egl/libEGL_adreno.so;SYMLINK=vendor/lib/libEGL_adreno.so
-vendor/lib/egl/libGLESv1_CM_adreno.so
-vendor/lib/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib/libGLESv2_adreno.so
-vendor/lib/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib/libq3dtools_adreno.so
-vendor/lib/egl/libq3dtools_esx.so
-vendor/lib/libC2D2.so
-vendor/lib/libCB.so
-vendor/lib/libOpenCL.so
-vendor/lib/libVkLayer_q3dtools.so
-vendor/lib/libadreno_utils.so
-vendor/lib/libc2d30_bltlib.so
-vendor/lib/libgpudataproducer.so
-vendor/lib/libgsl.so
-vendor/lib/libllvm-glnext.so
-vendor/lib/libllvm-qcom.so
-vendor/lib64/egl/eglSubDriverAndroid.so
-vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so
-vendor/lib64/egl/libGLESv1_CM_adreno.so
-vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so
-vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so
-vendor/lib64/egl/libq3dtools_esx.so
-vendor/lib64/libC2D2.so
-vendor/lib64/libCB.so
-vendor/lib64/libOpenCL.so
-vendor/lib64/libVkLayer_q3dtools.so
-vendor/lib64/libadreno_utils.so
-vendor/lib64/libc2d30_bltlib.so
-vendor/lib64/libgpudataproducer.so
-vendor/lib64/libgsl.so
-vendor/lib64/libllvm-glnext.so
-vendor/lib64/libllvm-qcom.so
+vendor/lib/egl/eglSubDriverAndroid.so|36794c5177c5d1e4c39b58297a07eb694ce9288c
+vendor/lib/egl/libEGL_adreno.so;SYMLINK=vendor/lib/libEGL_adreno.so||6fa7746acee41f5c5b843502e48788b183cf0aff
+vendor/lib/egl/libGLESv1_CM_adreno.so|a8f127209e983ffa427b10fed646bd3741d3c653
+vendor/lib/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib/libGLESv2_adreno.so|530b251b1af116f518007f34d66f0801033c6178
+vendor/lib/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib/libq3dtools_adreno.so|381e2d2123f5a6bb1edcc3e281c38acf953ff08b
+vendor/lib/egl/libq3dtools_esx.so|f0018cad37986629ace20146b9ddba5f6882159d
+vendor/lib/egl/libVkLayer_ADRENO_qprofiler.so|d4f26d511cd4f98b94c18f145d3246230fbc6d25
+vendor/lib/hw/vulkan.adreno.so|c16d86d34a72be7a69b19e453a1903925abe16cc
+vendor/lib/libC2D2.so|6e27b2e338ff3edd5c192a45f9bea74b0d171909
+vendor/lib/libCB.so|6a3cdb29ae4a3bf199c826dd966e6bd7182a1883
+vendor/lib/libOpenCL.so|55d34f35f21e70aafb19c3bfb0edc715ef83c543
+vendor/lib/libOpenCL_adreno.so|b90752ae53d16c9e9cede2b38d4a8109b39217b8
+vendor/lib/libVkLayer_q3dtools.so|c9953ac8a64b9b9a31173c56812bead633a7d379
+vendor/lib/libadreno_utils.so|f8cd5fe4ccf77b211ad379aee5bbf401788f1880
+vendor/lib/libc2d30_bltlib.so;DISABLE_CHECKELF|fc078600251e05be3cb029986a5c1f05e8b088ab
+vendor/lib/libgpudataproducer.so|84eb0a73b58c856fa0a73494e14f2a5d6c9dd7cc
+vendor/lib/libgsl.so|f11778a1870dfbb1c5b6bdd202d938dd0d4ec79b
+vendor/lib/libkcl.so|a504b8d00e87070f7b39a390b5199e971ab3f3e4
+vendor/lib/libkernelmanager.so|9314f26594fbca2c3993b8c91252bffcacb0592b
+vendor/lib/libllvm-glnext.so|b65ee37ba2fb63700ea38dbe39731bf1e51459b2
+vendor/lib/libllvm-qcom.so|c5d5324ceae72f6016020e75d4b8b9dcdde7776d
+vendor/lib/libllvm-qgl.so|0fd44f9a0029a18cbc1cc5aec3562cc0a0d0060e
+vendor/lib64/egl/eglSubDriverAndroid.so|3dabc44583b7d9efae2663f359f2c5d1053d6002
+vendor/lib64/egl/libEGL_adreno.so;SYMLINK=vendor/lib64/libEGL_adreno.so|860ed2358e89c555b738a0bb578e68da7c00e6c8
+vendor/lib64/egl/libGLESv1_CM_adreno.so|4538678560a8aa062b00f6690e4b268896c1b59d
+vendor/lib64/egl/libGLESv2_adreno.so;SYMLINK=vendor/lib64/libGLESv2_adreno.so|fbc82874ae90a9163257990048cbb077e6828f57
+vendor/lib64/egl/libq3dtools_adreno.so;SYMLINK=vendor/lib64/libq3dtools_adreno.so|421f7776fda70f2ba8212790e9ac69a3f7288f77
+vendor/lib64/egl/libq3dtools_esx.so|22cc73afe2f8167a0f9953a33ff2eaa465dcfb34
+vendor/lib64/egl/libVkLayer_ADRENO_qprofiler.so|2fa3a828512eadd1afbb132099547d496ba65be2
+vendor/lib64/hw/vulkan.adreno.so|f6db97058a3b806367b37b71b9961c00dbbb4f0c
+vendor/lib64/libC2D2.so|fafaeb8e08cc62dbad97d1c73af524ae47806c7c
+vendor/lib64/libCB.so|1e1f68f4e954617b8879ca980367ef53e82864a3
+vendor/lib64/libOpenCL.so|98fe18af9ed6b4c366f0d0ca17c707afca57f3a8
+vendor/lib64/libOpenCL_adreno.so|2b1dae0e6b8a8cec153a4b68683c6c3b0da3ce54
+vendor/lib64/libVkLayer_q3dtools.so|5ddfe2401db02f851d6472a7ba57c5fc67923675
+vendor/lib64/libadreno_utils.so|fbac8ba895413d3a9ded32226b0f494d33aad6f0
+vendor/lib64/libc2d30_bltlib.so;DISABLE_CHECKELF|cbd2c5b449d568f36ef13cd9fa6774e07db4265b
+vendor/lib64/libgpudataproducer.so|ae1e97612796a06a629f56ffb0dca4afb325b6ce
+vendor/lib64/libgsl.so|1420520b888230d4735c2a342314e7c96e649ed5
+vendor/lib64/libkcl.so|ca6e21ab2bffb2513d3c0cd2088fb2112b230833
+vendor/lib64/libkernelmanager.so|b1e5b3860bd2fab9074731c4d24583dfa0897e00
+vendor/lib64/libllvm-glnext.so|c297d4eaf59a52474f629fe049a61161b3dbea63
+vendor/lib64/libllvm-qcom.so|d36b8211b59ff12f9bf5e13d0b4253a77f28d8ac
+vendor/lib64/libllvm-qgl.so|e69f777067b49a4e54970b5d6b0e7622f56c1412
 
 # Graphics (Adreno firmware)
-vendor/firmware/a650_gmu.bin
-vendor/firmware/a650_sqe.fw
-vendor/firmware/a650_zap.b00
-vendor/firmware/a650_zap.b01
-vendor/firmware/a650_zap.b02
-vendor/firmware/a650_zap.elf
-vendor/firmware/a650_zap.mdt
-
-# Graphics (Vulkan)
-vendor/lib/hw/vulkan.adreno.so
-vendor/lib64/hw/vulkan.adreno.so
+vendor/firmware/a630_gmu.bin|32bb4acc7767c47ddb487ed7cb998d465ee462f2
+vendor/firmware/a630_sqe.fw|e25094f97b44244775cc38a9d909fba6bd4cf76b
+vendor/firmware/a640_gmu.bin|fb1eab0dd5f313abf31441e2209c9398da7df98b
+vendor/firmware/a640_zap.b00|7afc31984d7eeacdd0fc78118ad8fa46c9b3e4ee
+vendor/firmware/a640_zap.b02|27d26ca0ae982c065fb7ab58be73bf3ca2e8bdf3
 
 # GNSS
 odm/etc/izat.conf
