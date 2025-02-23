@@ -239,8 +239,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml
 
 # OPlusExtras
-#PRODUCT_PACKAGES += \
-#    OPlusExtras \
+PRODUCT_PACKAGES += \
+    OPlusExtras \
 
 # Overlays
 $(call inherit-product, hardware/oplus/overlay/generic/generic.mk)
