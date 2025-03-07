@@ -1,7 +1,8 @@
 [
   {
     "repository": "crdroidandroid/android_kernel_oneplus_sm8250",
-    "target_path": "kernel/oneplus/sm8250"
+    "target_path": "kernel/oneplus/sm8250",
+    "branch":"15.0-instantnoodle"
   },
   {
     "repository": "crdroidandroid/android_hardware_oplus",
