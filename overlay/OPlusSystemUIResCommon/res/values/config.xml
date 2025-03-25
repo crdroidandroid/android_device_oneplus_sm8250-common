@@ -5,6 +5,10 @@
 -->
 <resources>
 
+     <!-- Preferred refresh rate at keyguard, if supported by the display. Overrides
+           keyguardMaxRefreshRate. -->
+      <integer name="config_keyguardRefreshRate">60</integer>
+
      <!-- Should we vibrate on an icon animation of the shelf. This should only be active if the
           vibrator is capable of subtle vibrations -->
      <bool name="config_vibrateOnIconAnimation">true</bool>
