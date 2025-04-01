@@ -44,7 +44,7 @@ PRODUCT_PACKAGES += \
     audio.primary.kona \
     audio.r_submix.default \
     audio.usb.default \
-    audio_amplifier.qcom \
+    audio_amplifier.kona \
     liba2dpoffload \
     libbatterylistener \
     libcomprcapture \
