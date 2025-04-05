@@ -107,7 +107,7 @@ blob_fixups: blob_fixups_user_type = {
     'product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml': blob_fixup()
         .regex_replace('/my_product', '/product'),
     'system_ext/bin/wfdservice': blob_fixup()
-        .add_needed('libwfdservice_shim_v1.so'),
+        .add_needed('libwfdservice_shim.so'),
     'system_ext/lib/libwfdmmsrc_system.so': blob_fixup()
         .add_needed('libgui_shim.so'),
     'system_ext/lib/libwfdservice.so': blob_fixup()
