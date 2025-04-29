@@ -75,9 +75,6 @@ DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 ODM_MANIFEST_FILES := $(COMMON_PATH)/manifest_odm.xml
 
-# Init
-TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_oplus
-
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x00000000
