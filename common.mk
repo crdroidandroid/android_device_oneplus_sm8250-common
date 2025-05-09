@@ -373,8 +373,12 @@ PRODUCT_USE_PRODUCT_VNDK_OVERRIDE := true
 # Dolby
 PRODUCT_PACKAGES += \
     libstagefright_foundation-v33
-
     
+# Preopt SystemUI    
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+    Settings \
+    SystemUI
+        
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
