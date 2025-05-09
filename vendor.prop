@@ -186,10 +186,12 @@ ro.surface_flinger.has_HDR_display=true
 ro.surface_flinger.has_wide_color_display=true
 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 ro.surface_flinger.protected_contents=true
-ro.surface_flinger.set_idle_timer_ms=4000
-ro.surface_flinger.set_touch_timer_ms=4000
+ro.surface_flinger.set_idle_timer_ms=1800000
+ro.surface_flinger.set_touch_timer_ms=10
+ro.surface_flinger.set_display_power_timer_ms=700
 ro.surface_flinger.use_color_management=true
 ro.surface_flinger.use_content_detection_for_refresh_rate=true
+vendor.display.defer_fps_frame_count=2
 ro.surface_flinger.wcg_composition_dataspace=143261696
 vendor.opengles.version=196610
 
