@@ -239,3 +239,7 @@ wifi.aware.interface=wifi-aware0
 
 # Zygote
 zygote.critical_window.minute=10
+
+# Multi-Gen LRU
+persist.device_config.mglru_native.lru_gen_config=core
+
