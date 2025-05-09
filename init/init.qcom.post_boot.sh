@@ -838,7 +838,7 @@ function configure_zram_parameters() {
     fi
 
     if [ "$low_ram" == "true" ]; then
-        echo lz4 > /sys/block/zram0/comp_algorithm
+        echo zstd > /sys/block/zram0/comp_algorithm
     fi
 
     if [ -f /sys/block/zram0/disksize ]; then
