@@ -50,3 +50,9 @@ persist.vendor.sensors.enable.mag_filter=true
 
 # Vendor
 ro.vendor.qti.va_aosp.support=1
+
+# Save battery
+wifi.supplicant_scan_interval=180
+pm.sleep_mode=1
+ro.ril.disable.power.collapse=0
+
