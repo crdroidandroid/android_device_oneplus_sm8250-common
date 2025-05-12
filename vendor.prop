@@ -182,6 +182,7 @@ persist.sys.sf.color_saturation=1.0
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 ro.surface_flinger.enable_frame_rate_override=false
+ro.surface_flinger.game_default_frame_rate_override=120
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 ro.surface_flinger.has_HDR_display=true
 ro.surface_flinger.has_wide_color_display=true
