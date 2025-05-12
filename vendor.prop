@@ -245,5 +245,3 @@ zygote.critical_window.minute=10
 # Multi-Gen LRU
 persist.device_config.mglru_native.lru_gen_config=core
 
-# Netflix
-ro.netflix.bsp_rev=Q8450-34634-1
