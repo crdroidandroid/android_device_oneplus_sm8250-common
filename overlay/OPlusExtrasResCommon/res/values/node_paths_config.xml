@@ -11,15 +11,6 @@
     <!-- High Brightness sysfs node path -->
     <string name="node_hbm_switch" translatable="false">/sys/kernel/oplus_display/hbm</string>
 
-    <!-- Kcal sysfs node paths -->
-    <string name="node_red_preference" translatable="false">/sys/module/msm_drm/parameters/kcal_red</string>
-    <string name="node_green_preference" translatable="false">/sys/module/msm_drm/parameters/kcal_green</string>
-    <string name="node_blue_preference" translatable="false">/sys/module/msm_drm/parameters/kcal_blue</string>
-    <string name="node_saturation_preference" translatable="false">/sys/module/msm_drm/parameters/kcal_sat</string>
-    <string name="node_contrast_preference" translatable="false">/sys/module/msm_drm/parameters/kcal_cont</string>
-    <string name="node_hue_preference" translatable="false">/sys/module/msm_drm/parameters/kcal_hue</string>
-    <string name="node_value_preference" translatable="false">/sys/module/msm_drm/parameters/kcal_val</string>
-
     <!-- Keep PCC sysfs node path -->
     <string name="node_keep_pcc_switch" translatable="false">/sys/kernel/oplus_display/skip_pcc_override</string>
 

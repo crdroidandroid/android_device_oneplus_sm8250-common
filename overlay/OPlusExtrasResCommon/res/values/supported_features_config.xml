@@ -14,9 +14,6 @@
     <!-- Whether device supports High Brightness Mode -->
     <bool name="config_deviceSupportsHBM">true</bool>
 
-    <!-- Whether device supports Kcal -->
-    <bool name="config_deviceSupportsKcal">false</bool>
-
     <!-- Whether device supports Keep PCC -->
     <bool name="config_deviceSupportsKeepPCC">true</bool>
 
