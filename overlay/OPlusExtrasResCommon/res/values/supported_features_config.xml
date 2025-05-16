@@ -5,9 +5,6 @@
 -->
 <resources>
 
-    <!-- Whether device supports MSM Touchboost -->
-    <bool name="config_deviceSupportsTouchboost">true</bool>
-
     <!-- Whether device supports Ambient Display Gestures -->
     <bool name="config_deviceSupportsAmbientDisplayGestures">false</bool>
 
