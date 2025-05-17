@@ -410,6 +410,7 @@ PRODUCT_PACKAGES += \
 
 # Oneplus Camera
 $(call inherit-product, vendor/oneplus/camera/camera-vendor.mk)
+$(call soong_config_set,camera,override_format_from_reserved,$(TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED))
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/sm8250-common/sm8250-common-vendor.mk)
