@@ -30,6 +30,7 @@ PRODUCT_PACKAGES += \
 
 # Alert slider
 PRODUCT_PACKAGES += \
+    KeyHandler \
     tri-state-key-calibrate
 
 # Audio
