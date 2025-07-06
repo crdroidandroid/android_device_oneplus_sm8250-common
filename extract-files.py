@@ -103,7 +103,7 @@ blob_fixups: blob_fixups_user_type = {
     'odm/lib64/libpwirissoft.so': blob_fixup()
         .call(blob_fixup_nop_call, 'bl', '_ZN4pxlw18qcomSetDisplayModeEPvii', '_ZN4pxlw15irisSetConfigExEiiPKi@plt'),
     'product/app/PowerOffAlarm/PowerOffAlarm.apk': blob_fixup()
-        .apktool_patch('blob-patches/PowerOffAlarm.patch', '-s'),
+        .apktool_patch('blob-patches/PowerOffAlarm.patch'),
     'product/etc/sysconfig/com.android.hotwordenrollment.common.util.xml': blob_fixup()
         .regex_replace('/my_product', '/product'),
     'system_ext/bin/wfdservice': blob_fixup()
