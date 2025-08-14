@@ -212,7 +212,7 @@ $(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.1-service.oplus
+    vendor.lineage.livedisplay-service.oplus
 
 # Media
 PRODUCT_COPY_FILES += \
