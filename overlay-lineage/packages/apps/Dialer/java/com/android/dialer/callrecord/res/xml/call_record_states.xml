@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+ * Copyright (C) 2019 The LineageOS Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<call-record-allowed-flags>
+
+       <!-- Enable recording for Germany:
+             -->
+    <country iso="de" allowed="true" />
+
+    
+    <!-- Enable recording for Italy and Vatican City State:
+         It is not illegal to record a conversation, as parties to calls automatically accept the
+         risk that a call may be recorded. Making a recording available to other parties is a
+         criminal offense, when done so for reasons other than protecting either one's own rights or
+         other parties' rights. Articles 23 and 167, in the Privacy Code, deem that the crimes
+         provided for therein are punishable only if said acts result in harm. According to the
+         Supreme Court of Cassation, recorded conversations are legal and can be used as evidence in
+         court, even if the other party is unaware of being recorded, provided that it is not
+         recorded by a third party. The Italian comune of Campione d'Italia features an exclave,
+         situated within the Swiss canton of Ticino, and as such it may not be within the confines
+         of the Italian ISO and its inherent laws.
+
+         Legal articles:
+           https://www.altalex.com/index.php?idnot=53369
+           https://web.archive.org/web/20161011100301/http://notizie.tiscali.it/socialnews/articoli/polimeni/13230/registrare-di-nascosto-per-la-cassazione-e-legale/
+    -->
+    <country iso="it,va" allowed="true" />
+   
+    <!-- Enablee recording for United States of America, Guam, the Northern Mariana Islands, the
+                               United States Virgin Islands, Puerto Rico:
+    -->
+    <country iso="us,vi,gu" allowed="true" />
+    
+</call-record-allowed-flags>
