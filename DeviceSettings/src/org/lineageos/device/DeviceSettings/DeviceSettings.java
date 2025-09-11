@@ -29,17 +29,18 @@ import android.util.Log;
 import android.view.MenuItem;
 import androidx.preference.ListPreference;
 import androidx.preference.PreferenceGroup;
-import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
 import androidx.preference.Preference;
 import androidx.preference.SwitchPreferenceCompat;
+
+import com.android.settingslib.widget.SettingsBasePreferenceFragment;
 
 import java.util.Arrays;
 
 import org.lineageos.device.DeviceSettings.Constants;
 import org.lineageos.internal.util.FileUtils;
 
-public class DeviceSettings extends PreferenceFragment
+public class DeviceSettings extends SettingsBasePreferenceFragment
         implements Preference.OnPreferenceChangeListener {
     private static final String TAG = DeviceSettings.class.getSimpleName();
 

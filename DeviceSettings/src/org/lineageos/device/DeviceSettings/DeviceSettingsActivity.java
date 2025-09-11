@@ -33,14 +33,12 @@ import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
 
 public class DeviceSettingsActivity extends CollapsingToolbarBaseActivity {
 
-    private static final String TAG = "DeviceSettings";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getFragmentManager().beginTransaction().replace(
+        getSupportFragmentManager().beginTransaction().replace(
                 com.android.settingslib.collapsingtoolbar.R.id.content_frame,
-                new DeviceSettings(), TAG).commit();
+                new DeviceSettings()).commit();
     }
 }

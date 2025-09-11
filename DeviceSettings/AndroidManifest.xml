@@ -35,7 +35,7 @@
         android:label="@string/device_title"
         android:defaultToDeviceProtectedStorage="true"
         android:directBootAware="true"
-        android:theme="@style/Theme.SubSettingsBase"
+        android:theme="@style/Theme.SubSettingsBase.Expressive"
         android:exported="true">
 
         <!-- Device Settings -->
