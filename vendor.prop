@@ -191,6 +191,7 @@ ro.netflix.bsp_rev=Q8250-19134-1
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
+vendor.perf.framepacing.enable=1
 
 # Qualcomm System Daemon
 persist.vendor.qcomsysd.enabled=1
