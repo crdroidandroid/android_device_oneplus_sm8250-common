@@ -416,5 +416,8 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 # Blur
 TARGET_ENABLE_BLUR := true
 
+#Matlog
+TARGET_DISABLE_MATLOG := true
+
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/sm8250-common/sm8250-common-vendor.mk)
