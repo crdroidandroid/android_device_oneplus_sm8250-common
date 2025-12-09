@@ -910,6 +910,7 @@ vendor/lib64/unnhal-acc-hvx.so
 odm/etc/nfc/libnfc-mtp-SN100.conf_19805:vendor/etc/libnfc-nxp.conf
 odm/etc/nfc/libnfc-nci.conf_19805:vendor/etc/libnfc-nci.conf
 odm/etc/nfc/sn100u.bin_sn100t_fw_01_10_53:vendor/firmware/sn100u.bin
+vendor/etc/libnfc-nxp_RF.conf:vendor/etc/libnfc-nxp.conf
 
 # Osense
 odm/lib64/libosenseaidlhalclient.so
