@@ -200,6 +200,10 @@ persist.vendor.ims.disableDebugLogs=1
 persist.vendor.ims.disableIMSLogs=1
 persist.vendor.ims.disableQXDMLogs=1
 
+# Logging
+persist.log.tag.WifiHAL=E
+persist.log.tag.WifiStaIfaceAidlImpl=E
+
 # Media
 debug.stagefright.c2inputsurface=-1
 
