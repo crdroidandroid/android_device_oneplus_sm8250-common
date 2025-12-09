@@ -38,4 +38,11 @@
 
     <!-- Show battery cycle count -->
     <bool name="config_show_battery_cycle_count" translatable="false">true</bool>
+    
+    <!-- Whether device supports Dolby -->
+    <bool name="config_deviceSupportsDolby">true</bool>    
+
+    <!-- Dolby -->
+    <string name="config_DolbyPackage" translatable="false">co.aospa.dolby.xiaomi</string>
+    <string name="config_DolbyStartActivity" translatable="false">co.aospa.dolby.xiaomi.DolbyActivity</string>
 </resources>
