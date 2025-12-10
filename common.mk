@@ -264,6 +264,8 @@ PRODUCT_PACKAGES += \
 
 # Inherit from the OnePlus Camera makefile.
 $(call inherit-product, vendor/oneplus/camera/camera-vendor.mk)
+$(call soong_config_set,camera,override_format_from_reserved,$(TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED))
+$(call soong_config_set,camera,package_name,com.oplus.packageName)
 
 # Partitions
 PRODUCT_PACKAGES += \

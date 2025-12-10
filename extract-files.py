@@ -125,7 +125,9 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so': blob_fixup()
         .call(blob_fixup_nop_call, 'bl', '__cfi_check', '_ZN7android8hardware22configureRpcThreadpoolEmb@plt'),
     ('vendor/lib64/libdlbdsservice.so', 'vendor/lib/libstagefright_soft_ac4dec.so', 'vendor/lib/libstagefright_soft_ddpdec.so'): blob_fixup()
-        .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so')        
+        .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so')
+        'vendor/lib64/libAncSegBaseSdk.so|vendor/lib64/libaps_frame_registration.so|vendor/lib64/libyuv2.so': blob_fixup()
+        .replace_needed('libstdc++.so', 'libstdc++_vendor.so'),      
 }  # fmt: skip
 
 module = ExtractUtilsModule(
