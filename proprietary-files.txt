@@ -13,10 +13,10 @@ vendor/lib64/libadsp_default_listener.so
 vendor/lib64/vendor.qti.hardware.dsp@1.0.so
 
 # ADSP modules
-odm/lib/rfsa/adsp/hta_lib/libhta_dsp_skel.so;MODULE_SUFFIX=_odm
+odm/lib/rfsa/adsp/hta_lib/libhta_dsp_skel.so
 odm/lib/rfsa/adsp/libc++.so.1
 odm/lib/rfsa/adsp/libc++abi.so.1
-odm/lib/rfsa/adsp/libinterstellar_skel.so;MODULE_SUFFIX=_odm
+odm/lib/rfsa/adsp/libinterstellar_skel.so
 odm/lib/rfsa/adsp/libktvdrc.so
 odm/lib/rfsa/adsp/libktveffect.so
 odm/lib/rfsa/adsp/libktveq.so
