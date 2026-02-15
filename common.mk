@@ -129,7 +129,12 @@ PRODUCT_COPY_FILES += \
 # Dolby
 PRODUCT_PACKAGES += \
     DolbyAtmos
-    
+
+# Doze
+PRODUCT_PACKAGES += \
+    OplusDoze \
+    OplusDozeResCommon
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey \
