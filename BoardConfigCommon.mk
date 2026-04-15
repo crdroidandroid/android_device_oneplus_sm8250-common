@@ -95,6 +95,21 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := BRAND_SHOW_FLAG=oneplus
 TARGET_KERNEL_SOURCE := kernel/oneplus/sm8250
 TARGET_KERNEL_CONFIG := vendor/kona-perf_defconfig vendor/oplus.config
 TARGET_KERNEL_NO_GCC := true
+TARGET_KERNEL_CLANG_COMPILE := true
+
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+    LLVM=1 \
+    LLVM_IAS=1 \
+    LD=ld.lld \
+    AR=llvm-ar \
+    NM=llvm-nm \
+    OBJCOPY=llvm-objcopy \
+    OBJDUMP=llvm-objdump \
+    STRIP=llvm-strip \
+    OBJSIZE=llvm-size \
+    READELF=llvm-readelf \
+    HOSTCFLAGS="-I/usr/include -I/usr/include/x86_64-linux-gnu -fuse-ld=lld -Wno-unused-command-line-argument" \
+    HOSTLDFLAGS="-L/usr/lib/x86_64-linux-gnu -L/usr/lib -fuse-ld=lld"
 
 # Platform
 BOARD_USES_QCOM_HARDWARE := true
