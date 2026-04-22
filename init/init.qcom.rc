@@ -60,6 +60,22 @@ on init
     write /sys/kernel/icnss/wpss_boot 1
     chmod 0660 /sys/fs/cgroup/memory/bg/tasks
 
+on post-fs
+    # Hyper Touch
+    chown system system /proc/touchpanel/game_switch_enable
+
+    # TP Edge Touch Limit
+    chown system system /proc/touchpanel/oplus_tp_direction
+    write /proc/touchpanel/oplus_tp_direction 0
+
+    # USB 2.0 Force Fast Charge
+    chown system system /sys/module/oplus_chg/parameters/force_fast_charge
+    chown system system /sys/module/oplus_chg/parameters/ffc_val
+
+    # Vibrator
+    chown system system /sys/devices/platform/soc/88c000.i2c/i2c-6/6-005a/leds/vibrator/level
+
+
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
