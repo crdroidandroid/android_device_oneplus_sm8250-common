@@ -33,6 +33,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.oplus_extras.rc",
+    src: "init.oplus_extras.rc",
+    sub_dir: "init",
+    device_specific: true,
+}
+
+prebuilt_etc {
     name: "init.qcom.recovery.rc",
     src: "init.qcom.recovery.rc",
     sub_dir: "init",
