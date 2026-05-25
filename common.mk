@@ -128,7 +128,7 @@ PRODUCT_COPY_FILES += \
 
 # Dolby
 PRODUCT_PACKAGES += \
-    DolbyAtmos
+    LunarisDolby
 
 # Doze
 PRODUCT_PACKAGES += \
