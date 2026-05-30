@@ -133,7 +133,6 @@ odm/lib64/libfastov_dsp.so
 odm/lib64/libormshalclient.so
 odm/lib64/libvl53l1_daemon.so
 odm/lib64/sensors.hal.tof.so
-odm/lib64/vendor.oplus.hardware.cammidasservice-V1-ndk_platform.so
 vendor/etc/camera/M_Attribute_AG_BMW_1.1.0.model.hardcode
 vendor/lib/libc++_shared.so
 vendor/lib/libnightvision.so;FIX_SONAME
@@ -605,8 +604,6 @@ odm/lib64/libgf_hal_G5_oplus.so
 odm/lib64/libgf_hal_G6_oplus.so
 odm/lib64/libgf_ud_hal_20801_G3_oplus.so
 odm/lib64/libolc_vnd.so
-odm/lib64/vendor.oplus.hardware.commondcs-V1-ndk_platform.so
-odm/lib64/vendor.oplus.hardware.olc2-V1-ndk_platform.so
 
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
@@ -908,7 +905,6 @@ odm/etc/nfc/sn100u.bin_sn100t_fw_01_10_53:vendor/firmware/sn100u.bin
 # Osense
 odm/lib64/libosenseaidlhalclient.so
 odm/lib64/libosensehalclient.so
-odm/lib64/vendor.oplus.hardware.osense.client-V1-ndk_platform.so
 odm/lib64/vendor.oplus.hardware.osense.client@1.0.so
 
 # PASR
@@ -924,8 +920,6 @@ vendor/lib64/libperipheral_client.so
 vendor/lib64/libspcom.so
 
 # Perf
-odm/lib/vendor.oplus.hardware.performance-V1-ndk_platform.so
-odm/lib64/vendor.oplus.hardware.performance-V1-ndk_platform.so
 vendor/bin/hw/vendor.qti.hardware.perf@2.2-service
 vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc
 vendor/etc/perf/commonresourceconfigs.xml
@@ -1082,7 +1076,6 @@ vendor/lib64/libsystem_health_mon.so
 vendor/lib64/qcrild_librilutils.so
 vendor/lib64/qtibus.so
 vendor/lib64/qtimutex.so
-vendor/lib64/vendor.oplus.hardware.radio-V2-ndk_platform.so
 vendor/lib64/vendor.qti.hardware.radio.am@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.internal.deviceinfo@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so
