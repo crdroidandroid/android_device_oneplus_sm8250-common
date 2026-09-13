@@ -130,6 +130,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     LunarisDolby
 
+$(call soong_config_set,qtidisplay,target_uses_tp10_ubwc_for_10bit,true)
+
 # Doze
 PRODUCT_PACKAGES += \
     OplusDoze \
