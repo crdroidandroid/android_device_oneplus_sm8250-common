@@ -142,6 +142,7 @@ persist.vendor.dpm.idletimer.mode=default
 persist.vendor.dpmhalservice.enable=1
 
 # Display
+debug.renderengine.blur_algorithm=kawase_darkmoon
 vendor.display.disable_hw_recovery_dump=1
 vendor.display.disable_offline_rotator=1
 vendor.display.disable_system_load_check=1
