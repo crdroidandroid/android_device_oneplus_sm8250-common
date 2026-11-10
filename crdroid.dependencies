@@ -4,6 +4,10 @@
     "target_path": "kernel/oneplus/sm8250"
   },
   {
+    "repository": "crdroidandroid/android_hardware_oneplus",
+    "target_path": "hardware/oneplus"
+  },
+  {
     "repository": "crdroidandroid/android_hardware_oplus",
     "target_path": "hardware/oplus"
   },
