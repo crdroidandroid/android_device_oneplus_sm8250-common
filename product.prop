@@ -1,3 +1,6 @@
+# Animation override
+persist.sys.activity_anim_perf_override=true
+
 # Audio
 af.fast_track_multiplier=1
 
